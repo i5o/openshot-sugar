@@ -1,0 +1,4550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="zh_TW">
+   <articleinfo>
+      <title>OpenShot Video Editor Manual – v1.4</title>
+      <subtitle/>
+      <edition/>
+   </articleinfo><sect1 id="sect1_1"><title>介紹</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/logo_badge.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>OpenShot Video Editor is a program designed to create and edit videos on Linux.  It can easily combine multiple video clips, audio clips, and images into a single project, and then export the video into many common video formats.</para>
+   <para>OpenShot 是非線性的影音編輯程式：表示影音的每個時間點、每個影格都可以在任何時候存取到，所以剪輯可以依使用者的創意來圖層化、混合與編排。所有的編輯 (裁剪、刪節等等) 都是非破壞性，即：原始的影音剪輯不會被修改到。</para>
+   <para>您可以使用 OpenShot 來創作照片幻燈秀、編輯家庭影片、製作電視廣告與線上影片，或是其他隨您想像的用法。</para><sect2 id="sect2_1"><title>功能概觀：</title>
+   <orderedlist>
+      <listitem>
+         <para>支援許多視訊、音訊與影像格式 (基於 FFmpeg)</para>
+      </listitem>
+      <listitem>
+         <para>Gnome 介面整合 (支援拖放功能)</para>
+      </listitem>
+      <listitem>
+         <para>多影音軌</para>
+      </listitem>
+      <listitem>
+         <para>剪輯調整大小、裁剪、貼齊與刪節</para>
+      </listitem>
+      <listitem>
+         <para>以即時預覽做視訊轉場</para>
+      </listitem>
+      <listitem>
+         <para>合成、影像套疊、浮水印</para>
+      </listitem>
+      <listitem>
+         <para>Title templates, title creation, 3D animated titles</para>
+      </listitem>
+      <listitem>
+         <para>可縮放圖形 (SVG)，可用來建立、代入標題與片頭片尾字幕</para>
+      </listitem>
+      <listitem>
+         <para>捲動式電影片頭片尾字幕</para>
+      </listitem>
+      <listitem>
+         <para>實色剪輯 (包含 alpha 合成)</para>
+      </listitem>
+      <listitem>
+         <para>支援轉描 (Rotoscoping) / 連續影像</para>
+      </listitem>
+      <listitem>
+         <para>拖放時間軸</para>
+      </listitem>
+      <listitem>
+         <para>影格步進按鍵：J、K、L 鍵</para>
+      </listitem>
+      <listitem>
+         <para>視訊編碼 (基於 FFmpeg)</para>
+      </listitem>
+      <listitem>
+         <para>關鍵影格動畫</para>
+      </listitem>
+      <listitem>
+         <para>視訊剪輯數位縮放</para>
+      </listitem>
+      <listitem>
+         <para>剪輯速度變更 (慢動作等)</para>
+      </listitem>
+      <listitem>
+         <para>Custom transition wipes, lumas, and masks </para>
+      </listitem>
+      <listitem>
+         <para>正在調整剪輯大小 (影格大小)</para>
+      </listitem>
+      <listitem>
+         <para>音訊混音與編輯</para>
+      </listitem>
+      <listitem>
+         <para>關鍵影格動畫與配置的預先設定</para>
+      </listitem>
+      <listitem>
+         <para>肯・伯恩斯 (Ken Burns) 特效 (在影像上平移的視訊)</para>
+      </listitem>
+      <listitem>
+         <para>Digital video effects, including brightness, gamma, hue, greyscale, chroma key (bluescreen / greenscreen), and over 40 other video and audio effects</para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_2"><title>畫面截圖</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_clips.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2></sect1><sect1 id="sect1_2"><title>就此開始</title><sect2 id="sect2_3"><title>啟動 OpenShot 影音編輯程式</title>
+   <para>您可以用以下方法啟動 <application>OpenShot</application>：</para><sect3 id="sect3_1"><title>應用程式選單</title>
+   <para>選擇「<guisubmenu>聲音與視訊</guisubmenu>」&gt;「<guimenuitem>OpenShot 影音編輯程式</guimenuitem>」：</para></sect3><sect3 id="sect3_2"><title>命令列</title>
+   <para>要從命令列啟動 <application>OpenShot</application>，請開啟終端機視窗並輸入以下指令後按 <keycap>Enter</keycap>：</para>
+   <para><command>openshot</command> [檔案名稱]</para>
+   <para>選項 [檔案名稱] 參數可以是音訊檔或視訊檔，也可以是 OpenShot 專案檔 (*.osp)。也能指定多個檔案 (檔案名稱之間用空白隔開)，所有檔案會被匯入 <application>OpenShot</application> 的單一作業。</para></sect3><sect3 id="sect3_3"><title>以...開啟...</title>
+   <para>要從 Nautilus 啟動 <application>OpenShot</application>：在影像、視訊或音訊檔案上點右鍵，選擇「<guimenu>用...開啟</guimenu>」&gt;「<guimenuitem>OpenShot 影音編輯程式</guimenuitem>」；或：選擇「<guimenu>用...開啟</guimenu>」&gt;「<guimenuitem>用其他程式開啟</guimenuitem>」&gt;「<command>openshot</command>」。</para>
+   <para/></sect3></sect2></sect1><sect1 id="sect1_3"><title>5 分鐘學習 OpenShot！</title>
+   <para>使用 OpenShot 非常簡單！這個教學會在五分鐘內帶您走過一趟基本操作，之後您就可以自己製作簡單、帶有音樂的照片幻燈秀。</para><sect2 id="sect2_4"><title>步驟 1 - 匯入照片與音樂</title>
+   <para>在您開始製作影片前，您需要 <guibutton>匯入檔案</guibutton> 到 OpenShot。從您的桌面或資料夾拖放一些 <emphasis>影像</emphasis> (*.JPG、*.PNG 等...) 與 <emphasis>音樂檔</emphasis> (大部分格式都可以) 到 OpenShot 影音編輯程式。 請確認要把檔案放在例圖中箭頭所指的地方。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_5"><title>步驟 2 - 在時間軸上編排照片</title>
+   <para>在您匯入檔案之後，下一步是將它們加入時間軸並編排。點擊每張照片 (一次一張)、拖放到時間軸上的 <guibutton>影音軌 2</guibutton>、拖放照片 (又稱為「剪輯」) 來做編排。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_6"><title>步驟 3 - 加入音樂到時間軸</title>
+   <para>要讓照片幻燈秀更有趣，我們需要加入一些音樂。 您應該已經在步驟 1 匯入音樂檔案了，點擊音樂檔案、拖放到時間軸上的 <guibutton>影音軌 2</guibutton>。</para></sect2><sect2 id="sect2_7"><title>步驟 4 - 預覽您的專案</title>
+   <para>若要預覽我們的視訊看起來如何、聲音聽起來如何，請點預覽視窗下方的 <guibutton>播放按鈕</guibutton>，再點一次則可以暫停播放。 請記得：如果您需要重新編排剪輯，只需要拖放移動即可。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_8"><title>步驟 5 - 匯出您的影音</title>
+   <para>您覺得照片幻燈秀影片看起來不錯，下一步就是匯出檔案了。 將 OpenShot 專案轉換成單一、可用於大多摩體播放程式 (例如 Totem、VLC、MPlayer... 等) 或網站 (例如 YouTube、Vimeo... 等) l的影片檔。</para>
+   <para>點畫面最頂端的 <guibutton>匯出視訊</guibutton> 圖示 (或使用「<guimenuitem>檔案</guimenuitem>」&gt;「<guimenuitem>匯出視訊...</guimenuitem>」選單)，從許多預先設定中選擇一個適合的，點「<guibutton>匯出視訊按鈕</guibutton>」。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_9"><title>步驟 6 - 享受 OpenShot！</title>
+   <para>您現在應該有些基本概念了，稍懂 OpenShot 的運作： <emphasis>匯入、編排、預覽、匯出</emphasis>。 非常希望您花不到五分鐘就完成了這個教學。 請繼續閱讀說明手冊後續部份來了解更多 OpenShot 的詳細內容與進階功能。 請慢慢欣賞！</para></sect2></sect1><sect1 id="sect1_4"><title>主視窗</title>
+   <para>OpenShot 影音編輯程式有一個主視窗，其中含有大多數資訊、按鈕、用來編輯專案的選單。</para><sect2 id="sect2_10"><title>概觀</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>主要工具列</para>
+            </entry>
+            <entry>
+               <para>包含開啟、儲存、匯出您的影音專案的按鈕。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>功能分頁</para>
+            </entry>
+            <entry>
+               <para>在專案檔案、過場與特效間切換。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>專案檔案</para>
+            </entry>
+            <entry>
+               <para>所有的音訊、視訊與影像檔案都匯入您的專案。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>預覽視窗</para>
+            </entry>
+            <entry>
+               <para>視訊播放在畫面上的區域。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>編輯工具列</para>
+            </entry>
+            <entry>
+               <para>這個工具列有用來編輯、裁剪、分割剪輯的切換按鈕。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>縮放滑桿</para>
+            </entry>
+            <entry>
+               <para>這個滑桿可以調整時間軸的時間刻度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>播放指示 / 時間尺</para>
+            </entry>
+            <entry>
+               <para>時間尺顯示時間刻度；紅線是播放指示，表示目前播放位置。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>時間軸</para>
+            </entry>
+            <entry>
+               <para>時間軸讓您的專案視覺化，也包括專案中的剪輯和過場。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Filter</para>
+            </entry>
+            <entry>
+               <para>Filter the list of items shown (project files, transitions, and effects) by using these toggle buttons and textbox.  Enter a few letters of what you are looking for, and the results will be shown.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_11"><title>主要工具列</title>
+   <para>The <guimenu>main toolbar </guimenu>contains buttons to quickly create and save your project, undo and redo actions, import files, and export your video.  All of these functions can also be accessed through the <guimenuitem>File</guimenuitem> and <guimenuitem>Edit</guimenuitem> menus.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_toolbar.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>New Project</para>
+            </entry>
+            <entry>
+               <para>Create a new OpenShot project file (*.OSP).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>儲存專案</para>
+            </entry>
+            <entry>
+               <para>儲存目前的專案。如果沒有建立專案，會跳出對話畫面來取得更多資訊。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>取消動作</para>
+            </entry>
+            <entry>
+               <para>Undo the last action</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>重複動作</para>
+            </entry>
+            <entry>
+               <para>Redo the previous action</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>匯入檔案</para>
+            </entry>
+            <entry>
+               <para>匯入一個或多個檔案到目前的 OpenShot 專案。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>匯出視訊</para>
+            </entry>
+            <entry>
+               <para>匯出目前的專案為單一影音檔。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_12"><title>功能分頁</title>
+   <para>這些分頁讓您能在三種不同的功能間切換：專案檔案、過場、特效。 分頁中的項目可以直接拖放到時間軸上。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_tabs.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_13"><title>專案檔案</title>
+   <para>The Project Files section contains all files that have been imported into your project.  Before you can add an image, audio file, or video file to your project timeline, it must first be imported into your Project Files section.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_files.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_14"><title>預覽視窗</title>
+   <para>預覽視窗可以控制您的視訊專案播出 (預覽)。 點預覽視窗下方的按鈕可控制播放，播放區域的大小可直接點擊與拖拉周圍的邊線來更改。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>跳到開頭</para>
+            </entry>
+            <entry>
+               <para>跳到專案的最開始。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>倒轉</para>
+            </entry>
+            <entry>
+               <para>從目前播放的位置倒轉視訊。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>播放 / 暫停</para>
+            </entry>
+            <entry>
+               <para>繼續或暫停播放您的專案。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>快轉</para>
+            </entry>
+            <entry>
+               <para>從目前播放的位置快轉視訊。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>跳到結尾</para>
+            </entry>
+            <entry>
+               <para>跳到專案結尾。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_15"><title>編輯工具列</title>
+   <para>編輯工具列可讓您衣時間軸在不同的編輯模式之間切換。 在移動、裁剪、分割剪輯時，必須使用此工具列變更編輯模式。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>加入影音軌</para>
+            </entry>
+            <entry>
+               <para>加入新影音軌到最頂端。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>選取模式</para>
+            </entry>
+            <entry>
+               <para>選取模式讓您點擊與移動剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>切割模式</para>
+            </entry>
+            <entry>
+               <para>Razor mode allows you to split a clip where ever you click.  If snapping is enabled, clicking near the play-head (the red line), will slice the clip exactly on the play-head.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>調整大小模式</para>
+            </entry>
+            <entry>
+               <para>調整大小模式讓您抓取剪輯的邊緣與拖拉就能變更 (或裁剪) 剪輯的大小。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>貼齊模式</para>
+            </entry>
+            <entry>
+               <para>Snap mode allows clips to snap (or jump) to the nearest clip or play-head (if any are close) when you drop them.  Transitions will snap to nearby clips.  Also, clips and transitions will snap to the play-head's position.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>加入標記</para>
+            </entry>
+            <entry>
+               <para>加入一個新的標記，讓您在預覽時可以快速跳到這個位置。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>前個標記</para>
+            </entry>
+            <entry>
+               <para>跳到前一個標記 (如果有)。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>下個標記</para>
+            </entry>
+            <entry>
+               <para>跳到下一個標記 (如果有)。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_16"><title>縮放滑桿</title>
+   <para>縮放滑桿可讓您變更時間軸的時間刻度。 放大 (zoom in) 可將時間軸拉近、縮小 (zoom out) 則可不捲動而看整個專案時間軸。 您可以點縮放按鈕 (在左右邊)，或滑動縮放滑桿。拖拉滑桿到一半停住或放掉時，會立即更新時間軸刻度。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_zoomer.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_17"><title>時間軸</title>
+   <para>The timeline visualizes your project in a very graphical way.  Each clip is represented by a yellow rectangle.  Each track is represented by a blue rectangle.  The Play-head (red line) represents the current playback (or preview) position of your project.</para>
+   <para>點擊時間尺上可跳到該時間點。如果您沿著時間尺拖拉，就會掃描瀏覽該視訊，是個快速但較粗野的專案預覽方法。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>時間尺</para>
+            </entry>
+            <entry>
+               <para>時間尺顯示目前時間軸的時間刻度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>播放指示</para>
+            </entry>
+            <entry>
+               <para>播放指示表示預覽視窗的目前播放位置。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>剪輯</para>
+            </entry>
+            <entry>
+               <para>「剪輯」指音訊、影像或視訊檔案。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>影音軌</para>
+            </entry>
+            <entry>
+               <para>影音軌類似「圖層」功能。 上層的影音軌的視訊與影像會疊在下層影音軌之上。 沒有限制一個專案能有多少個影音軌。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_18"><title>Track</title>
+   <para><application>OpenShot</application> 使用影音軌來為視訊與影像分層，頂端的影音軌是頂端階層、底部的影音軌是底部階層。如果您知道影像編輯程式的「圖層」功能，那您應該能理解這功能就是相同概念。OpenShot 會與影像編輯程式一樣，將每個階層都混合在一起。</para>
+   <para>For example, imagine a 3 track video project.  A sunset image should be used as the background, an image with lots of circles should be in the middle, and a logo should be on top.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/tracks.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>頂端影音軌</para>
+            </entry>
+            <entry>
+               <para>這個影音軌的剪輯會在頂端，標誌與浮水印應該放在這階層。 例圖中，OpenShot 的標誌在這個影音軌。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>中間影音軌</para>
+            </entry>
+            <entry>
+               <para>These clips are under the top track, but above the bottom track.  The image with circles is on this track in the illustration.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>底部影音軌</para>
+            </entry>
+            <entry>
+               <para>這些剪輯位在其他所有影音軌之下。 例圖中，落日在這個影音軌。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_19"><title>控制視訊播放</title>
+   <para>播放、暫停與邊看邊找在影音編輯程式中是非常重要的功能。當您建立影音專案時，您必須一次又一次播放查看專案；這時點擊 <guibutton>播放按鈕</guibutton> 就可以輕鬆達成；其他還有許多快速的方法。</para><sect3 id="sect3_4"><title>播放方法</title>
+   <para>There are 8<emphasis> ways </emphasis>to control the video playback in <application>OpenShot</application>. </para>
+   <orderedlist>
+      <listitem>
+         <para>點擊 <guibutton>預覽工具列</guibutton> (播放、快轉...等)</para>
+      </listitem>
+      <listitem>
+         <para>拖拉預覽工具列上方的滑桿</para>
+      </listitem>
+      <listitem>
+         <para>拖放時間尺上的 <guibutton>播放指示</guibutton></para>
+      </listitem>
+      <listitem>
+         <para>點擊時間尺的任何位置</para>
+      </listitem>
+      <listitem>
+         <para>使用鍵盤捷徑鍵 (J、K、L 鍵)</para>
+      </listitem>
+      <listitem>
+         <para>使用方向按鈕 (左、右、上、下)</para>
+      </listitem>
+      <listitem>
+         <para>Using SHIFT + Arrow Buttons (Left, Right, Up, Down)</para>
+      </listitem>
+      <listitem>
+         <para>使用空白鍵 (播放 / 暫停)</para>
+      </listitem>
+      <listitem>
+         <para>Double-clicking on a user-defined marker</para>
+      </listitem>
+   </orderedlist></sect3></sect2></sect1><sect1 id="sect1_5"><title>Keyboard Shortcuts</title>
+   <para>A keyboard shortcut is a key (or keys) on the keyboard that saves you the trouble of moving your mouse and clicking.  It is often faster to type a key, than to point and click.  Here are all keyboard shortcuts in <application>OpenShot</application>:</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>按鍵</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>J</para>
+            </entry>
+            <entry>
+               <para>倒轉視訊播放</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>K</para>
+            </entry>
+            <entry>
+               <para>暫停 / 播放</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>L</para>
+            </entry>
+            <entry>
+               <para>快轉視訊播放</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>空白鍵</para>
+            </entry>
+            <entry>
+               <para>暫停 / 播放</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>向上</para>
+            </entry>
+            <entry>
+               <para>跳到上一個標記 (如果有)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>向下</para>
+            </entry>
+            <entry>
+               <para>跳到下一個標記 (如果有)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>往左</para>
+            </entry>
+            <entry>
+               <para>往回一個影格 (影格步進)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Left</para>
+            </entry>
+            <entry>
+               <para>Step backwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>往右</para>
+            </entry>
+            <entry>
+               <para>往前一個影格 (影格步進)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Right</para>
+            </entry>
+            <entry>
+               <para>Step forwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>TAB</para>
+            </entry>
+            <entry>
+               <para>切換 <guibutton>調整大小</guibutton> 與 <guibutton>選取</guibutton> 模式</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Scroll Wheel</para>
+            </entry>
+            <entry>
+               <para>放大與縮小時間軸</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Home</para>
+            </entry>
+            <entry>
+               <para>跳到時間軸開頭</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + End</para>
+            </entry>
+            <entry>
+               <para>跳到時間軸結尾</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>C</para>
+            </entry>
+            <entry>
+               <para>Slice all clips at the play-head position</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + N</para>
+            </entry>
+            <entry>
+               <para>Create a new project</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + O</para>
+            </entry>
+            <entry>
+               <para>Open an existing project</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + F</para>
+            </entry>
+            <entry>
+               <para>Import a file (audio, video, or image)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + I</para>
+            </entry>
+            <entry>
+               <para>Import an image sequence</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + W</para>
+            </entry>
+            <entry>
+               <para>Import new transition</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + S</para>
+            </entry>
+            <entry>
+               <para>Save the current project</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + CTRL + S</para>
+            </entry>
+            <entry>
+               <para>Save the current project as...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + X</para>
+            </entry>
+            <entry>
+               <para>Export project as MLT XML</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + E</para>
+            </entry>
+            <entry>
+               <para>Export the current project as a video file</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + U</para>
+            </entry>
+            <entry>
+               <para>Upload current project as a video file to YouTube or Vimeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Q</para>
+            </entry>
+            <entry>
+               <para>Quit the program</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Z</para>
+            </entry>
+            <entry>
+               <para>Undo the last action</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Y</para>
+            </entry>
+            <entry>
+               <para>Redo the previous action</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + P</para>
+            </entry>
+            <entry>
+               <para>Edit the preferences</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + T</para>
+            </entry>
+            <entry>
+               <para>Create a new title</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + B</para>
+            </entry>
+            <entry>
+               <para>Create a new animated title</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F11</para>
+            </entry>
+            <entry>
+               <para>Toggle full-screen mode</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F1</para>
+            </entry>
+            <entry>
+               <para>開啟輔助說明檔案 (如果有安裝)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + D</para>
+            </entry>
+            <entry>
+               <para>Capture and save the current frame of any non-audio clips that are overlapping the play-head, and add them to the project files.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>M</para>
+            </entry>
+            <entry>
+               <para>Add a marker to the timeline</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Middle Mouse click</para>
+            </entry>
+            <entry>
+               <para>Opens clip properties window</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Drag clip or transition</para>
+            </entry>
+            <entry>
+               <para>Restricts movement of clip or transition to vertical only</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Click</para>
+            </entry>
+            <entry>
+               <para>Removes the clip or transition that was clicked</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Remove Clip (menu item)</para>
+            </entry>
+            <entry>
+               <para>Closes the gap on the timeline left by the deleted clip</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_6"><title>專案 - 建立、開啟與儲存</title>
+   <para><application>OpenShot</application> 需要 <emphasis>專案檔案</emphasis> 來儲存製作視訊專案的資訊，像是：專案名稱、儲存位置、視訊與音訊檔案位置、時間軸資訊、已裁剪與編排的剪輯...等。</para>
+   <para/>
+   <para><application>OpenShot</application> 啟動後會自動建立一個新的專案檔案，您可以不必再手動建立專案就可以馬上使用。  </para>
+   <para>專案檔案使用 .OSP 副檔名 (例如：ExampleProject.osp)。 另外：專案檔案需要「縮圖」資料來擺放專案的縮圖；如果您移動專案檔案，記得要一併移動「縮圖」資料夾。</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>專案檔案</para>
+            </entry>
+            <entry>
+               <para>/home/user/Desktop/ProjectA.osp</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>縮圖資料夾</para>
+            </entry>
+            <entry>
+               <para>/home/user/Desktop/thumbnail/</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable><sect2 id="sect2_20"><title>建立專案</title>
+   <para>有二個方法建立專案檔。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/menu_file.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_5"><title>方法 1 - 檔案選單：</title>
+   <para>選擇「<guimenu>檔案</guimenu>」&gt;「<guimenuitem>新專案</guimenuitem>」，會開啟 <guilabel>新專案</guilabel> 畫面。 可以變更專案名稱、專案類型、時間軸長度，點「儲存專案」就可存檔。</para></sect3><sect3 id="sect3_6"><title>方法 2 - 儲存預設值：</title>
+   <para>因為 OpenShot 已在您啟動程式時建立了一個專案，您可以直接選擇「<guimenu>檔案</guimenu>」&gt;「<guimenuitem>儲存</guimenuitem>」，就會開啟「<guilabel>儲存專案</guilabel>」畫面。 可以變更專案名稱、專案類型、時間軸長度，點「儲存專案」就可存檔。</para></sect3></sect2><sect2 id="sect2_21"><title>儲存專案畫面</title>
+   <para>點 <guimenuitem>新專案</guimenuitem> 或 <guimenuitem>儲存專案</guimenuitem> 的結果會顯示在畫面。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/projects_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>專案名稱</para>
+            </entry>
+            <entry>
+               <para>您的專案檔案的名稱 (.osp 副檔名)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>專案資料夾</para>
+            </entry>
+            <entry>
+               <para>儲存您的專案檔案的資料夾的位置。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>專案長度</para>
+            </entry>
+            <entry>
+               <para>The <emphasis>maximum</emphasis> length of the timeline.  However, the length of the timeline will automatically grow, if and when clips exceed the length.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>專案類型</para>
+            </entry>
+            <entry>
+               <para>This affects the preview window.  It determines the size,  aspect ratio, and frames per second of the video files you are previewing.  It is recommended that you edit in the same profile you are planning to export (for the best results).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>專題類型詳細資料</para>
+            </entry>
+            <entry>
+               <para>這個表格預覽專案類型的詳細資料，像是：大小、長寬比、fps 等。 當您變更專案類型後，這裏的資料也會更新。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_22"><title>開啟專案</title>
+   <para>要開啟專案，選擇「<guimenu>檔案</guimenu>」&gt;「<guimenuitem>開啟專案</guimenuitem>」，會顯示 <guimenuitem>開啟專案</guimenuitem> 對話框。 選擇要開啟的專案檔案 (*.osp)，點 <guibutton>開啟專案</guibutton>。</para>
+   <para>如果您想開啟最近用過的專案，選擇「<guimenu>檔案</guimenu>」&gt;「<guimenuitem>最近用過的專案</guimenuitem>」，這通常就是在 <application>OpenShot</application> 內開啟專案的最快方法。</para>
+   <para>如果您想要在啟動 OpenShot 後自動開啟您的專案，請雙擊您電腦中的 .OSP 檔案，然後選擇 <command>openshot</command> 為開啟指令。</para></sect2></sect1><sect1 id="sect1_7"><title>匯入檔案 - 音訊、視訊與影像</title>
+   <para>在您把剪輯 <emphasis>匯入</emphasis> 專案檔案部份之後，它們才能加到時間軸使用。 有幾個不同的方法可以匯入剪輯，最普遍的方法是把您電腦中的檔案拖放到這個畫面的 <guibutton>專案檔案</guibutton> 部份。</para>
+   <para>有四個不同的方法可以匯入剪輯。</para><sect2 id="sect2_23"><title>方法 1 - 拖放</title>
+   <orderedlist>
+      <listitem>
+         <para>執行 <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>從您的電腦一次拖放多個檔案到 <guibutton>專案檔案</guibutton>。</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_24"><title>方法 2 - 拖放資料夾</title>
+   <orderedlist>
+      <listitem>
+         <para>執行 <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>Drag and drop a folder full of media files from your Desktop to the <emphasis>Project Files</emphasis> tree. </para>
+         <para>
+            <emphasis>* 所有的音訊、視訊與影像檔案都會從這個資料夾被匯入</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_25"><title>方法 3 - 開啟</title>
+   <orderedlist>
+      <listitem>
+         <para>在 Gnome 瀏覽檔案時，選取一個或多個媒體檔案</para>
+      </listitem>
+      <listitem>
+         <para>Right click on the selected files, and choose <guimenu>Open With Other Application...</guimenu> 
+         </para>
+      </listitem>
+      <listitem>
+         <para>Choose <application>OpenShot Video Editor</application> (or the <command>openshot</command> command)</para>
+         <para>
+            <emphasis>* 就算是您開始作業之後</emphasis>
+            <application>OpenShot</application>
+            <emphasis> with your files, you can still return to the file system, and right click on more files and choose </emphasis>
+            <application>OpenShot</application>
+            <emphasis>. It will add them to the currently running instance of OpenShot. </emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_26"><title>方法 4 - 匯入按鈕</title>
+   <orderedlist>
+      <listitem>
+         <para>執行 <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>Click the <guibutton>Import Files</guibutton> toolbar button </para>
+      </listitem>
+      <listitem>
+         <para>Select 1 or more files, and click <guibutton>Import</guibutton>
+         </para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_8"><title>連續影像</title>
+   <para>OpenShot 最牆大的功能之一就是可以匯入已在同個資料夾儲存、名稱類似且按順序的連續影像。 每個影像檔案表示視訊的一個影格，所以要製作 30 秒長、30 fps 的剪輯就需要 900 個影像檔。 雖然連續影像很麻煩處理 (數量很多)，但仍完成了。</para>
+   <para>要匯入連續影像，請按以下步驟：</para><sect2 id="sect2_27"><title>指定連續影像位置</title>
+   <para>許多程式可以展生連續影像，例如：您可以在 Blender (3D 動畫軟體) 裏建立強大的動畫、再匯出為一系列 .PNG 檔案 (背景透明)，它會在您的電腦建立一個放有這些影像檔的資料夾。</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_28"><title>輸入連續影像</title>
+   <para>選擇 <guimenu>檔案</guimenu> &gt; <guimenuitem>匯入連續影像</guimenuitem> 項目，就能開啟連續影像對話方塊。  </para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>選擇您的連續影像資料夾的位置與檔案名稱模式。 不是所有的連續影像都用相同方法命名，例如：Movie_001.JPG 就跟 Movie_1.JPG 不同。 若是您已經輸入正確的檔案名稱模式，請點 <guibutton>匯入連續影像</guibutton>。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_29"><title>Drag and Drop Image Sequences</title>
+   <para>The easiest way to import an image sequence, is to drag and drop just a single image from the sequence into the “Project Files”, or use the <guimenuitem>Import Files</guimenuitem> screen and import just a single image.  It will then prompt you to import the entire image sequence.  Using this method will automatically determine the file name pattern, and set all the correct settings for the sequence.</para></sect2><sect2 id="sect2_30"><title>加入時間軸</title>
+   <para>把您的新連續影像在放在時間軸上，就能重現為令一個新的剪輯，像是一個正常的視訊剪輯。</para></sect2><sect2 id="sect2_31"><title>建立連續影像</title>
+   <para>如果您還沒有準備好連續影像，也可以很簡單地建立一組。 只要右鍵點 <guimenuitem>專案檔案</guimenuitem> 裏面任何一個 <guibutton>視訊檔案</guibutton>、選擇 <guimenuitem>轉換為連續影像</guimenuitem>.，就會建立一個新資料夾並把每個影格都匯出成 .PNG 影像檔，同時也會自動在您的 <guimenuitem>專案檔案</guimenuitem> 部份自動加入連結。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_convert.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_32"><title>編輯連續影像</title>
+   <para>如果您想要編輯影像，我們推薦使用 Gimp (一個開放原始碼的影像編輯程式)，它有許多插件協助編輯連續影像圖片，可以簡單地處理連續影像的編輯、儲存、與開啟下一影像，您只要點每個影格即可做移除紅眼、加入光劍的發光特效、去除線條...等處理。 利用一格格編輯，您可以達成許多很難辦到的效果，但就是需要花費許多工夫。</para><sect3 id="sect3_7"><title>Gimp 動畫套件 (GAP)</title>
+   <para>GAP 是 Gimp 的插件，用來協誤編輯連續影像，可以快速儲存目前的影像再載入下一張。它也能使用關鍵影格以在其他影格套用特效、建立動畫。 如果您需要編輯連續影像，您就該看看 <ulink url="http://www.gimp.org/tutorials/Using_GAP/">GAP</ulink>。</para></sect3><sect3 id="sect3_8"><title>Gimp 動畫套件的畫面截圖</title>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/gimp_animation_package.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect3></sect2></sect1><sect1 id="sect1_9"><title>管理檔案與資料夾</title>
+   <para>在製作影片時，您需要匯入許多不同的檔案到專案裏，包括音訊、視訊、影像、字幕、套疊、音效...等；這可能會導致您弄混，且使得專案檔案清單太長而拖慢您尋找檔案的速度。</para>
+   <para>If your project has too many files (which is up to you to decide), you can use labels, filters, and folders as a way to organize your files.</para><sect2 id="sect2_33"><title>Labels</title>
+   <para>Each file has a column for a <guimenuitem>Label</guimenuitem>.  A label is any phrase or phrases that helps you identify what this file is going to be used for.  For example, “Scene 1”, “Intro”, “Title”, “Credits”.  There is no right or wrong way to use a label, just enter any text that helps you identify a file.</para></sect2><sect2 id="sect2_34"><title>Filters</title>
+   <para>The <guimenuitem>Project Files</guimenuitem> section has filter buttons and a textbox to help you find files quickly.  The filter buttons, <guimenuitem>Video</guimenuitem>, <guimenuitem>Audio</guimenuitem>, and <guimenuitem>Image</guimenuitem>, will quickly filter the list of files down to those file types.  Entering any text into the filter textbox will only show files that contain that text in their filename or label.  So, this feature can be combined with labels, to create a powerful search and organization system.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_filter.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_35"><title>Folders</title>
+   <para>If labels and filters are not enough to organize your project files, you can also create folders inside your project to help group files together.</para></sect2><sect2 id="sect2_36"><title>建立資料夾</title>
+   <orderedlist>
+      <listitem>
+         <para>右鍵點 <guimenuitem>專案檔案</guimenuitem> 部份。</para>
+      </listitem>
+      <listitem>
+         <para>選擇 <guimenuitem>建立資料夾...</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>輸入您的資料夾名稱。</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_create.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_37"><title>移動檔案到資料夾</title>
+   <orderedlist>
+      <listitem>
+         <para>確認您已先建立了資料夾。</para>
+      </listitem>
+      <listitem>
+         <para>在 <guimenuitem>專案檔案</guimenuitem> 部份右鍵點選一個或多個檔案。</para>
+      </listitem>
+      <listitem>
+         <para>選擇 <guimenuitem>移動檔案到資料夾</guimenuitem>。</para>
+      </listitem>
+      <listitem>
+         <para>選擇資料夾。</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_move_to_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_38"><title>移除資料夾</title>
+   <orderedlist>
+      <listitem>
+         <para>在資料夾上點擊右鍵</para>
+      </listitem>
+      <listitem>
+         <para>Choose <guimenuitem>Remove</guimenuitem>
+         </para>
+         <para>
+            <emphasis>* 確認在移除前先把所有檔案從資料夾移走。</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_10"><title>加入檔案到時間軸</title>
+   <para>Once you have imported files into your project, the next step is to add them to the timeline.  </para><sect2 id="sect2_39"><title>Drag and Drop</title>
+   <para>To add a file from your <guimenuitem>Project Files</guimenuitem> to the <guibutton>timeline</guibutton>, follow these steps:</para>
+   <orderedlist>
+      <listitem>
+         <para>點選檔案。</para>
+      </listitem>
+      <listitem>
+         <para>拖拉到 <guibutton>時間軸</guibutton> 上再放開。</para>
+      </listitem>
+      <listitem>
+         <para>這個剪輯現在會被加入時間軸。</para>
+         <para>
+            <emphasis>* You can only add 1 file at a time using this method.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+      <emphasis/>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_40"><title>Add Multiple Files to the Timeline</title>
+   <para>If you would like to quickly add multiple files to the timeline at the same time, there is an <guimenuitem>Add to Timeline </guimenuitem>feature.  To use this feature, select all of the files you would like to add to the timeline, and right-click and select <guimenuitem>Add to Timeline</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>The <guimenuitem>Add to Timeline </guimenuitem>screen can also apply fade in and fade out settings to each clip,  add transitions between the clips, or simply stack the clips back to back on the timeline.  The files will be inserted at the position of the play-head. </para>
+   <para/>
+   <mediaobject/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Start Time</para>
+            </entry>
+            <entry>
+               <para>This is the location on the timeline (in seconds) where the files will be added.  It will default to the position of the play-head.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>頂端影音軌</para>
+            </entry>
+            <entry>
+               <para>The top track is the primary track where clips will be added.  If no transitions are being used, only the top track is needed.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>底部影音軌</para>
+            </entry>
+            <entry>
+               <para>The bottom track is used when transitions are needed, and the clips alternate between the top and bottom track, with transitions between them.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>淡入淡出</para>
+            </entry>
+            <entry>
+               <para>The type of fade to apply to a clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Fade Length</para>
+            </entry>
+            <entry>
+               <para>The length (in seconds) of the fade.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>轉場</para>
+            </entry>
+            <entry>
+               <para>The type of transition to add between clips.  You can also choose Random Transition, if you do not want the same transition being used over and over again.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Transition Length</para>
+            </entry>
+            <entry>
+               <para>The length (in seconds) of the transition.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>向上移動</para>
+            </entry>
+            <entry>
+               <para>Move the selected files up in the list.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>向下移動</para>
+            </entry>
+            <entry>
+               <para>Move the selected files down in the list.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>Shuffle Files</para>
+            </entry>
+            <entry>
+               <para>Shuffle the files and put them in a random order.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>Remove File</para>
+            </entry>
+            <entry>
+               <para>Remove the selected files from this screen. </para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_11"><title>在時間軸上移動與剪裁剪輯</title>
+   <para>在您的檔案或剪輯已加入時間軸後，我們需要把它們編排在影音軌上並按正確順序放置。 另外，如果有需要，我們也需要裁剪掉視訊剪輯的開始與結尾。</para><sect2 id="sect2_41"><title>移動剪輯 (選取模式)</title>
+   <orderedlist>
+      <listitem>
+         <para>切換到 <guibutton>選取模式</guibutton> (預設的模式)</para>
+      </listitem>
+      <listitem>
+         <para>在剪輯上點擊。</para>
+      </listitem>
+      <listitem>
+         <para>拖拉剪輯到 <guibutton>時間軸</guibutton> 上的新位置，然後放開。</para>
+         <para>
+            <emphasis>* 如果有啟用貼齊，這個剪輯會跳到其他接近的剪輯 (或是夠接近的播放指示)。</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_42"><title>剪裁剪輯 (調整大小模式)</title>
+   <orderedlist>
+      <listitem>
+         <para>點下調整大小圖示，切換到 <guibutton>調整大小模式</guibutton>。</para>
+      </listitem>
+      <listitem>
+         <para>移動您的滑鼠游標到剪輯的右側邊緣或左側邊緣。</para>
+      </listitem>
+      <listitem>
+         <para>拖拉剪輯的邊緣來裁剪視訊。</para>
+         <para>
+            <emphasis>* 在您拖拉剪輯邊緣時，預覽視窗會顯示剪輯的開始與結尾 (看您拖拉的是哪一邊)。</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_43"><title>分割剪輯 (切割模式)</title>
+   <orderedlist>
+      <listitem>
+         <para>
+            <emphasis>把剪輯分割成二段，切換到</emphasis>
+            <guibutton>切割模式</guibutton>
+            <emphasis>.</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>滑鼠游標會變成虛線與剃刀圖示。</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>點擊剪輯中想刪節 / 分割的地方。</emphasis>
+         </para>
+         <para>
+            <emphasis>* If snapping is enabled, the razor will jump to the play-head position, if it is close-by.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_44"><title>編輯工具列</title>
+   <para>編輯工具列可讓您衣時間軸在不同的編輯模式之間切換。 在移動、裁剪、分割剪輯時，必須使用此工具列變更編輯模式。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>加入影音軌</para>
+            </entry>
+            <entry>
+               <para>加入新影音軌到最頂端。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>選取模式</para>
+            </entry>
+            <entry>
+               <para>選取模式讓您點擊與移動剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>切割模式</para>
+            </entry>
+            <entry>
+               <para>切割模式讓您裁切您點擊的剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>調整大小模式</para>
+            </entry>
+            <entry>
+               <para>調整大小模式讓您抓取剪輯的邊緣與拖拉就能變更 (或裁剪) 剪輯的大小。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>貼齊模式</para>
+            </entry>
+            <entry>
+               <para>貼齊模式讓您拖放剪輯時，使剪輯對齊 (或跳到) 最接近的剪輯或播放指示 (如果夠接近)。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>加入標記</para>
+            </entry>
+            <entry>
+               <para>加入一個新的標記，讓您在預覽時可以快速跳到這個位置。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>前個標記</para>
+            </entry>
+            <entry>
+               <para>跳到前一個標記 (如果有)。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>下個標記</para>
+            </entry>
+            <entry>
+               <para>跳到下一個標記 (如果有)。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_12"><title>從影音分離音訊</title>
+   <para>如果有需要，OpenShot 可以分離剪輯的視訊與音訊。如果您只想播放剪輯的音訊，或是播放沒有聲音的視訊，則請依照以下步驟：</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/track_buttons.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_45"><title>只有視訊</title>
+   <para>若是只要播放剪輯的視訊，點剪輯的喇叭圖示就會讓該剪輯靜音。 若是您想要讓整個影音軌都靜音，則請點影音軌的喇叭圖示。</para></sect2><sect2 id="sect2_46"><title>只有音訊</title>
+   <para>若是只要播放剪輯的音訊，點剪輯的眼睛圖示就會隱藏視訊輸出。 若是您想要隱藏整個影音軌的視訊，則請點影音軌的眼睛圖示。</para></sect2></sect1><sect1 id="sect1_13"><title>複製剪輯</title>
+   <para>OpenShot 有個非常實用的功能，可以複製剪輯、過場與遮罩。 請右鍵點選要複製的項目、選擇 <guimenuitem>複製</guimenuitem>，就會在時間軸上多加入一份複製的項目，開始、結束位置、剪輯套用的特效、關鍵影格動畫設定等也會一併複製。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/duplicate_clip.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>一般 <guimenuitem>複製</guimenuitem> 功能是用來裁剪並複製出視訊剪輯中需要的場景。在您有二個相同的剪輯時，您可以讓其中一個靜音、關掉另一個的顯示，這是分離剪輯的視訊與音訊的最方法。 在您裁剪出視訊後，您可以偏移或繼續剪輯的音訊。這通常用於有兩個人在對話的影片：持續發出其中一個人說話聲，但畫面則是另一人的反應。</para></sect1><sect1 id="sect1_14"><title>剪輯屬性</title>
+   <para>OpenShot 的每個剪輯都有許多屬性可設定，但是因為不可能在時間軸上顯示所有的設定，所以才有這個畫面。 讓使用者調整包含長度、速度、音量、大小、位置、長寬比...等各個設定與屬性。</para><sect2 id="sect2_47"><title>啟動剪輯屬性畫面</title>
+   <para>To launch the clip properties screen, right-click on a clip and choose <guimenuitem>Properties</guimenuitem>, or click your middle mouse button on a clip.</para></sect2><sect2 id="sect2_48"><title>預覽變更</title>
+   <para>要快速預覽您的設定結果，請點 <guibutton>播放按鈕</guibutton> 或 拖拉預覽 <guibutton>滑條</guibutton> 就可以不斷預覽變更結果；不斷重複操作就可以找到最適合的設定。 在您點 <guibutton>套用</guibutton> 按鈕之前，不會把儲存時間軸變更結果。</para></sect2><sect2 id="sect2_49"><title>一般分頁</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab1.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para>一般分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>Description</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Position on Timeline</para>
+            </entry>
+            <entry>
+               <para>The point on the timeline at which the clip begins to play (in seconds).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>啟用視訊</para>
+            </entry>
+            <entry>
+               <para>為此剪輯輸出視訊</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>啟用音訊</para>
+            </entry>
+            <entry>
+               <para>為此剪輯輸出音訊</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_50"><title>長度分頁</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab2.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box"/>長度分頁提供剪輯的開始、結束、總長度等資訊。調整這些數值，您就可以延遲剪輯播放、提早結束剪輯、或以上二者。 可以用 <guibutton>播放按鈕</guibutton> 來預覽變更，不使用調整大小工具則可以做練習調整。</para>
+   <para/>
+   <para>長度分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡入 (秒)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to start playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡出 (秒)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to stop playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>長度 (秒)</para>
+            </entry>
+            <entry>
+               <para>剪輯的長度是依照進出點來計算。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_51"><title>速度分頁</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab3.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box1"/>速度分頁由簡單模式和進階模式組成：在簡單模式，用預訂的值來加速或減慢播放速度，從 16x 到 1/16，也可以變更方向。進階分頁則讓您自行以高精確十進位數字設定播放速度。</para>
+   <para/>
+   <para>Note:  The speed tab is only displayed for video files.  Also, the audio is not played when the speed is modified.</para>
+   <para/>
+   <para>速度分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>速度</para>
+            </entry>
+            <entry>
+               <para>開始播放視訊的秒數 (十進位)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>方向</para>
+            </entry>
+            <entry>
+               <para>視訊剪輯最後一秒 (十進位)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>進階速度</para>
+            </entry>
+            <entry>
+               <para>高精確十位數值表示剪輯的播放速度，變更這個值跟使用下拉選單一樣效果。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_52"><title>配置分頁</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>配置分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>關鍵影格</para>
+            </entry>
+            <entry>
+               <para>下拉選單設定您操作的關鍵影格，每個剪輯有二個關鍵影格：剪輯開頭、剪輯結束。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>高度</para>
+            </entry>
+            <entry>
+               <para>剪輯的高度 (百分比)。數字較大則剪輯高度較高、數字較小則高度較低。 只會影響目前的關鍵影格，不影響整個剪輯。  </para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>寬度</para>
+            </entry>
+            <entry>
+               <para>剪輯的寬度 (百分比)。數字較大則剪輯寬度較寬、數字較小則寬度較窄。 只會影響目前的關鍵影格，不影響整個剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>X</para>
+            </entry>
+            <entry>
+               <para>剪輯的中心位置的 X 值。數字較大則剪輯會越往右移、數字較小則越往左移。 只會影響目前的關鍵影格，不影響整個剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Y</para>
+            </entry>
+            <entry>
+               <para>剪輯的中心位置的 Y 值。數字較大則剪輯會越往下移、數字較小則越往上移。 只會影響目前的關鍵影格，不影響整個剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Alpha</para>
+            </entry>
+            <entry>
+               <para>剪輯的 alpha 度。100 = 可見、 0 = 看不見。 只會影響目前的關鍵影格，不影響整個剪輯。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_53"><title>音訊分頁</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab5.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>音訊分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>音量</para>
+            </entry>
+            <entry>
+               <para>剪輯的音量等級。0 = 靜音, 100 = 最大聲。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡入</para>
+            </entry>
+            <entry>
+               <para>剪輯從靜音到音量大小做淡入。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡出</para>
+            </entry>
+            <entry>
+               <para>剪輯從音量大小到靜音做淡出。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡入淡出 (秒)</para>
+            </entry>
+            <entry>
+               <para>淡入淡出持續的秒數，數字愈大越平緩。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_54"><title>視訊分頁</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab6.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>視訊分頁可以調整剪輯的大小、位置與切齊位置，也可以在開始與結束時套用淡入淡出效果，有時候會比使用轉場更簡單。 因為淡入淡出是剪輯的屬性之一，所以和轉場不一樣：您移動剪輯之後仍會繼續保持原有設定。</para>
+   <para>視訊分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>擴展到全畫面</para>
+            </entry>
+            <entry>
+               <para>擴展剪輯的大小到與畫面一樣大 (依據專案類型)。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>維持長寬比</para>
+            </entry>
+            <entry>
+               <para>不讓剪輯變形。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>水平切齊</para>
+            </entry>
+            <entry>
+               <para>從左到右對齊剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>垂直切齊</para>
+            </entry>
+            <entry>
+               <para>從上到下對齊剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>旋轉</para>
+            </entry>
+            <entry>
+               <para>The number of degrees to rotate the image.  This can be a negative or positive number, depending on which direction you want to rotate.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡入</para>
+            </entry>
+            <entry>
+               <para>此剪輯從透明到不透明淡入。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡出</para>
+            </entry>
+            <entry>
+               <para>此剪輯從不透明到透明淡出。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>淡入淡出 (秒)</para>
+            </entry>
+            <entry>
+               <para>淡入淡出持續的秒數，數字愈大越平緩。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_55"><title>特效分頁</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab7.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>特效分頁可以套用語管理許多用在剪輯上的特效。 要預覽剪輯套用特效厚的效果，請使用 <guibutton>播放按鈕</guibutton>。每個特效都有許多設定，所以在變更設定後也可以使用 <guibutton>播放按鈕</guibutton> 觀看結果。</para>
+   <para>特效分頁有以下屬性：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>特效清單</para>
+            </entry>
+            <entry>
+               <para>這個方塊有已套用到這個剪輯的特效的清單，處理順序從上到下。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>加入</para>
+            </entry>
+            <entry>
+               <para>加入新特效到剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>移除</para>
+            </entry>
+            <entry>
+               <para>從剪輯移除選取的特效。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>向上</para>
+            </entry>
+            <entry>
+               <para>將選取的特效在清單內向上移。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>向下</para>
+            </entry>
+            <entry>
+               <para>將選取的特效在清單內向下移。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>特效設定</para>
+            </entry>
+            <entry>
+               <para>這個區域含有選取的剪輯的設定 (如果有)。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_15"><title>關鍵影格</title>
+   <para>OpenShot 可以使用 <emphasis>關鍵影格</emphasis> 來使剪輯動畫化。 關鍵影格是個帶有許多像是大小、位置、透明度設定的時間點。 在 OpenShot 有二種方式可以設定關鍵影格：手動或預先設定。  </para><sect2 id="sect2_56"><title>預先設定動畫</title>
+   <para>有許多預先設定動畫可用，像是從下到上移動剪輯且畫面慢慢縮放。 要在剪輯加入預先設定動畫，請右鍵點選剪輯、選擇 <guimenuitem>動畫化</guimenuitem>。</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_animate.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_57"><title>配置預先設定</title>
+   <para>有許多預先設定配置可用，像是調整剪輯大小與定位到角落或中央。 要再剪輯加入預先設定配置，請右鍵點選剪輯、選擇 <guimenuitem>配置</guimenuitem>。</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_layout.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_58"><title>手動</title>
+   <para>要手動建立關鍵影格，請右鍵點選剪輯、選擇 <guimenuitem>屬性</guimenuitem>、切換到 <guibutton>配置分頁</guibutton>、從下拉選單選擇要編輯的關鍵影格。</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>每個剪輯有二個關鍵影格：剪輯開頭、剪輯結束。如果這二者不一樣，OpenShot 會在每個影隔間插入差異，使剪輯動畫化。 以下的屬性會被關鍵影格影響：<emphasis>高度、寬度、X、Y、Alpha</emphasis>。</para>
+   <para>例如，這些關鍵影格：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>開始關鍵影格：</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=0</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>結束關鍵影格：</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X =150, Y=0</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>這會在剪輯產生畫面從左到右的動畫。X 的設定會影響插入剪輯的影格：較長則動畫較慢、較短則動畫較快。</para>
+   <para>如果您想要靜態地變更剪輯的大小或位置，只要將開始關鍵影格與結束關鍵影格設定一樣數值：</para>
+   <para>例如，這些關鍵影格：</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>開始關鍵影格：</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>結束關鍵影格：</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>這將會將剪輯偏移到畫面頂端右側，但不會動畫化，因為開始關鍵影格與結束關鍵影格設定數值相同。</para>
+   <para>如果您需要超過二個關鍵影格，請將剪輯分割成許多段，然後在各段設定開始關鍵影格與結束關鍵影格，這樣您就可以有無線多個關鍵影格了。</para></sect2></sect1><sect1 id="sect1_16"><title>切取特效</title>
+   <para>OpenShot 可以切取視訊與影像剪輯。請使用 <guibutton>剪輯屬性</guibutton> 畫面的配置設定：右鍵點選剪輯、選擇 <guimenuitem>屬性</guimenuitem>、切換到 <guibutton>配置分頁</guibutton>。</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>要切取剪輯，您需要放大想要看的部份：調整想要切取的剪輯的高度、寬度、X、Y 的設定 (請確認兩個關鍵影格設定一樣)。 使用 <guibutton>播放按鈕</guibutton> 預覽您的切取成果；覺得滿意時，點 <guibutton>套用</guibutton> 按鈕。</para></sect1><sect1 id="sect1_17"><title>旋轉特效</title>
+   <para>如國您需要將剪輯旋轉 90 度、180 度或圓形動態旋轉，OpenShot 有 <guibutton>旋轉</guibutton> 特效可以使用。</para>
+   <para>OpenShot 有兩種類型的旋轉特效：固定值與動態。 要套用旋轉特效，請在 <guibutton>主視窗</guibutton> 切換到 <guibutton>特效分頁</guibutton>，將 <guimenuitem>旋轉</guimenuitem> 特效 拖放到剪輯上。  </para>
+   <para>要調整您的旋轉設定，請右鍵點選剪輯、選擇 <guimenuitem>屬性</guimenuitem>、切換到屬性視窗的特效分頁、點選旋轉特效。 這樣就會出現可以調整的旋轉特效清單。 請試著調整每個設定，然後用 <guibutton>播放按鈕</guibutton> 預覽效果。</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_rotation.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_59"><title>固定值旋轉</title>
+   <para>固定值旋轉可以將視訊旋轉 90 度、180 度、或您希望的角度，但並不會動態旋轉；這在您拍攝了側向視訊需要旋轉時很有用。 要使用固定值旋轉，請調整開頭為「固定值」的設定，請確認其他設定為 0。</para></sect2><sect2 id="sect2_60"><title>動態旋轉</title>
+   <para>動態旋轉可用來讓剪輯按圓形或其他模式快速旋轉，用於字幕特效、旋轉的報紙或其他創意用法。 要使用動態旋轉，請調整「固定」設定為 0、只使用「旋轉」開頭的設定。</para></sect2><sect2 id="sect2_61"><title>Simple Rotation</title>
+   <para>Each clip has a <guimenuitem>Rotate</guimenuitem> setting, which will rotate the clip without requiring an effect to be added to the clip.  This can be modified on the <guimenuitem>Clip Properties</guimenuitem> screen, or by right-clicking on a clip, and choosing the <guimenuitem>Rotate</guimenuitem> menu.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/rotate_simple_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_18"><title>字幕編輯器</title>
+   <para>Like many video editors, OpenShot has a built-in title editor.  It has some basic functionality to help you create titles for your video project.  Here are the features of the title system:</para>
+   <orderedlist>
+      <listitem>
+         <para>許多樣板 (包含實色樣板)</para>
+      </listitem>
+      <listitem>
+         <para>簡易文字編輯 (標題、字幕)</para>
+      </listitem>
+      <listitem>
+         <para>變更字型語言色 (包含 alpha 通道)</para>
+      </listitem>
+      <listitem>
+         <para>變更背景顏色 (包含 alpha 通道)</para>
+      </listitem>
+      <listitem>
+         <para>使用 SVG 影像格式 (向量組成)</para>
+      </listitem>
+      <listitem>
+         <para>加入字幕到 <guimenuitem>專案檔案</guimenuitem> 部份</para>
+      </listitem>
+      <listitem>
+         <para>與 Inkscape 整合 (作為進階編輯程式)</para>
+      </listitem>
+   </orderedlist>
+   <para/>
+   <para>然盒，如果這基本的編輯程式無法滿足您的需求，則也可以匯入 SVG 影像檔案當作字幕使用。 支援 Alpha 通道 (透明度)，即字幕可以套疊在影音軌最頂端，然後顯示視訊時會穿透透明的部份。</para><sect2 id="sect2_62"><title>啟動字幕編輯程式</title>
+   <para>To add a new title, click the <guimenu>Title</guimenu> &gt; <guimenuitem>New Title...</guimenuitem> menu option.  This will launch the  Title Editor.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_63"><title>建立新字幕檔案</title>
+   <para>字幕編輯程式啟動後，您需要選取一個範本、然後點擊 <guibutton>建立新字幕</guibutton> 按鈕。 這樣會製作範本 SVG 字幕的附，然後加入到您的 <guimenuitem>專案檔案</guimenuitem>；再輸入檔案的名稱以儲存到您的硬碟。</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_64"><title>字幕編輯程式視窗</title>
+   <para>字幕對話框可以讓您選擇範本、編輯文字、變更顏色、建立您的視訊專案的字幕。 在您完成編輯字幕後，點 <guibutton>套用</guibutton> 按鈕。</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_main_screen.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>選擇樣板</para>
+            </entry>
+            <entry>
+               <para>選擇要製作字幕用的範本 SVG 檔案。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>建立字幕按鈕</para>
+            </entry>
+            <entry>
+               <para>點這個按鈕來建立 SVG 範本的複製。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>編輯文字</para>
+            </entry>
+            <entry>
+               <para>啟動文字編輯視窗。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>變更字型</para>
+            </entry>
+            <entry>
+               <para>變更字型的大小與名稱屬性。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>字型顏色</para>
+            </entry>
+            <entry>
+               <para>變更字型顏色與 alpha (透明) 度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>背景顏色</para>
+            </entry>
+            <entry>
+               <para>變更背景顏色與 alpha (透明) 度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>進階編輯程式</para>
+            </entry>
+            <entry>
+               <para>在 Inkscape 編輯 SVG 字幕。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>字幕預覽</para>
+            </entry>
+            <entry>
+               <para>每次編輯、變更顏色、變更字型後都預覽您的字幕。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_65"><title>捲動式字幕 / 片頭片尾字幕</title>
+   <para>要建立捲動式字幕特效，您需要將您的字幕切成許多不同的與畫面等大的字幕。</para><sect3 id="sect3_9"><title>建立各字幕影像</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_10"><title>在時間軸偏移各字幕</title>
+   <para>Add each title image of your scrolling credits to the timeline, set the length of each image to 7 seconds, and then offset them between two tracks.  This can be done very quickly with the <guimenuitem>Add to Timeline</guimenuitem> feature.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_scrolling.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_11"><title>動畫化各字幕</title>
+   <para>右鍵點各字幕剪輯、選擇「<guimenuitem>動畫化</guimenuitem>」&gt;「<guimenuitem>底部到頂端</guimenuitem>」。這樣就會使您的整個片頭片尾字幕連續、無間斷地由底部到頂端捲動。 請確認有套疊字幕 (如例圖所示)，則在字幕之間就不會有間斷。</para></sect3></sect2></sect1><sect1 id="sect1_19"><title>動畫字幕編輯器</title>
+   <para>Animated 3D titles are just as easy to create as simple image-based titles.  The animated title system has the following features:</para>
+   <orderedlist>
+      <listitem>
+         <para>Many Templates</para>
+      </listitem>
+      <listitem>
+         <para>簡易文字編輯 (標題、字幕)</para>
+      </listitem>
+      <listitem>
+         <para>Change Font and Color</para>
+      </listitem>
+      <listitem>
+         <para>Transparent Backgrounds</para>
+      </listitem>
+      <listitem>
+         <para>Outputs an image sequence of PNG images (with alpha channel)</para>
+      </listitem>
+      <listitem>
+         <para>加入字幕到 <guimenuitem>專案檔案</guimenuitem> 部份</para>
+      </listitem>
+      <listitem>
+         <para>Integration with Blender (a 3D animation application)</para>
+      </listitem>
+   </orderedlist><sect2 id="sect2_66"><title>Launch Animated Title Editor</title>
+   <para>To add a new title, click the <guimenu>Title</guimenu> &gt; <guimenuitem>New Animated Title...</guimenuitem> menu option.  This will launch the Animated Title Editor.  Be sure to set the “Blender Executable” setting in the preferences dialog to the path of Blender (version 2.5+ is required).</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_67"><title>Create New Animated Title</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/animated_title.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>選擇樣板</para>
+            </entry>
+            <entry>
+               <para>Choose a template to use as a title.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>預覽視窗</para>
+            </entry>
+            <entry>
+               <para>Preview any frame in the animation.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Frame Selector</para>
+            </entry>
+            <entry>
+               <para>Choose any frame to preview in the animation.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>重新整理</para>
+            </entry>
+            <entry>
+               <para>Refresh the preview window, to reflect new changes.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Edit Settings</para>
+            </entry>
+            <entry>
+               <para>Edit the various animation settings, including the title, font, color, etc...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>繪製</para>
+            </entry>
+            <entry>
+               <para>Generate an image sequence with the animated title, and add it the <guimenuitem>Project Files</guimenuitem> section.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_20"><title>轉場</title>
+   <para>過場是用來逐步移動兩個不同的剪輯。 <application>OpenShot</application> 有許多不同的過場可用，可以簡易地拖放到時間軸，使視訊專案更有趣。</para><sect2 id="sect2_68"><title>轉場畫面</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_clock.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>轉場分頁</para>
+            </entry>
+            <entry>
+               <para>這是過場分頁，裏面有 <application>OpenShot</application> 可用的過場清單。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>轉場清單</para>
+            </entry>
+            <entry>
+               <para>這是過場清單，請選取之後拖放到時間軸上。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>影音片段選取工具</para>
+            </entry>
+            <entry>
+               <para>調整大小工具可以用來調整過場的大小。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>時間軸上的轉場</para>
+            </entry>
+            <entry>
+               <para>Once you drop a transition on the timeline, it can be moved and resized just like any other clip.  The transition snaps between tracks, and blends between the 2 tracks.  If snapping is enabled, the transition will automatically resize itself to perfectly fit between 2 clips, and also  automatically set the direction of the transition.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_69"><title>加入轉場</title>
+   <para>To add a transition, switch to the <guibutton>Transition Tab</guibutton>, and select a transition by clicking on it.  Drag and drop the transition onto the <guibutton>timeline</guibutton>.  It will snap between 2 tracks and automatically resize itself, if dropped where 2 clips overlap.</para></sect2><sect2 id="sect2_70"><title>移動轉場</title>
+   <para>要移動過場，請切換到 <guibutton>時間軸工具列</guibutton> 的 <guibutton>選擇模式</guibutton>，然後拖放到新位置。</para></sect2><sect2 id="sect2_71"><title>調整轉場大小</title>
+   <para>要調整過場的大小，請切換到 <guibutton>時間軸工具列</guibutton> 的 <guibutton>調整大小模式</guibutton>，然後拖拉左側或右側邊緣成新的大小。</para></sect2><sect2 id="sect2_72"><title>切換方向</title>
+   <para>因為過場會融合兩個影音軌，所以融合的方向非常重要。 在過場會有箭頭表示方向：頂端到底部或底部到頂端。 一般來說：過場應該按時間軸位置，從前一個剪輯而到下一個剪輯。</para>
+   <para>要變更過場的方向，請右鍵點選過場、選擇 <guimenuitem>切換方向</guimenuitem>。</para></sect2><sect2 id="sect2_73"><title>轉場屬性</title>
+   <para>跟剪輯一樣，過場也有屬性視窗。要開啟過場或遮罩的屬性視窗，請右鍵點選該項目、選擇 <guimenuitem>屬性</guimenuitem>。 要儲存您的設定，請點 <guibutton>套用</guibutton> 按鈕。</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_properties.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>類型</para>
+            </entry>
+            <entry>
+               <para>遮罩或轉場</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>方向</para>
+            </entry>
+            <entry>
+               <para>過場或遮罩的方向：<emphasis>向上</emphasis> - 從底部剪輯融合頂端剪輯、<emphasis>向下</emphasis> - 從頂部剪輯融合底端剪輯。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>柔和</para>
+            </entry>
+            <entry>
+               <para>過場的柔軟度。 數字較大表示處理得較寬、數字較小表示較窄。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>遮罩程度</para>
+            </entry>
+            <entry>
+               <para>遮罩程度是用在遮罩的灰色量。數字較大表示遮罩用得較多、數字較小表示用得較少。 可以多試幾次找出最適當的遮罩程度。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_74"><title>轉換為遮罩</title>
+   <para>遮罩非常類似過場，但遮罩是靜態的；它不逐步將剪輯變更為下一個，反而在某些預先設定點混合二個影音軌。 遮罩可以用來顯示小區段的剪輯、顯示剪輯周圍的外框、遮住剪集中的某些東西。 要試驗遮罩，可以簡單地將過場轉換為遮罩，然後觀察發生什麼。</para>
+   <para>要將過場轉換成遮罩，請右鍵點擊過場、選擇「<guimenuitem>轉換成遮罩</guimenuitem>」。</para></sect2><sect2 id="sect2_75"><title>建立新轉場 / 遮罩</title>
+   <para>Transitions are just gray-scale images.  They can be created in any graphics program.  To add a custom transition or mask, select <guimenu>File</guimenu> &gt; <guimenuitem>Import New Transition</guimenuitem>, and select a gray-scale PNG image file from your hard-drive.  You will see this new image show up on the <guimenuitem>Transitions</guimenuitem> tab.  This transition will be in localed in the /home/USER/.openshot/ folder.</para></sect2><sect2 id="sect2_76"><title>移除轉場</title>
+   <para>要移除過場，請在時間軸上的過場點右鍵、選擇「<guimenuitem>移除</guimenuitem>」。</para></sect2></sect1><sect1 id="sect1_21"><title>轉場清單</title>
+   <para>This list does not feature every transition, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>百葉窗從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>大型百葉窗從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_sliding.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>滑動百葉窗</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>圓圈從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>圓圈從外到內</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>時鐘從左到右</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>時鐘從右到左</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_5.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 5</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_6.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 6</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 7</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_8.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>不規則碎形 8</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>影線 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>影線 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>影線 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>沙漏 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>沙漏 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>沙漏 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>沙漏 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/mountains.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>山</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/openshot_logo.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Openshot 標誌</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/puzzle_7_by_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>益智拼圖 (7x7)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>矩形從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>矩形從外到內</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sand.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>砂</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sphere.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>球形</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>抽象螺旋 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>抽象螺旋 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>大螺旋</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_medium.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>中螺旋</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_small.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>小螺旋</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spots.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>斑點</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>星形 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>星形 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>垂直百葉窗從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>大型垂直百葉窗從內到外</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_bottom_to_top.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>從下到上抹除</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>對角抹除 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>對角抹除 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>對角抹除 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>對角線抹除 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>從左到右抹除</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>從右到左抹除</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_top_to_bottom.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>從上到下抹除</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_22"><title>特效</title>
+   <para>OpenShot has over 40 effects designed to manipulate the video or audio output of a clip.  Adjusting color hue, brightness, and gamma can all be done with effects.  Also, more exotic effects, such as distort, wave, old-film, green screen (also known as Chroma Key), and audio effects.</para><sect2 id="sect2_77"><title>加入特效</title>
+   <para>要加入特效，請切換到 <guibutton>特效分頁</guibutton>，從清單內選取特效、拖放到 <guibutton>時間軸</guibutton> 上的剪輯。</para>
+   <para/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>特效分頁</para>
+            </entry>
+            <entry>
+               <para>This tab holds the effects list.  The list of effects can be filtered by toggling the “All Effects”, “Video”, or “Audio” buttons.  You can also type the first few letters of the effect name, and the list of effects will be filtered.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>特效清單</para>
+            </entry>
+            <entry>
+               <para>The effects list contains every effect available in OpenShot.  The list can be filtered with the buttons above this list.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>剪輯</para>
+            </entry>
+            <entry>
+               <para>Drag the selected effect onto any clip.  Use the Clip Properties to adjust effect settings.  Also, you can double-click the effect icon, which is displayed on any clips that have effects, which will launch the clip properties screen.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_78"><title>調整特效設定</title>
+   <para>要調整特效的設定，請右鍵點選剪輯、選擇  <guimenuitem>屬性</guimenuitem>、切換到 <guibutton>特效分頁</guibutton>，您就可以看到已套用在目前這個剪輯的特效清單。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_settings.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>特效列表</para>
+            </entry>
+            <entry>
+               <para>屬於選取的剪輯的特效清單。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>特效設定</para>
+            </entry>
+            <entry>
+               <para>選取的特效的設定清單，點選特效即可載入此設定清單。 當您變更設定的數值，請使用 <guibutton>播放按鈕</guibutton> 來預覽特效的效果。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>預覽按鈕</para>
+            </entry>
+            <entry>
+               <para>在您點 <guibutton>套用</guibutton>之前，請先使用 <guibutton>播放按鈕</guibutton> 與 <guibutton>滑條</guibutton> 來預覽特效的效果。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>加入特效</para>
+            </entry>
+            <entry>
+               <para>這按鈕啟動加入特效視窗。選取要加入的特效再點擊 <guibutton>加入特效</guibutton>。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>移除特效</para>
+            </entry>
+            <entry>
+               <para>這按鈕移除選取的特效 (如果有)。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>移動特效</para>
+            </entry>
+            <entry>
+               <para>特效是從上開始往下套用，請使用這些按鈕來編排特效的順序、用 <guibutton>播放按鈕</guibutton> 來預覽您變更後的效果。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <mediaobject/></sect2></sect1><sect1 id="sect1_23"><title>特效列表</title>
+   <para>This list does not feature every effect, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Bass</guibutton> - Adjust the low-pitched sound or tone.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/two_layer.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Black and White</guibutton> - Adjust the color of the image to black and white based on a threshold .</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/blur.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Blur</guibutton> – Blur the image similar to an out-of-focus camera.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/brightness.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Brightness</guibutton> – Adjusts the brightness of the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/cartoon.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Cartoon</guibutton> – Cartoonify the image, using a form of edge detection.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/charcoal.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Charcoal</guibutton> – Filter the image to look like it is drawn with charcoal.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/burningtv.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Chroma Hold</guibutton> – Display a single color, while using greyscale for the rest of the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/chroma_key.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Chroma Key</guibutton> – Make a single color transparent.  Also referred to as green screen and blue screen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/colordistance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Color Distance</guibutton> – Calculates the distance between the selected color and the current pixel and uses that value as new pixel value.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/contrast.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Contrast</guibutton> – Adjusts the contrast of a source image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/deinterlace.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Deinterlace</guibutton> – Convert interlaced video to non-interlaced video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/distort.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Distort</guibutton> – Distort the source similar to plasma.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Echo</guibutton> – Add an echo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/edgeglow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Edgeglow</guibutton> – Find and glow the edges of objects.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/freeze.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Freeze</guibutton> – Freeze the frame of a video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/gamma.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Gamma</guibutton> – Adjusts the gamma or luminance value of the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/glow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Glow</guibutton> – Add a glow effect to the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/greyscale.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Gray-scale</guibutton> – Convert an image to shades of grey.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/hue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Hue</guibutton> – Shift the hue of all colors in the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/invert.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Invert</guibutton> – Convert colors in the image to the opposite or complementary colors.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/mirror.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Mirror</guibutton> – Split and mirror the image.  Vertical, horizontal, and diagonal mirrors are supported.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/nosync.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Nosync</guibutton> – Adjust the image up and down, with the off-screen portion appearing on the other side.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_dust.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Old Dust</guibutton> – Add small dust shapes randomly on the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_film.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Old Film</guibutton> – Adjusts the gamma and brightness randomly to create the illusion of old film.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_grain.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Old Grain</guibutton> – Adds static and grain to the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_lines.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Old Lines</guibutton> – Adds random vertical lines to the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/tcolor.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Oversaturate</guibutton> – Oversaturate the color in the image, like in old Technicolor movies.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Phaser</guibutton> – Add a series of peaks and troughs to the audio, creating a sweeping effect.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/pixelate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Pixelate</guibutton> – Increase the size of pixels to obscure the image. </para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_blue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Remove Blue</guibutton> – Extracts blue from the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_green.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Remove Green</guibutton> – Extracts green from the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_red.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Remove Red</guibutton> – Extracts red from the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/rotate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Rotate</guibutton> – Rotate an image statically or animated.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/saturate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Saturation</guibutton> – Adjusts the saturation or intensity of the image.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sepia.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Sepia</guibutton> – Adjust the color of the image to emulate black-and-white film that has had sepia pigment added.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sobel.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Sobel</guibutton> – Detect and highlight the edges of objects.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/threshold.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Threshold</guibutton> – Reduces and mixes the colors of the image based on a threshold .</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Treble</guibutton> – Adjust the high-pitched sound or tone.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/white_balance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>White Balance</guibutton> – Adjust the white balance and color temperature.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_24"><title>匯出視訊</title>
+   <para>在您完成專案後，您會想要匯出為您想要的格式。 OpenShot 已準備好許多格式來簡化處理程序。 OpenShot 有二種模式可匯出影音：「簡單模式」與「進階模式」。</para>
+   <para>二個模式都共用畫面頂端的一般區域：<guibutton>一般選項</guibutton>。 可以輸入影音檔案的名稱 (無副檔名)、選擇要匯出的資料夾。</para><sect2 id="sect2_79"><title>啟動匯出視窗</title>
+   <para>要啟動匯出視窗，請點擊主視窗頂端的 <guimenuitem>匯出視訊</guimenuitem> 工具列圖示，或選擇「<guimenu>File</guimenu>」&gt;「<guimenuitem>匯出視訊</guimenuitem>」。</para></sect2><sect2 id="sect2_80"><title>簡單模式</title>
+   <para>OpenShot 已準備好許多匯出格式，涵蓋大多數一般使用狀況。 選取 <guibutton>專案類型</guibutton> 看是 DVD 或網站，然後選擇 <guibutton>目標</guibutton>、<guibutton>影像設定檔</guibutton> 和 <guibutton>品質</guibutton>。 如果您選取 <guibutton>所有格式</guibutton>，則會給您所有常見格式的清單讓您從中選擇要使用的。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_12"><title>上傳到網路</title>
+   <para>Choose the <guibutton>Upload to Web</guibutton> option at the top of this screen to choose between YouTube and Vimeo.  These are two very common video sharing websites.  This will automatically set the export settings that are compatible with the selected video website, and launch the <guibutton>Upload Video</guibutton> screen once the video file has been created.</para></sect3></sect2><sect2 id="sect2_81"><title>進階模式</title>
+   <para>進階選項應該只限由熟悉 FFmpeg 的人來使用，因為很容易弄出不正確的編解碼器、格式與位元率設定組合。 然而，如果您熟悉這些設定，則可以利用 FFmpeg 支援的格式/編解碼器/位元率來組合出更多用在匯出程序的格式。 您也可以將視訊匯出為連續影像，在類似 Blender 這類需要連續影像的程式時會很有用。</para>
+   <para>如果您先選取 <guibutton>簡單模式</guibutton> 的數值後再切換到 <guibutton>進階模式</guibutton>，則會預先選取簡單模式的所有設定。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_advanced.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_25"><title>上傳影片</title>
+   <para>If you would like to directly upload a video to YouTube or Vimeo, choose <guimenu>File</guimenu> &gt; <guimenuitem>Upload Video</guimenuitem>.  Also, on the <guimenuitem>Export Video</guimenuitem> screen, you can choose <guimenuitem>Upload to Web</guimenuitem>, which will first export your project to the correct video format, and then display the upload screen.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/upload_to_web.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>組件</para>
+            </entry>
+            <entry>
+               <para>說明</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Video File</para>
+            </entry>
+            <entry>
+               <para>Choose a video file to upload to YouTube.  Be sure it's a compatible format with YouTube first, or it might not work correctly.  If you first use the <guimenu>Export Video</guimenu> screen, you can choose <guibutton>Upload to Web</guibutton>, which automatically chooses a compatible format, and fills in this box for you.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Upload To</para>
+            </entry>
+            <entry>
+               <para>Choose the video website you want to upload a video to.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>字幕</para>
+            </entry>
+            <entry>
+               <para>Enter a title for the video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Description</para>
+            </entry>
+            <entry>
+               <para>Enter a description for the video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Credentials</para>
+            </entry>
+            <entry>
+               <para>Enter the username and password for the video website.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_26"><title>Export to XML</title>
+   <para>Export your project to a powerful and flexible XML format, called MLT XML.  This XML file can be used with <emphasis>Kdenlive</emphasis> and the <guibutton>melt</guibutton> command line.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_to_xml.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_27"><title>專案類型 / 基本資料</title>
+   <para>每個 <application>OpenShot</application> 的專案都必須有 <guibutton>專案類型</guibutton> (或稱「<guibutton>設定檔</guibutton>」)。 設定檔有以下播放與匯出設定：<emphasis>畫面更新率、高度與寬度、長寬比與像素率</emphasis>。</para>
+   <para>這是 ATSC 1080i 60Hz 的設定檔範例：</para>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>說明</para>
+            </entry>
+            <entry>
+               <para>ATSC 1080i 60Hz</para>
+            </entry>
+            <entry>
+               <para>您的設定檔名稱，會用在 OpenShot。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_num</para>
+            </entry>
+            <entry>
+               <para>30000</para>
+            </entry>
+            <entry>
+               <para>畫面更新率的分子。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_den</para>
+            </entry>
+            <entry>
+               <para>1001</para>
+            </entry>
+            <entry>
+               <para>畫面更新率的分母。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>寬度</para>
+            </entry>
+            <entry>
+               <para>1920</para>
+            </entry>
+            <entry>
+               <para>視訊的寬度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>高度</para>
+            </entry>
+            <entry>
+               <para>1080</para>
+            </entry>
+            <entry>
+               <para>視訊的高度。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>漸進式</para>
+            </entry>
+            <entry>
+               <para>0</para>
+            </entry>
+            <entry>
+               <para>0 = 交錯式, 1 = 漸進式</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_num</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>像素比的分子。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_den</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>像素比的分母。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_num</para>
+            </entry>
+            <entry>
+               <para>16</para>
+            </entry>
+            <entry>
+               <para>顯示長寬比的分子。</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_den</para>
+            </entry>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>顯示長寬比的分母。</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>
+      <application>OpenShot</application> has over 40 predefined profiles / project types available.  However, if you can not find a profile that works for your project, you can also create your own.  You can manage the list of profiles with the <guimenu>Edit &gt;</guimenu> 
+      <guimenuitem>Preferences </guimenuitem>
+      <guimenu>&gt;</guimenu>
+      <guimenuitem> Profiles </guimenuitem>tab.</para></sect1><sect1 id="sect1_28"><title>偏好設定</title>
+   <para>要設定 <application>OpenShot</application>，請選擇「<guimenu>編輯</guimenu>」&gt;「<guimenuitem>偏好設定</guimenuitem>」。 <guimenuitem>偏好設定</guimenuitem> 對話方塊可以調整影像預設長度、預設主題、預設專案類型 / 設定檔。 變更這些設定可以在開始新專案時節省您的寶貴時間。</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/preferences.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_29"><title>Dependencies</title>
+   <para>OpenShot is programmed in Python, but has many dependencies, some optional and some required.  If you are trying to manually install OpenShot or create an installation package for OpenShot, than this section is for you.</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="4"><tbody><row>
+            <entry>
+               <para>ID</para>
+            </entry>
+            <entry>
+               <para>名稱</para>
+            </entry>
+            <entry>
+               <para>Debian Package Name</para>
+            </entry>
+            <entry>
+               <para>Notes</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Python</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>This is the primary language that OpenShot is programmed in.  Python 2.5+ is required.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>GTK+ &amp;  Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-gtk2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>OpenShot uses GTK+, and needs the Python bindings for GTK.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>MLT (Media Lovin' Toolkit)</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libmlt2, libmlt-data, libmlt++3, melt</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>MLT is an open source multimedia framework, designed and developed for television broadcasting.  This has many additional dependencies which are not listed here.  This library is used to create, edit, and playback videos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>MLT Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-mlt2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>These are the Python bindings for MLT, which are required to use MLT from the Python programming language.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>GooCanvas Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-pygoocanvas</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>GooCanvas is used to render and animate the timeline.  The Python bindings are required to use this library.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Frei0r Video Effects</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>frei0r-plugins</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>
+                  <emphasis>(Optional)</emphasis> This library is used to add many additional video effects to OpenShot.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>FreeDesktop.org Standards Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-xdg</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>XDG is used to load icons, set mime-types, and other desktop integration features.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Sox Audio Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>sox</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Swiss Army Knife sound processing, used in the audio effects.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Simple DirectMedia Layer</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libsdl1.2debian, libsdl1.2debian-pulseaudio</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>SDL is used to display the preview window for video and play audio.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>Scalable Vector Graphics Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>librsvg2-common</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>SVG library required to process and display SVG images.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>Python Imaging Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-imaging</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>PIL is used to calculate image size information.  Primarily used for the <emphasis>Animated Titles</emphasis> screen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>12</para>
+            </entry>
+            <entry>
+               <para>FFmpeg File Format Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libavformat52 or libavformat-extra-52 or libavformat-unstripped-52</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>This provides MLT with the ability to understand different audio and video codecs.  There are many different versions of libavformat, some with limited codecs and some with lots of codecs.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>13</para>
+            </entry>
+            <entry>
+               <para>Fontconfig</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>fontconfig</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Fontconfig is a font configuration and customization library.  OpenShot uses the fc-list command to get a list of all installed fonts on the computer, for the <emphasis>Animated Titles</emphasis> screen.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_30"><title>Become an OpenShot Developer</title>
+   <para>If you are a programmer (or wanting to become a programmer), and are interested in developing new features, fixing bugs, improving the user interface, or developing new themes for OpenShot, the following sections will explain the steps and processes you will need to follow. </para><sect2 id="sect2_82"><title>The Big Picture</title>
+   <para>OpenShot is a Python program made up of many different Python files (.py), images (.svg, .png),  XML files (.xml), GTK+ XML files (.ui), and Blender project files (.blend).  Python is an interpreted language, which means there are no files that need compiling or building to run OpenShot.  If you change any of the source files, you just need to close and relaunch OpenShot to see the changes.</para></sect2><sect2 id="sect2_83"><title>Getting the Latest Source Code</title>
+   <para>OpenShot hosts the latest version of source code on <ulink url="https://code.launchpad.net/openshot">LaunchPad.net</ulink>, using the <ulink url="http://bazaar.canonical.com/en/">Bazaar version</ulink> control system.</para>
+   <orderedlist>
+      <listitem>
+         <para>Install the Bazaar version control system.  In Debian (or Ubuntu), you can type</para>
+         <para>
+            <command>$ sudo apt-get install bzr</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Tell Bazaar to create a local branch for your computer.  This will create an /<emphasis>openshot/</emphasis> folder in your home folder and download the latest source code into that folder.  For example: /home/USER/openshot/</para>
+         <para>
+            <command>$ bzr branch lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>If you already have an <emphasis>/openshot/</emphasis> folder, just change your current directory to it, and run the following command to get the lastest version:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr pull lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Now you should have the latest source code for OpenShot.  To launch OpenShot from this folder, you must run the following commands.  Remember, you must already have the dependencies for OpenShot installed, which is covered in the next topic.</para>
+         <para>
+            <command>$ cd /home/USER/openshot/bin/</command>
+         </para>
+         <para>
+            <command>$ ./openshot  or  python openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>If you have made some changes to the OpenShot source code, and want to see everything you have changed, run this command:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr status</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>If you are unhappy with your local changes, and want to revert your changes, run this command:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr revert</command>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_84"><title>Setting Up Your Environment</title>
+   <para>Once you have gotten the latest source code, the next step is to install all of the required dependencies.  I would recommend installing OpenShot from your favorite package manager (such as Synaptic).  This will install a version of OpenShot and all the required dependencies.  This will not conflict with your local version of OpenShot source code.  The only trick is to remember that the <guimenu>$ openshot</guimenu> command will launch the official version of OpenShot, and not your local version.  So, you must remember to launch OpenShot with the following commands:</para>
+   <para>
+      <command>$ cd /home/USER/openshot/bin/</command>
+   </para>
+   <para>
+      <command>$ ./openshot  or  python openshot</command>
+   </para>
+   <para>Now that you have the latest source code and all of the dependencies, you can either use a text editor (such as gedit), or a full Python IDE, such as <ulink url="http://www.eclipse.org/">Eclipse</ulink> or <ulink url="http://www.aptana.com/">Aptana</ulink> (with <ulink url="http://pydev.org/">Pydev</ulink>) to modify the source code.  The advantage of using a full Python IDE is the enhanced debugging capabilities.  It is beyond the scope of this document to teach you how to debug Python with Eclipse or Aptana, but there are lots of good tutorials online.</para></sect2><sect2 id="sect2_85"><title>Fixing Your First Bug</title>
+   <para>Now that you have a local version of OpenShot running, fixing bugs and adding new features is easy.  Just modify the files, and re-launch OpenShot to see your changes.  Of course, I can't tell you exactly how to fix a bug, that is up to you.  So, good luck!</para></sect2><sect2 id="sect2_86"><title>Sharing Your Changes with the OpenShot Team</title>
+   <para>Once you have fixed your first bug or added a great new feature, the next step is to share it with the OpenShot Team, so we can be sure your changes get into the official version of OpenShot.  The easiest way to share your changes is to create a patch (or diff).  Use the following command to create a patch:</para>
+   <para>
+      <command>$ cd /home/USER/openshot/</command>
+   </para>
+   <para>
+      <command>$ bzr diff &gt; mychanges.patch</command>
+   </para>
+   <para>This will create a file called mychanges.patch, which should have all of the changes for all the files you have modified.  Of course, if you have created new files, you will need to compress those up into a ZIP or TAR file, and include them with your mychanges.patch file.</para>
+   <para>Next, create a <ulink url="https://launchpad.net/openshot/+filebug">new bug report</ulink> on LaunchPad (or find an existing bug report), and upload your patch and related files to the bug report.  That's it!  The OpenShot team will be notified by email that a patch has been submitted.  Now you can subscribe to the bug report, and follow along to see if there are any questions or comments about your patch.</para></sect2><sect2 id="sect2_87"><title>Join the OpenShot Developers Team on LaunchPad</title>
+   <para>If you are fixing bugs or adding new features to OpenShot, please consider <ulink url="https://launchpad.net/~openshot.developers">joining our </ulink>
+      <ulink url="https://launchpad.net/~openshot.developers">team</ulink> on LaunchPad.  We have a mailing list that will keep you up to date on the newest bug reports and plans related to OpenShot.</para></sect2></sect1><sect1 id="sect1_31"><title>關於 OpenShot</title>
+   <para><application>OpenShot</application> 是由 Jonathan Thomas (<ulink url="mailto:Jonathan.Oomph@gmail.com">Jonathan.Oomph@gmail.com</ulink>) 在 2008 年 8 月時創作出來，目標是提供穩定、自由與友善使用的影音編輯程式。</para><sect2 id="sect2_88"><title>OpenShot 開發團隊</title>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Jonathan Thomas</para>
+            </entry>
+            <entry>
+               <para>Jonathan.Oomph@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Andy Finch</para>
+            </entry>
+            <entry>
+               <para>we.rocked.in79@googlemail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Olivier Girard</para>
+            </entry>
+            <entry>
+               <para>eolinwen@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Maël Lavault</para>
+            </entry>
+            <entry>
+               <para>moimael@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>View the full list of developers:</para>
+            </entry>
+            <entry>
+               <para>
+                  <ulink url="https://launchpad.net/~openshot.developers/+members#active">https://launchpad.net/~openshot.developers/+members#active</ulink>
+               </para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_89"><title>更多資訊</title>
+   <para>To find more information about <application>OpenShot</application>, please visit the <ulink url="http://www.openshot.org/">OpenShot Web page </ulink>
+      <ulink url="http://www.openshot.org/">(www.openshot.org)</ulink>. To report a bug or make a suggestion regarding this application or this manual, go to the <ulink url="https://launchpad.net/openshot">OpenShot site on Launchpad</ulink>.  To discuss OpenShot with other users, visit our user website &amp; forum: <ulink url="http://openshotusers.com/forum/">http://OpenShotUsers.com/forum/</ulink>
+   </para></sect2><sect2 id="sect2_90"><title>版權與商標</title>
+   <para>Copyright (C) 2011  Jonathan Thomas.  OpenShot(TM) is a registered trademark owned by Jonathan Thomas.</para></sect2><sect2 id="sect2_91"><title>授權許可</title>
+   <para>本程式是依據自由軟體基金會 (Free Software Foundation) 出版的 GNU 通用公共許可證 (GNU General Public License, GPL) 條款而散布。不管是 GPL 第三版或是往後的版本，您都可以在 <ulink url="http://www.gnu.org/licenses/gpl.html">這裏</ulink> 找到一份授權許可，或者是附在本程式的原始碼。</para></sect2></sect1><para/>
+</article>

@@ -1,0 +1,4501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="he">
+   <articleinfo>
+      <title>OpenShot Video Editor Manual – v1.4</title>
+      <subtitle/>
+      <edition/>
+   </articleinfo><sect1 id="sect1_1"><title>הקדמה</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/logo_badge.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>עורך וידיאו אופןשוט זו תכנה שנועדה ליצירת ועריכת וידיאו על לינוקס.  התכנה מאפשרת צרוף קל של מספר קטעי וידיאו, קול ותמונות לפרויקט יחיד, ואז ליצא אותו למספר פורמטי וידיאו נפוצים.</para>
+   <para>אופןשוט הוא עורך וידיאו לא ליניארי.  המשמעות היא שכל תמונה בכל קטע וידיאו ניתנת לגישה בכל עת, ושניתן למקם את הקטעים בשכבות, לערבב, ולארגן בדרכים יצירתיות.  כל קטעי הוידיאו נערכים בלי להרוס אותם, כך שקבצי המקור לא נפגעים ולא משונים בזמן העריכה.</para>
+   <para>ניתן להשתמש באופןשוט ליצירת מצגות וידיאו, עריכת סרטים ביתיים, יצירה של פרסומות טלויזיה וסרטים מקוונים, וכל שתרצו או תחלמו.</para><sect2 id="sect2_1"><title>סקירת תכונות:</title>
+   <orderedlist>
+      <listitem>
+         <para>תמיכה בהרבה פורמטי וידיאו, קול ותמונה (מתבססת על FFmpeg).</para>
+      </listitem>
+      <listitem>
+         <para>הטמעה בגנום (גרור והשלך)</para>
+      </listitem>
+      <listitem>
+         <para>מספר מסילות</para>
+      </listitem>
+      <listitem>
+         <para>קיצוץ, חיתוך, הדבקה, קיטוע והתאמת קטעים.</para>
+      </listitem>
+      <listitem>
+         <para>מעבר וידאו עם צפיה מוקדמת בזמן אמת</para>
+      </listitem>
+      <listitem>
+         <para>צירופים, פריסות, סימני מים</para>
+      </listitem>
+      <listitem>
+         <para>תבניות לכותרות, יצירת כותרות, כותרות תלת מימדיות מונפשות</para>
+      </listitem>
+      <listitem>
+         <para>ידידותי לSVG, ליצירת והכללת כותרות ותודות</para>
+      </listitem>
+      <listitem>
+         <para>גלילת תודות</para>
+      </listitem>
+      <listitem>
+         <para>קטעים אחידי צבע (כולל שקיפויות)</para>
+      </listitem>
+      <listitem>
+         <para>תמיכה ברצפי תמונה</para>
+      </listitem>
+      <listitem>
+         <para>גרירה והשלכה על ציר הזמן</para>
+      </listitem>
+      <listitem>
+         <para>תנועה על תמונות בודדות, מיפוי לחצנים: J,K,L</para>
+      </listitem>
+      <listitem>
+         <para>קידוד וידיאו (מבוסס על FFmpeg)</para>
+      </listitem>
+      <listitem>
+         <para>הנפשת תמונות מפתח</para>
+      </listitem>
+      <listitem>
+         <para>התקרבות דיגיטלית לקטע וידיאו</para>
+      </listitem>
+      <listitem>
+         <para>שנוי מהירות תצוגה (הילוך איטי\מהיר)</para>
+      </listitem>
+      <listitem>
+         <para>מעברים מותאמים, מחיקות, תאורה ומסיכות</para>
+      </listitem>
+      <listitem>
+         <para>שנוי גודל קטעים (שנוי גודל תמונות)</para>
+      </listitem>
+      <listitem>
+         <para>עירבול ועריכת קול</para>
+      </listitem>
+      <listitem>
+         <para>הנפשות מוגדרות מראש</para>
+      </listitem>
+      <listitem>
+         <para>אפקט קן ברנס (יצירת וידיאו על ידי מעבר על תמונות פנורמיות)</para>
+      </listitem>
+      <listitem>
+         <para>אפקטים דיגיטליים של וידיאו, כולל בהירות, גאמא, רוויה, אפרוריות, שקיפות ועוד ... מעל 40 אפקטים לוידיאו וקול.</para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_2"><title>צילום מסך</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_clips.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2></sect1><sect1 id="sect1_2"><title>מתחילים</title><sect2 id="sect2_3"><title>שגר את עורך הוידאו צילוםפתוח</title>
+   <para>ניתן להתחיל את הפעלה <application>OpenShot</application> בדרכים הבאות:</para><sect3 id="sect3_1"><title>תפריט יישומים</title>
+   <para>מהתפריט, בחירה ב<guisubmenu>Sound &amp; Video &gt;</guisubmenu><guimenuitem>OpenShot Video Editor</guimenuitem>.</para></sect3><sect3 id="sect3_2"><title>שורת פקודה</title>
+   <para>להפעלת <application>OpenShot</application> משורת הפקודה, יש לכתוב במסוף את הפקודה הבאה וללחוץ על <keycap>Return</keycap>:</para>
+   <para><command>openshot</command> [קובץ]</para>
+   <para>הפרמטר [קובץ] הוא רשות ויכול להיות קובץ קול, וידיאו, תמונה, פרויקט של אופןשוט (*.osp).  ניתן להעביר מספר שמות של קבצים (עם רווחים בין השמות), והקבצים ייובאו לעותק אחד של יישום <application>OpenShot</application>.</para></sect3><sect3 id="sect3_3"><title>פתח עם...</title>
+   <para>להפעלת <application>OpenShot</application> מתוך נאוטילוס, לחצן עכבר ימני על תמונה, וידאו או קובץ קול, ובחירה ב<guimenu>פתיחה עם </guimenu>&gt; <guimenuitem>OpenShot Video Editor</guimenuitem>.   או בחירה ב<guimenu>פתיחה עם</guimenu> &gt;<guimenuitem>אחר </guimenuitem> &gt; <command>openshot</command>.</para>
+   <para/></sect3></sect2></sect1><sect1 id="sect1_3"><title>למד אופןשוט בחמש דקות!</title>
+   <para>השמוש באופןשוט קל, והמדריך הזה יקח אותך לסיור בתפעול הבסיסי שלו תוך פחות מחמש דקות.  אחרי קריאת המדריך, תוכל ליצור מצגת תמונות עם מוזיקה.</para><sect2 id="sect2_4"><title>שלב 1 - יבוא תמונות ומוזיקה</title>
+   <para>לפני שאפשר לעשות וידיאו, צריך <guibutton>ליבא קבצים</guibutton> לאופןשוט.  גרור והשלך כמה קבצי תמונה (jpg,png...) ומוזיקה (רוב הפורמטים יעבדו) משולחן העבודה לעורך הוידיאו אופןשוט.  יש להשליך את הקבצים למקום אליו מצביע החץ בתמונה.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_5"><title>שלב 2 - ארגון התמונות על ציר הזמן</title>
+   <para>אחרי שהקבצים יובאו, השלב הבא הוא הוספתם לציר הזמן וארגונם.  לחיצה על כל תמונה (בזו אחר זו) וגרירתה ל<guibutton>Track 2</guibutton> (מסלול מספר 2) על ציר הזמן.  גרירה והשלכת תמונות (קטעים) וארגונן.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_6"><title>שלב 3 - הוספת מוזיקה לציר הזמן</title>
+   <para>להפיכת המצגת לחיה יותר, כדאי להוסיף מוזיקה.  יש ליבא קבצי מוזיקה כפי שהוסבר בסעיף 1.  לחיצה על קובץ מוזיקה, וגרירתו ל<guibutton>Track 1</guibutton> (מסלול 1) על ציר הזמן.</para></sect2><sect2 id="sect2_7"><title>תצוגה מקדימה של הפרויקט</title>
+   <para>לתצוגה מקדימה של הוידיאו והקול, יש ללחוץ על לחצן <guibutton>Play </guibutton> שתחת חלון התצוגה המקדימה.  לחיצה חוזרת על אותו הלחצן לעצירה.  יש לזכור שניתן לארגן את הקטעים על ידי גרירתם והשלכתם למיקום הרצוי.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_8"><title>שלב 5 - יצוא הוידיאו</title>
+   <para>ברגע שהתוצאה משביעת רצון, הצעד הבא הוא יצוא הוידיאו.  זה ימיר את פרויטק האופןשוט לקובץ וידיאו יחיד, שיעבוד בכל נגן מדיה בלינוקס (כדוגמת טוטם, vlc וכו') או אתר (כדוגמת youtube, vimeo וכו').</para>
+   <para>לחיצה על הסמל <guibutton>Export Video</guibutton> בחלקו העליון של החלון (או שמוש בתפריט <guimenuitem>File</guimenuitem> &gt; <guimenuitem>Export Video...</guimenuitem>).  בחירה באחת האפשרויות המוגדרות מראש, ולחיצה על לחצן <guibutton>Export Video </guibutton>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_9"><title>שלב 6 - להנות מאופןשוט!</title>
+   <para>אחרי שהבנתם את הבסס של אופןשוט -<emphasis> יבוא, ארגון, תצוגה מקדימה ויצוא </emphasis>, אנו מקוום שמדריך זה דרש פחות מחמש דקות מזמנכם.  אנא קראו את המשך המדריך למשתמש לפרטים נוספים והבנה מעמיקה של אופןשוט, ויכולות מתקדמות.  תהנו!</para></sect2></sect1><sect1 id="sect1_4"><title>חלון ראשי</title>
+   <para>לעורך הוידיאו אופןשוט  יש חלון ראשי אחד שמכיל את רוב המידע, הלחצנים והתפריטים החיוניים לעריכת הפרוקיט.</para><sect2 id="sect2_10"><title>סקירה</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>סרגל הכלים הראשי</para>
+            </entry>
+            <entry>
+               <para>מכיל לחצנים לפתיחה, שמירה, ויצוא של פרויקט וידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>חוצץ פעולות</para>
+            </entry>
+            <entry>
+               <para>החלפה בין קבצי פרויקט, מעברים ואפקטים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>קובצי המיזם</para>
+            </entry>
+            <entry>
+               <para>כל קבצי הקול, הוידיאו והתמונות שיובאו לפרויקט</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>חלון תצוגה מקדימה</para>
+            </entry>
+            <entry>
+               <para>בחלק זה הוידיאו יוצג על המסך</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>סרגל עריכה</para>
+            </entry>
+            <entry>
+               <para>סרגל זה מכיל לחצנים דביקים בשמוש לעריכה, חיתוך וחציית קטעים.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>גלילת מרחק</para>
+            </entry>
+            <entry>
+               <para>פס גלילה זה מתאים את יחס הזמנים לציר הזמן.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>סרגלון ראש התצוגה</para>
+            </entry>
+            <entry>
+               <para>הסרגלון מראה את סקאלת הזמן, והפס האדום הוא ראש התצוגה.  ראש התצוגה מייצג את המיקום הנוכחי של התצוגה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>ציר הזמן</para>
+            </entry>
+            <entry>
+               <para>ציר הזמן ממחיש את פרויקט הוידיאו שלך, וכל קטע ומעבר בפרויקט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>פילטר</para>
+            </entry>
+            <entry>
+               <para>מסנן את רשימת העצמים המוצגים (קבצי פרויקט, מעברים ואפקטים) על ידי שמוש בלחצנים ותיבת טקסט.  הכנס כמה תוים מהמזהה של מה שאתה מחפש, והתוצאות תופענה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_11"><title>סרגל הכלים הראשי</title>
+   <para>ה<guimenu>סרגל הראשי  </guimenu> מכיל לחצנים ליצירה ושמירה מהירה של הפרויקט, בטול וחזרה על פעולות, יבוא קבצים, ויצוא הוידאו.  כל התפקודים הללו ניתנים לגישה גם דרך תפריטי <guimenuitem>קובץ</guimenuitem> ו<guimenuitem>עריכה</guimenuitem>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_toolbar.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>פרויקט חדש</para>
+            </entry>
+            <entry>
+               <para>צור קובץ פרויקט אופןשוט חדש (*.OSP)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>שמירת המיזם</para>
+            </entry>
+            <entry>
+               <para>שמירת הפרויקט הקיים.  אם לא נוצר פרויקט, חלון דו-שיח ייפתח לאיסוף המידע הנדרש.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>ביטול</para>
+            </entry>
+            <entry>
+               <para>בטל את הפעולה האחרונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>ביצוע חוזר</para>
+            </entry>
+            <entry>
+               <para>חוזר על פעולה אחרונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>יבוא קבצים</para>
+            </entry>
+            <entry>
+               <para>יבוא קובץ או קבצים לפרויקט אופןשוט הנוכחי.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>יצוא וידאו</para>
+            </entry>
+            <entry>
+               <para>יצוא הפרויקט הנוכחי לקובץ וידיאו יחיד.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_12"><title>חוצץ פעולות</title>
+   <para>חוצץ זה מאפשר לעבור בין שלושה תפקודים עיקריים:  קבצי הפרויקט, מעברים ואפקטים.  העצמים בחוצצים הללו ניתנים לגרירה והשלכה על ציר הזמן.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_tabs.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_13"><title>קובצי המיזם</title>
+   <para>מקטע קבצי הפרויקט מכיל את כל הקבצים שיובעו לפרויקט שלך.  בטרם תתאפשר הוספה של תמונה, קובץ קול או קובץ וידיאו לציר הזמן של הפרויקט, עליו להיות מיובא למקטע קבצי הפרויקט.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_files.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_14"><title>חלון תצוגה מקדימה</title>
+   <para>חלון התצוגה המקדימה שולט בהצגת פרויקט הוידיאו.  לחיצה על הכפתורים שתחת חלון זה שולטת בהצגה, ופלט הוידיאו באזור זה.  גודל אזור זה ניתן לשנוי בלחיצה וגרירת גבולותיו.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>דלג להתחלה</para>
+            </entry>
+            <entry>
+               <para>דלג לנקודת ההתחלה של הפרויקט</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>חזור אחורה</para>
+            </entry>
+            <entry>
+               <para>חזור לאחור מנקודת ההצגה הנוכחית</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>נגינה / השהייה</para>
+            </entry>
+            <entry>
+               <para>נגינה או השהייה של תצוגת הפרויקט</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>הרץ קדימה</para>
+            </entry>
+            <entry>
+               <para>הרצה קדימה של הפרויקט מנקודת התצוגה הנוכחית</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>דלג לסיום</para>
+            </entry>
+            <entry>
+               <para>דלג לסוף הפרויקט</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_15"><title>סרגל עריכה</title>
+   <para>סרגל העריכה מאפשר החלפה בין מצבי עבודה שונים על ציר הזמן.  כשמזיזים, גוזמים ופולחים קטע, חיוני להעזר בסרגל זה להחלפת מצבי העבודה.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>הוספת רצועה</para>
+            </entry>
+            <entry>
+               <para>הוספה של רצועה חדשה למלאי</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>מצב בחירה</para>
+            </entry>
+            <entry>
+               <para>בחירת מצב מאפשרת גרירה של קטעים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>מצב תער</para>
+            </entry>
+            <entry>
+               <para>מצב תער מאפשר לך לפלח קטעים בלחיצה.  אם "הדבקה" אפשרית, לחיצה סמוך למיקום התצוגה (הפס האדום) תפלח את הקטע בדיוק על הפס האדום.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>מצב שינוי גודל</para>
+            </entry>
+            <entry>
+               <para>מצב שנוי גודל מאפשר לך לגרור את קצוות הקטע לשנוי גודל (או גיזום) של הקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>מצב הצמדה</para>
+            </entry>
+            <entry>
+               <para>מצב הצמדה מאפשר לקטעים להצמד (או לקפוץ אל) קצה הקטע הסמוך או לנקודת התצוגה (מה שקרוב יותר) כשהם מושלכים על ציר הזמן.  מערבים ייצמדו לקטע הסמוך.  כמו כן, קטעים ומעברים יצמדו לנקודת התצוגה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>הוספת סמן</para>
+            </entry>
+            <entry>
+               <para>הוספת סמן חדש, מאפשרת לקפוץ במהירות לאחור לנקודה ספציפית זו תוך כדי צפיה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>הסמן הקודם</para>
+            </entry>
+            <entry>
+               <para>דילוג למיקום סמן קודם (אם קיים).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>הסימון הבא</para>
+            </entry>
+            <entry>
+               <para>דילוג למיקום הסמן הבא (אם קיים).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_16"><title>גלילת מרחק</title>
+   <para>גלגלת המרחק מאפשרת שנוי של סקאלת הזמן בציר הזמן.  התקרבות תציג יותר פרטים על הציר, התרחקות תציג את כל ציר הזמן בלי צורך לגלול אותו.  ניתן ללחוץ על לחצני המרחק (בצידי הגלגלת), או לגלול.  כשגוללים את הגלגלת, ציר הזמן מתעדכן כשעוצרים.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_zoomer.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_17"><title>ציר הזמן</title>
+   <para>ציר הזמן ממחיש את הפרויקט באופן גרפי.  כל קטע מיוצג במלבן צהוב.  כל רצועה מיוצגת במלבן כחול.  מיקום התצוגה (פס אדום) מייצג את התצוגה הנוכחית ומיקומה בפרויקט.</para>
+   <para>לחיצה על נקודה כלשהי בסרגלון תביא למיקום המתאים בציר הזמן.  גרירה לאורכו, תסרוק את הוידיאו במהירות.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>סרגלון</para>
+            </entry>
+            <entry>
+               <para>הסרגלון מראה את סקאלת הזמן הנוכחית של ציר הזמן</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>מקום התצוגה</para>
+            </entry>
+            <entry>
+               <para>מקום התצוגה מראה את מיקום התצוגה הנוכחית בחלון התצוגה המקדימה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>קטע</para>
+            </entry>
+            <entry>
+               <para>קטע מייצג קובץ קול, תמונה או וידיאו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>רצועה</para>
+            </entry>
+            <entry>
+               <para>רצועה דומה לשכבה.  ככל שהיא ממוקמת גבוה יותר במאגר התמונות והוידיאו שעליה יוצגו מעל אלו שברצועות שממוקמות נמוך יותר.  אין גבול למספר הרצועות שניתן להגדיר בפרויקט.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_18"><title>רצועות</title>
+   <para><application>אופןשוט</application> נעזר במסילות כשכבות לוידיאו ותמונות.  המסילה העליונה היא השכבה העליונה, והתחתונה היא השכבה התחתונה.  אם שכבות בעריכת תמונות זה משהו מוכר, התחושה תהיה דומה.  אופןשוט מערבב את השכבות יחד בדיוק כמו תכנה לעריכת תמונות.</para>
+   <para>לדוגמה, דמיינו 3 מסילות של וידיאו.  תמונת שקיעה תהיה ברקע, תמונה עם הרבה מעגלים באמצע, ולוגו למעלה.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/tracks.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>רצועה עליונה</para>
+            </entry>
+            <entry>
+               <para>קטעים על רצועה זו יהיו למעלה.  סימני מים ולוגו רצוי למקם על שכבה זו.  הלוגו של אופןשוט נמצא ברצועה זו בהדגמה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>רצועה אמצעית</para>
+            </entry>
+            <entry>
+               <para>קטעים אלו תחת הרצועה העליונה אבל מעל התחתונה.  התמונה עם המעגלים בדוגמה ברצועה זו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>רצועה תחתונה</para>
+            </entry>
+            <entry>
+               <para>הקטעים הללו תחת כל שאר המסילות.  השקיעה מצויה במסילה זו בהדגמה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_19"><title>שליטה על תצוגת הוידיאו</title>
+   <para>הפעלה, הפסקה ודילוג - אלו יכולות חשובות בעריכת וידיאו.  ביצירת פרויקט, תצטרכו להציג את הפרויקט שוב ושוב.  בעוד לחיצה על לחצן <guibutton>Play </guibutton> היא דרך קלה לביצוע, יש מספר דרכים מהירות יותר.</para><sect3 id="sect3_4"><title>דרכים להצגת הוידיאו</title>
+   <para>יש שמונה <emphasis> דרכים </emphasis>לשלוט בתצוגת הוידיאו ב<application>אופןשוט</application>.</para>
+   <orderedlist>
+      <listitem>
+         <para>לחיצה בסרגל <guibutton>Preview </guibutton> (תצוגה מקדימה) (נגן, דלג וכו'...)</para>
+      </listitem>
+      <listitem>
+         <para>גרירת הסמן מעל סרגל התצוגה המקדימה</para>
+      </listitem>
+      <listitem>
+         <para>גרירת <guibutton>נקודת התצוגה </guibutton> בגלגלת</para>
+      </listitem>
+      <listitem>
+         <para>לחיצה על גלגלת ציר הזמן בנקודה כלשהי</para>
+      </listitem>
+      <listitem>
+         <para>שמוש במקשי קיצור (J,K)</para>
+      </listitem>
+      <listitem>
+         <para>שמוש בחיצים (שמאלה, ימינה, מעלה, מטה)</para>
+      </listitem>
+      <listitem>
+         <para>Using SHIFT + Arrow Buttons (Left, Right, Up, Down)</para>
+      </listitem>
+      <listitem>
+         <para>שמוש במקש הרווח (הצג\עצור)</para>
+      </listitem>
+      <listitem>
+         <para>לחיצה כפולה על סמן שהוגדר בידי המשתמש</para>
+      </listitem>
+   </orderedlist></sect3></sect2></sect1><sect1 id="sect1_5"><title>Keyboard Shortcuts</title>
+   <para>A keyboard shortcut is a key (or keys) on the keyboard that saves you the trouble of moving your mouse and clicking.  It is often faster to type a key, than to point and click.  Here are all keyboard shortcuts in <application>OpenShot</application>:</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>מקש</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>J</para>
+            </entry>
+            <entry>
+               <para>מחזיר את תצוגת הוידיאו לאחור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>K</para>
+            </entry>
+            <entry>
+               <para>נגן\הפסק</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>L</para>
+            </entry>
+            <entry>
+               <para>מקדם את תצוגת הוידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>רווח</para>
+            </entry>
+            <entry>
+               <para>נגן\הפסק</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מעלה</para>
+            </entry>
+            <entry>
+               <para>קפוץ לסמן קודם (אם קיים)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מטה</para>
+            </entry>
+            <entry>
+               <para>קפוץ לסמן הבא (אם קיים)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>שמאלה</para>
+            </entry>
+            <entry>
+               <para>חזור תמונה אחת (מעבר על תמונות)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Left</para>
+            </entry>
+            <entry>
+               <para>Step backwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>ימינה</para>
+            </entry>
+            <entry>
+               <para>התקדם תמונה אחת (מעבר על תמונות)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Right</para>
+            </entry>
+            <entry>
+               <para>Step forwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>TAB</para>
+            </entry>
+            <entry>
+               <para>החלף בין מצבי <guibutton>גודל</guibutton>ו <guibutton>בחירה</guibutton></para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Scroll Wheel</para>
+            </entry>
+            <entry>
+               <para>התקרבות והתרחקות על ציר הזמן</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Home</para>
+            </entry>
+            <entry>
+               <para>קפיצה לתחילת ציר הזמן</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + End</para>
+            </entry>
+            <entry>
+               <para>קפיצה לסוף ציר הזמן</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>C</para>
+            </entry>
+            <entry>
+               <para>חיתוך כל הקטעים במיקום התצוגה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ctrl + N</para>
+            </entry>
+            <entry>
+               <para>יצירת פרויקט חדש</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ctrl + O</para>
+            </entry>
+            <entry>
+               <para>פתיחת פרוייקט קיים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ctrl + F</para>
+            </entry>
+            <entry>
+               <para>יבוא קובץ (קול, וידיאו או תמונה)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ctrl + I</para>
+            </entry>
+            <entry>
+               <para>יבוא רצף תמונות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + W</para>
+            </entry>
+            <entry>
+               <para>יבא פרויקט חדש</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ctrl + S</para>
+            </entry>
+            <entry>
+               <para>שמירת הפרוייקט הנוכחי</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + CTRL + S</para>
+            </entry>
+            <entry>
+               <para>שמירת פרויקט נוכחי בשם...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + X</para>
+            </entry>
+            <entry>
+               <para>יצוא הפרויקט בתור MLT XML</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + E</para>
+            </entry>
+            <entry>
+               <para>יצוא הפרויקט הנוכחי כקובץ וידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + U</para>
+            </entry>
+            <entry>
+               <para>העלאת הפרויקט הנוכחי כוידיאו לyoutube או לvimeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Q</para>
+            </entry>
+            <entry>
+               <para>יציאה מהתכנית</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Z</para>
+            </entry>
+            <entry>
+               <para>בטל את הפעולה האחרונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Y</para>
+            </entry>
+            <entry>
+               <para>חוזר על פעולה אחרונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + P</para>
+            </entry>
+            <entry>
+               <para>עריכת העדפות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + T</para>
+            </entry>
+            <entry>
+               <para>צור כותרת חדשה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + B</para>
+            </entry>
+            <entry>
+               <para>צור כותרת מונפשת חדשה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F11</para>
+            </entry>
+            <entry>
+               <para>היפוך מצב מסך מלא</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F1</para>
+            </entry>
+            <entry>
+               <para>הצגת קובץ העזרה (אם הותקן)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + D</para>
+            </entry>
+            <entry>
+               <para>לכידה ושמירה של התמונה הנוכחית מקטע שאינו קטע קולי שחופף למיקום התצוגה, והוספתו לקבצי הפרויקט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>M</para>
+            </entry>
+            <entry>
+               <para>Add a marker to the timeline</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Middle Mouse click</para>
+            </entry>
+            <entry>
+               <para>Opens clip properties window</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Drag clip or transition</para>
+            </entry>
+            <entry>
+               <para>Restricts movement of clip or transition to vertical only</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Click</para>
+            </entry>
+            <entry>
+               <para>Removes the clip or transition that was clicked</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Remove Clip (menu item)</para>
+            </entry>
+            <entry>
+               <para>Closes the gap on the timeline left by the deleted clip</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_6"><title>פרויקט - יצירה, פתיחה ושמירה</title>
+   <para>קובץ פרויקט של <application>אופןשוט</application>צריך <emphasis> </emphasis>לשמור מידע שיוצר את את הפרויקט.  מידע כדוגמת שם ומיקום הפרויקט, קבצי קול ווידיאו, מידע על ציר הזמן, אילו קטעים נחתכו, ארגון וכו'...</para>
+   <para/>
+   <para>כאשר  <application>אופןשוט</application> מופעל, הוא יוצר באופן אוטומטי קובץ פרויקט חדש.  ניתן להתחיל להשתמש ב<application>אופןשוט</application> מייד, בלי ליצור פרויקט.  </para>
+   <para>לקבצי פרויקט יש סיומת OSP.   (ExampleProject.osp).  כמו כן, קבצי פרויקט זקוקים לתיקיית  /thumbnail/  ,  שמכילה את התמונות הממוזערות של הפרויקט.  אם מעבירים את קובץ הפרויקט, יש להעברי אם את התיקיה הזו.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>קובץ פרויקט</para>
+            </entry>
+            <entry>
+               <para>/home/user/Desktop/ProjectA.osp</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>תצוגת תמונות קטנות</para>
+            </entry>
+            <entry>
+               <para>/home/user/Desktop/thumbnail/</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable><sect2 id="sect2_20"><title>יצירת מיזם</title>
+   <para>קיימות 2 דרכים ליצירת פרויקט</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/menu_file.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_5"><title>דרך ראשונה - תפריט "קובץ":</title>
+   <para>בחר<guimenu>File &gt;</guimenu><guimenuitem>New Project</guimenuitem>. חלון  <guilabel>New Project</guilabel>ייפתח.  שנה את שם הפרויקט, סוגו, אורך ציר הזמן ולחץ “Save Project”.</para></sect3><sect3 id="sect3_6"><title>דרך שניה - שמירה</title>
+   <para>מפני שתכנת אופןשוט יוצרת פרויקט ברירת מחדל כשמפעילים אותה, ניתן לבחור בפשטוט<guimenu>File &gt;</guimenu><guimenuitem>Save</guimenuitem>. חלון <guilabel>Save Project</guilabel> ייפתח, ניתן לשנות את שם הפרויקט, אורך ציר הזמן וללחוץ על “Save Project”.</para></sect3></sect2><sect2 id="sect2_21"><title>חלון שמירת הפרויקט</title>
+   <para>לחיצה על <guimenuitem>New Project</guimenuitem> או <guimenuitem>Save Project</guimenuitem> תגרום להופעת החלון הזה.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/projects_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>שם הפרויקט</para>
+            </entry>
+            <entry>
+               <para>שם קובץ הפרויקט (בסיומת .osp).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>מחיצת הפרויקט</para>
+            </entry>
+            <entry>
+               <para>מיקום המחיצה אליה יש לשמור את קובץ הפרויקט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>אורך הפרויקט</para>
+            </entry>
+            <entry>
+               <para>האורך <emphasis>המרבי</emphasis> של ציר הזמן.  אורך ציר הזמן יגדל באופן אוטומטי אם קטעים יחרגו ממנו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>סוג הפרויקט</para>
+            </entry>
+            <entry>
+               <para>זה משפיע על התצוגה המקדימה.  זה קובע את הגודל, מנת הממדים, וקצב התמונות לשניה של הוידיאו בתצוגה המקדימה.  מומלץ לערוך תחת אותן ההגדרות שהיצוא עתיד להתבצע אליהן.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>פרטי סוג הפרויקט</para>
+            </entry>
+            <entry>
+               <para>טבלא זו מציגה את פרטי סוג הפרויקט, כדוגמת גודל, מנת ממדים וקצב תמונות.  שנוי בבחירת הפרויקט יביא לעדכון טבלא זו.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_22"><title>פתיחת פרויקט</title>
+   <para>לפתיחת פרויקט, יש לבחור <guimenu>File &gt;</guimenu><guimenuitem>Open Project</guimenuitem>.  חלון <guilabel>Open Project</guilabel> ייפתח.  יש לבחור בקובץ הפרויקט (*.osp) וללחוץ על לחצן <guibutton>Open Project</guibutton>.</para>
+   <para>לפתיחה של פרויקט מהאחרונים שנפתחו, ניתן לבחור <guimenu>File &gt;</guimenu><guimenuitem>Recent Projects</guimenuitem>.  זו דרך מהירה יותר לפתיחת פרויקט ב<application>אופןשוט</application>.</para>
+   <para>להפעלת אופןשוט עם פרויקט ספציפי, ניתן ללחוץ על קובץ ה*.osp (במחשב), ולבחור את <command>אופןשוט</command> כפקודה.</para></sect2></sect1><sect1 id="sect1_7"><title>יבוא קבצים - קול, וידיאו ותמונות</title>
+   <para>בטרם ניתן למקם קטע על ציר הזמן, יש <emphasis>ליבא</emphasis> אותו לפרויקט.  יש כמה דרכים ליבא קטע.  הפשוטה ביותר היא לגרור אותו ממנהל הקבצים שלך אל מקטע<guibutton>קבצי הפרויקט</guibutton>.</para>
+   <para>בארבע דרכים ייובא פרויקט.</para><sect2 id="sect2_23"><title>דרך ראשונה - גרור והשלך</title>
+   <orderedlist>
+      <listitem>
+         <para>הרצת <application>אופןשוט</application></para>
+      </listitem>
+      <listitem>
+         <para>גרירה והשלכה של קבצים משולחן העבודה אל עץ <guibutton>קבצי הפרויקט</guibutton></para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_24"><title>דרך שניה - השלכת תיקיה</title>
+   <orderedlist>
+      <listitem>
+         <para>הרצת <application>אופןשוט</application></para>
+      </listitem>
+      <listitem>
+         <para>גרירה ווהשלכה של תיקיה מלאה בקבצי מדיה ממנהל הקבצים או שולחן העבודה אל עץ <emphasis>קבצי הפרויקט</emphasis>.</para>
+         <para>
+            <emphasis>* כל קבצי הקול, הוידיאו והתמונות ייובאו מתוך תיקיה זו.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_25"><title>דרך שלישית - פתיחה בעזרת</title>
+   <orderedlist>
+      <listitem>
+         <para>ממנהל הקבצים בגנום, יש לבחור קובץ מדיה אחד או יותר</para>
+      </listitem>
+      <listitem>
+         <para>לחצן עכבר ימני, ובחירה ב<guimenu>פתח ביישום...</guimenu></para>
+      </listitem>
+      <listitem>
+         <para>לבחור ביישום <application>OpenShot Video Editor</application> (או בפקודה <command>openshot</command> ).</para>
+         <para>
+            <emphasis>*אפילו אחרי הפעלת</emphasis>
+            <application>אופןשוט</application>
+            <emphasis>עם קבצים, ניתן לשוב למערכת הקבצים ולבחור קבצים נוספים.</emphasis>
+            <application>אופןשוט</application>
+            <emphasis>זה יוסיף עצם לעותק הרץ של אופןשוט.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_26"><title>דרך רביעית - לחצן היבוא</title>
+   <orderedlist>
+      <listitem>
+         <para>הרצת <application>אופןשוט</application></para>
+      </listitem>
+      <listitem>
+         <para>לחיצה על לחצן <guibutton>Import Files</guibutton> (יבוא קבצים) בסרגל.</para>
+      </listitem>
+      <listitem>
+         <para>בחירת קובץ (או קבצים) ולחיצה על <guibutton>Import</guibutton>.</para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_8"><title>רצף תמונות</title>
+   <para>אחת היכולות החזקות ביותר בואפןשוט היא היכולת ליבא רצפי תמונות.  רצף תמונות זו תיקיה מלאה בתמונות בשמות דומים, וכמובן ממוספרים.  כל קובץ תמונה מייצג תמונה אחת מהוידיאו, כך שקטע בן 30 שניות בקצב של 30 תמונות לשניה יזדקק ל900 תמונות.  למרות שהטיפול ברצפי תמונות עלול להיות קשה (בגלל נפח הקבצים), ניתן לעשות איתם כמעט הכל.</para>
+   <para>ליבוא רצף תמונות, נא לעקוב אחר השלבים הבאים:</para><sect2 id="sect2_27"><title>מיקום הקבצים ברצף</title>
+   <para>הרבה תכנות יכולות ליצור רצפי תמונות.  לדוגמה, עם בלנדר (עורך תלת ממדי) ניתן ליצור רצף של כותרות מונפשות וליצא אותן לרצף של קבצי Png (עם שקיפות).  זה ייצור תיקיה על המחשב שתכיל את הקבצים הללו.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_28"><title>יבוא רצף תמונות</title>
+   <para>בחירה בתפריט <guimenu>File</guimenu> &gt; <guimenuitem>Import Image Sequence</guimenuitem>, שתפעיל את תיבת יבוא הרצף.  </para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>בחירה בתיקיה המכילה את קבצי הרצף, ופורמט שיום הקבצים.  לא כל רצפי התמונות משויימים באותו האופן.  לדוגמה, Movie_0001.JPG ממש שונה מMovie_1.JPG.  ברגע שמבנה שמות הקבצים הוזן כהלכה, יש ללחוץ על <guibutton>Import Image Sequence</guibutton>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_29"><title>גרירה והשלכה של רצף</title>
+   <para>הדרך הקלה ליבא רצף תמונות, לגרור ולהשליך תמונה מהרצף ל"אזור הקבצים", או להשתמש במסך <guimenuitem>יבוא קבצים</guimenuitem> וליבא תמונה בודדת.  תתקבל בקשה ליבא את כל הרצף.  שמוש בשיטה זו יבדוק את מבנה שמות הקבצים באופן עצמאי, ויגדיר את התצורה הנכונה לרצף.</para></sect2><sect2 id="sect2_30"><title>הוספה לציר הזמן</title>
+   <para>השלכת התמונה החדשה לציר הזמן.  זה מייצד קטע אחד, בדיוק כמו קטע וידיאו רגיל.</para></sect2><sect2 id="sect2_31"><title>יצירת רצף תמונות</title>
+   <para>אם אין ברשותכם רצף תמונות, קל ליצור אחד.  לחיצה ימנית על כל קובץ וידיאו שהוא בקבצי הפרויקט ובחירה בה <guimenuitem>Convert to Image Sequence</guimenuitem>.  זה ייצור תיקיה חדשה, וייצא כל תמונה לקובץ png נפרד.  זה גם יוסיף התיחסות לרצף התמונות החדש במקטע "קבצי הפרויקט".</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_convert.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_32"><title>עריכת רצפי תמונות</title>
+   <para>לעריכת רצף תמונות, אנו ממליצים על שמוש בgimp (עורך תמונות בקוד פתוח).  יש לו תוסף לסיוע בעריכת רצפי תמונות גדולים שיכול לפשט את הליך העריכה, השמירה ופתיחת הקובץ הבא ברצף.  ניתן לעבוד מול כל תמונה, להסיר עיניים אדומות, להוסיף אפקטים זרחניים לחרבות אור, למחוק חוטים וכו'...  ניתן לעשות הכל בעבודה של רצפי תמונה, אבל זה דורש המון מאמץ.</para><sect3 id="sect3_7"><title>Gimp Animation Package (GAP)</title>
+   <para>GAP הוא תוסף לgimp, שעוזר לערוך רצפי תמונות.  הוא מאפשר שמירה מהירה של התמונה הנוכחית וטעינת התמונה הבאה ברצף.  אפשר גם להשתמש בתמונות מפתח להפעלת אפקטים על מספר תמונות, או אפלו ליצירת הנפשה.  אם ברצונכם לערוך רצף תמונות, בהחלט כדאי להעיף מבט ב<ulink url="http://www.gimp.org/tutorials/Using_GAP/">GAP</ulink>.</para></sect3><sect3 id="sect3_8"><title>תמונת מסך של GAP</title>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/gimp_animation_package.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect3></sect2></sect1><sect1 id="sect1_9"><title>ניהול קבצים ותיקיות</title>
+   <para>לצורך עשית וידיאו, יש ליבא הרבה קבצים שונים לפרויקט, כולל קול, וידיאו, תמונות, כותרות, מעברים, אפקטים ועוד.  זה יכול לצאת משליטה, לגרום לרשימת קבצי הפרויקט להיות ארוכה ולהאט את החיפוש.</para>
+   <para>אם בפרויקט יש יותר מדי קבצים (ההגדרה המדויקת תלויה במשתמש), ניתן להשתמש בתויות, מסננים ותיקיות כדרכים לארגן את הקבצים.</para><sect2 id="sect2_33"><title>תויות</title>
+   <para>מול כל קובץ יש עמודה עבור <guimenuitem>תויות</guimenuitem>.  תוית היא בטוי כלשהו שעוזר לזהות מה הקובץ הזה עושה ומה שימושו.  לדוגמה, "קטע 1", "מבוא", "כותרת"...  אין נכון או שגוי בהצמדה של תוית, פשוט טקסט שעוזר לזהות את הקובץ.</para></sect2><sect2 id="sect2_34"><title>מסננים</title>
+   <para>למקטע <guimenuitem>קבצי הפרויקט</guimenuitem> יש לחצן סינון ותיבת טקסט לעזרה במציאה מהירה של קבצים.  לחצני הסינון, <guimenuitem>Video</guimenuitem>, <guimenuitem>Audio</guimenuitem> ו<guimenuitem>Image</guimenuitem>, מסננים במהירות רת רשימת הקבצים שתחתם.  הזנת מלל בתיבת הטקסט תציג רק את הקבצים שמכילים טקסט זה בשמם או בתוית שלהם.  כך, תכונה זו בשיתוף עם תויות עוזרת ליצור כלי חיפוש חזק ויעיל.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_filter.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_35"><title>תיקיות</title>
+   <para>אם התויות והמסננים לא מספיקים לארגון הקבצים, אפשר ליצור תיקיות בתוך הפרויקט כדי לעזור לקבץ אותם יחד.</para></sect2><sect2 id="sect2_36"><title>יצירת תיקיה</title>
+   <orderedlist>
+      <listitem>
+         <para>לחצן עכבר ימני באזור <guimenuitem>קבצי הפרויקט</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>בחירה ב<guimenuitem>Create Folder...</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>הזנת שם לתיקיה</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_create.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_37"><title>העברת קבצים לתיקיה החדשה</title>
+   <orderedlist>
+      <listitem>
+         <para>ראשית יש לודא שהתיקיה נוצרה</para>
+      </listitem>
+      <listitem>
+         <para>לחצן עכבר ימני על קובץאו קבצים באזור <guimenuitem>קבצי הפרויקט</guimenuitem>.</para>
+      </listitem>
+      <listitem>
+         <para>בחירה ב<guimenuitem>Move File(s) to Folder</guimenuitem> (העבר קבצים לתיקיה).</para>
+      </listitem>
+      <listitem>
+         <para>בחירת תיקיה.</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_move_to_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_38"><title>מחיקת תיקיה</title>
+   <orderedlist>
+      <listitem>
+         <para>לחצן עכבר ימני על תיקיה</para>
+      </listitem>
+      <listitem>
+         <para>בחירה ב<guimenuitem>Remove</guimenuitem> (הסר).</para>
+         <para>
+            <emphasis>* לודא הוצאת כל הקבצים מהתיקיה לפני הסרתה</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_10"><title>הוספת קובץ לציר הזמן</title>
+   <para>אחרי שהקבצים יובאו לפרויקט, השלב הבא הוא הוספתם לציר הזמן.  </para><sect2 id="sect2_39"><title>גרירה והשלכה</title>
+   <para>להוספת קובץ מ<guimenuitem>קבצי הפרויקט</guimenuitem> אל <guibutton>ציר הזמן</guibutton> יש לפעול בסדר הבא:</para>
+   <orderedlist>
+      <listitem>
+         <para>לחיצה על קובץ.</para>
+      </listitem>
+      <listitem>
+         <para>גרירת הקובץ אל <guibutton>ציר הזמן</guibutton> והשלכתו.</para>
+      </listitem>
+      <listitem>
+         <para>הקטע נוסף לציר הזמן.</para>
+         <para>
+            <emphasis>* בדרך זו ניתן להוסיף את הקבצים בבודדים בלבד</emphasis>
+         </para>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+      <emphasis/>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_40"><title>הוספת מספר קבצים לציר הזמן</title>
+   <para>להוספה מהירה של מספר קבצים לציר הזמן בבת אחת, יש יכולת <guimenuitem>Add to Timeline </guimenuitem> (הוספה לציר הזמן).  לשמוש ביכולת הזו, יש לבחור את הקבצים שרוצים להוסיף, ובלחצן עכבר ימני לבחור <guimenuitem>Add to Timeline </guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>מסך <guimenuitem>Add to Timeline </guimenuitem> (הוסף לציר הזמן) יכול גם להגדיר הופעה ודעיכה לכל קטע, הוספה של מעברים בין הקטעים, או הצמדת הקטעים לציר הזמן.  הקבצים יוכנסו למיקום התצוגה.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>זמן התחלה</para>
+            </entry>
+            <entry>
+               <para>זה המיקום על ציר הזמן (בשניות) בו הקבצים יתוספו.  ברירת מחדל היא מיקום התצוגה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>רצועה עליונה</para>
+            </entry>
+            <entry>
+               <para>המסילה העליונה היא המסילה הראשית שאליה יתווספו הקטעים.  אם לא נוספו מעברים, צריך רק את המסילה העליונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>רצועה תחתונה</para>
+            </entry>
+            <entry>
+               <para>המסילה התחתונה בשמוש כשנעזרים במעברים, והקטעים עוברים ממסילה למסילה, עם אפקטי מעבר ביניהם.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>עמעום</para>
+            </entry>
+            <entry>
+               <para>סוג הדעיכה שמוגדר לקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>זמן דעיכה</para>
+            </entry>
+            <entry>
+               <para>משך הזמן (בשניות) לדעיכת הקטע.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>מעבר</para>
+            </entry>
+            <entry>
+               <para>סוג המעבר בין הקטעים.  ניתן לבחור אקראי, אם לא רוצים שאותו המעבר ישמש שוב ושוב.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>אורך המעבר</para>
+            </entry>
+            <entry>
+               <para>ארכו של המעבר בשניות.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>הזזה למעלה</para>
+            </entry>
+            <entry>
+               <para>קידום הקובץ הנבחר במעלה הרשימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>הזזה למטה</para>
+            </entry>
+            <entry>
+               <para>הורדת הקובץ הנבחר במורד הרשימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>ערבוב קבצים</para>
+            </entry>
+            <entry>
+               <para>לערבב את הקבצים לסדר אקראי</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>הסר קובץ</para>
+            </entry>
+            <entry>
+               <para>הסרת הקובץ הנבחר ממסך זה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_11"><title>הזז וגזום קטעים על ציר הזמן</title>
+   <para>כשיש קבצים (מכונים גם קטעים) על ציר הזמן, צריך לארגן אותם במסילות, ולסדר אותם.  לעתים צריך גם לגזום את תחילתם וסופם של קטעי הוידיאו.</para><sect2 id="sect2_41"><title>הזזת קטע (בחירת קטע)</title>
+   <orderedlist>
+      <listitem>
+         <para>החלף ל<guibutton>מצב בחירה</guibutton> (זה מצב ברירת המחדל).</para>
+      </listitem>
+      <listitem>
+         <para>לחץ על קטע</para>
+      </listitem>
+      <listitem>
+         <para>גרור את הקטע למיקומו החדש על <guibutton>ציר הזמן</guibutton>, והשלך אותו.</para>
+         <para>
+            <emphasis>אם מצב משיכה מופעל, הקטע יקפוץ ויצמד לקטע שלפניו\אחריו (או לנקודת התצוגה, האפשרות הסמוכה מביניהן).</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_42"><title>גזום קטע (מצב שנוי גודל)</title>
+   <orderedlist>
+      <listitem>
+         <para>עבור למצב <guibutton>שינוי גודל</guibutton>, על ידי לחיצה על סמל שינוי הגודל.</para>
+      </listitem>
+      <listitem>
+         <para>הזז את סמן העכבר מעל שפתו הימנית או השמאלית של קטע</para>
+      </listitem>
+      <listitem>
+         <para>גרירת שפת הקטע תגרום לגיזום הוידיאו.</para>
+         <para>
+            <emphasis>בגרירת קצה הקטע, התצוגה המקדימה תראה היכן הקטע יתחיל או יסתיים (תלוי בצד הנגרר).</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_43"><title>חיתוך קטע</title>
+   <orderedlist>
+      <listitem>
+         <para>
+            <emphasis>כדי לחתוך קטע לשתי פיסות, עבור ל</emphasis>
+            <guibutton>מצב תער</guibutton>
+            <emphasis>.</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>סמן העכבר ישתנה לקו מנוקד + תער.</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>לחיצה על נקודה בה רוצים לחתוך</emphasis>
+         </para>
+         <para>
+            <emphasis>* אם משיכה מאופשרת, התער ידלג אל מיקום ראש התצוגה, או לקצה הקטע הסמוך - הקרוב מבין השניים.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_44"><title>סרגל עריכה</title>
+   <para>סרגל העריכה מאפשר החלפה בין מצבי עבודה שונים על ציר הזמן.  כשמזיזים, גוזמים ופולחים קטע, חיוני להעזר בסרגל זה להחלפת מצבי העבודה.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>הוספת רצועה</para>
+            </entry>
+            <entry>
+               <para>הוספה של רצועה חדשה למלאי</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>מצב בחירה</para>
+            </entry>
+            <entry>
+               <para>בחירת מצב מאפשרת גרירה של קטעים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>מצב תער</para>
+            </entry>
+            <entry>
+               <para>מצב תער מאפשר לחצות קטעים במקום בו לוחצים.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>מצב שינוי גודל</para>
+            </entry>
+            <entry>
+               <para>מצב שנוי גודל מאפשר לך לגרור את קצוות הקטע לשנוי גודל (או גיזום) של הקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>מצב הצמדה</para>
+            </entry>
+            <entry>
+               <para>מצב הצמדה מאפשר לקטע להצמד (או לדלג) לקטע הסמוך או לראש התצוגה כשהקטע נזרק.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>הוספת סמן</para>
+            </entry>
+            <entry>
+               <para>הוספת סמן חדש, מאפשרת לקפוץ במהירות לאחור לנקודה ספציפית זו תוך כדי צפיה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>הסמן הקודם</para>
+            </entry>
+            <entry>
+               <para>דילוג למיקום סמן קודם (אם קיים).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>הסימון הבא</para>
+            </entry>
+            <entry>
+               <para>דילוג למיקום הסמן הבא (אם קיים).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_12"><title>הפרדת קול מוידיאו</title>
+   <para>אם צריך אופןשוט יכול להפריד קול ווידיאו בקטע.  אם צריך להשמיע רק קול של קטע (בלי להציג את הוידיאו), או רק להציג אותו בלי להשמיע, יש לפעול לפי הצעדים הבאים:</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/track_buttons.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_45"><title>רק וידיאו</title>
+   <para>להצגת וידיאו ללא קול, יש ללחוץ על סמליל הרמקול הממוקם על הקטע.  זה יחריש את הקול בקטע.  אם רוצים להחריש רצועה שלמה, לחיצה על סמליל הרמקול של הרצועה.</para></sect2><sect2 id="sect2_46"><title>רק קול</title>
+   <para>להשמעה ללא הצגה של קטע, לחיצה על סמליל העין הממוקם על הקטע.  זה יחסום את פלט הוידיאו.  אם רוצים להעלים את כל הוידיאו של רצועה, לחיצה על סמליל העין של הרצועה.</para></sect2></sect1><sect1 id="sect1_13"><title>שכפול קטע</title>
+   <para>תכונה שימושית של אופןשוט היא היכולת להכפיל קטע, מעבר או מסכה.  לשכפול עצם, לחצן עכבר ימני על העצם (כדוגמת קטע או מעבר), ובחירה ב<guimenuitem>Duplicate</guimenuitem> (שכפול).  זה יוסיף עותק מדויק של הקטע המשוכפל לציר הזמן.  כולל נקודות כניסה ויציאה, אפקטים והנפשות תמונות מפתח.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/duplicate_clip.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>השמוש השכיח ליכולת ה<guimenuitem>Duplicate</guimenuitem> (שכפול), הוא לגזום קטע וידיאו עד סצנה מסויימת, ואז לשכפל אותו.  ברגע שיש שני קטעים זהים, אפשר להשתיק את הקול באחד מהם, ולהעלים את הוידיאו במשנהו.  זו דרך מהירה להפריד את ערוץ הקול מהוידיאו בקטע.  כעת ניתן להזיז את הקול יחסית לוידיאו, או לסיים את הצגת הוידיאו ולהמשיך את הקול, על דיד גיזום הוידיאו.  לעתים קרובות נעזרים בזה בסרטים, כששני אנשים מדברים.  שומעים את קולו של האחד מדבר, ורואים את משנהו מאזין לו.</para></sect1><sect1 id="sect1_14"><title>מאפייני סרטון</title>
+   <para>לכל קטע באופןשוט יש הרבה מאפיינים שניתן לשנות.  מפני שאי אפשר להציג ולשנות את כל ההגדרות על ציר הזמן, מסך זה נוצר.  הוא מאפשר שנוי של כל הגדרה אפשריות וכל מאפיין שיש לקטע, כולל גם אורך, מהירות, עצמה, גודל, מיקום, מנת מימדים ועוד.</para><sect2 id="sect2_47"><title>הפעלת מסך מאפייני הקטע</title>
+   <para>To launch the clip properties screen, right-click on a clip and choose <guimenuitem>Properties</guimenuitem>, or click your middle mouse button on a clip.</para></sect2><sect2 id="sect2_48"><title>תצוגה מקדימה לשנויים</title>
+   <para>לתצוגה מהירה של השינויים לחיצה על לחצן <guibutton>Play </guibutton> או גרירה של <guibutton>זחלן</guibutton>התצוגה המקדימה.  אפשר להציג את השינויים שוב ושוב לקבלת התוצעה המיטבית.  השנויים לא נשמרים לציר הזמן בטרם יילחץ לחצן ה<guibutton>Apply</guibutton>.</para></sect2><sect2 id="sect2_49"><title>חוצץ כללי</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab1.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para>חוצץ כללי מכיל את המאפיינים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Position on Timeline</para>
+            </entry>
+            <entry>
+               <para>The point on the timeline at which the clip begins to play (in seconds).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הפעלת וידאו</para>
+            </entry>
+            <entry>
+               <para>פלט וידיאו לקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הפעלת שמע</para>
+            </entry>
+            <entry>
+               <para>פלט קול לקטע</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_50"><title>חוצץ אורך</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab2.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box"/>  חוצץ האורך מספק מידע על תחילת, סיום ומשך הקטע.  בהתאמת ערכים אלו ניתן להשהות את תחילת התצוגה של קטע, ולסיים את הקטע לפני סופו, או שניהם.  אפשר להשתמש בלחצן <guibutton>Play </guibutton> לתצוגה מקדימה של השינויים.  כדאי להתאמן בשנוי ערכים אלו ללא שמוש בכלי שינוי הגודל.</para>
+   <para/>
+   <para>חוצץ האורך מכיל את המאפיינים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>כניסה (שניות)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to start playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>יציאה (שניות)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to stop playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>אורך (שניות)</para>
+            </entry>
+            <entry>
+               <para>אורך הקטע מחושב בהתיחס לנקודת הכניסה והיציאה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_51"><title>חוצץ מהירות</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab3.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box1"/> חוצץ המהירות מורכב ממצב פשוט ומצב מתקדם.  במצב הפשוט ניתן להשתמש בערכים מוגדרים מראש, להאיץ את הקטע עד פי 16 ממהירותו הרגילה או להאט עד פי 16.  כמו כן, ניתן לשנות את הכוון.  במצב המתקדם מאפשר להגדיר מהירויות בהזנת ערך עשרוני, במקום לבחור מהרשימה.</para>
+   <para/>
+   <para>לידיעה: חוצץ המהירות משפיע רק על קטעי וידיאו.  כמו כן, הקול לא מנוגן כאשר משנים מהירות.</para>
+   <para/>
+   <para>בחוצץ המהירות ניתן להגדיר את הדברים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מהירות</para>
+            </entry>
+            <entry>
+               <para>מספר השניות מתחילת קובץ הוידיאו שהקטע מתחיל</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>כיוון</para>
+            </entry>
+            <entry>
+               <para>השניה האחרונה של קטע הוידיאו (עשרוני)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הגדרת מהירות מתקדמת</para>
+            </entry>
+            <entry>
+               <para>הגדרת מהירות בהזנת ערך עשרוני.  ערך זה משתנה כשבוחרים מהירות אחרת בתיבת הבחירה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_52"><title>חוצץ פריסה</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>חוצץ הפריסה מאפשר להגדיר את המאפיינים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>תמונת מפתח</para>
+            </entry>
+            <entry>
+               <para>תיבת הבחירה מראה על איזו תמונת מפתח עובדים.  לכל קטע יש 2 תמונות מפתח - אחת בתחילתו והשניה בסופו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>גובה</para>
+            </entry>
+            <entry>
+               <para>גובה הקטע (מבוסס על אחוזים).  ככל שהערך גדל, הקטע גבוה יותר.  ככל שהוא קטן, הקטע נמוך יותר.  הגדרה זו משפיעה רק על תמונת המפתח, לא על הקטע בכללותו.  </para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>רוחב</para>
+            </entry>
+            <entry>
+               <para>רוחב הקטע (באחוזים).  ככל שהערך גדל, הקטע מתרחב.  ככל שהערך קטן, הקטע מוצר.  הגדרה זו משפיעה רק על תמונת המפתח, לא על הקטע בכללותו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>X</para>
+            </entry>
+            <entry>
+               <para>מיקום אופקי של מרכז הקטע.  ככל שהמספר גדל, הקטע ימוקם יותר לצד ימין.   ככל שהוא קטן, הקטע ממוקם יותר לצד שמאל.  הגדרה זו משפיעה רק על תמונת המפתח, לא על הקטע בכללותו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Y</para>
+            </entry>
+            <entry>
+               <para>מיקום אנכי של מרכז הקטע.  ככל שהמספר גדל, הקטע ימוקם נמוך יותר.  ככל שהמספר קטן, הקטע ימוקם גבוה יותר.  הגדרה זו משפיעה רק על תמונת המפתח, לא על הקטע בכללותו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>שקיפות</para>
+            </entry>
+            <entry>
+               <para>מידת השקיפות\אטימות של הקטע.  100 = אטום, 0 = לא נראה.  הגדרה זו משפיעה רק על תמונת המפתח, לא על הקטע בכללותו.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_53"><title>חוצץ קול</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab5.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>בחוצץ הקול ניתן להגדיר את המאפיינים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>עצמת השמע</para>
+            </entry>
+            <entry>
+               <para>עצמת השמע של הקטע.  0 - מושתק, 100 - מירבי.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>עמעום פנימה</para>
+            </entry>
+            <entry>
+               <para>התגברו קטע ממצב מושתק לעצמה כלשהי</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>עמעום החוצה</para>
+            </entry>
+            <entry>
+               <para>דעיכת קטע מעצמה כלשהי למצב מושתק</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>דעיכה (שניות)</para>
+            </entry>
+            <entry>
+               <para>מספר השניות שההתגברות\הדעיכה יימשכו.  ככל שהמספר גדל, השנוי יהיה הדרגתי יותר.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_54"><title>חוצץ וידיאו</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab6.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>בחוצץ הוידיאו ניתן להתאים גודל, מיקום, ויישור של הקטע.  כמו כן, ניתן להגדיר אפקט דעיכה\הופעה לתחילת וסוף הקטע, לפעמים זה קל יותר משמוש במעברים.  מפני שאפקט זה הוא מאפיין של הקטע, הוא זז כשמזיזים את הקטע, ולכן שלא כמעבר, הדעיכה\הופעה נשארת עם הקטע גם כשמזיזים אותו.</para>
+   <para>בחוצץ הוידיאו ניתן להגדיר את המאפיינים הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מתיחה למסך מלא</para>
+            </entry>
+            <entry>
+               <para>מתיחת הקטע לגודל המסך (מבוסס על הגדרות הפרויקט)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>שמירה על יחס התצוגה</para>
+            </entry>
+            <entry>
+               <para>לא לעוות את הקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>יישור אופקי</para>
+            </entry>
+            <entry>
+               <para>יישור הקטע לימין או לשמאל</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>יישור אנכי</para>
+            </entry>
+            <entry>
+               <para>יישור הקטע לתחתית או לתקרה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הטיה</para>
+            </entry>
+            <entry>
+               <para>כמות המעלות לסיבוב התמונה.  ערך זה יכול להיות שלילי או חיובי, תלוי בכוון שרוצים לסובב.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>עמעום פנימה</para>
+            </entry>
+            <entry>
+               <para>התעצמות הקטע ממצב שקוף לאטום</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>עמעום החוצה</para>
+            </entry>
+            <entry>
+               <para>העלמות הקטע ממצב אטום לשקוף</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>דעיכה (שניות)</para>
+            </entry>
+            <entry>
+               <para>מספר השניות שההתגברות\הדעיכה יימשכו.  ככל שהמספר גדל, השנוי יהיה הדרגתי יותר.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_55"><title>חוצץ אפקטים</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab7.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>בחוצץ האפקטים ניתן להוסיף ולהגדיר מגוון אפקטים על הקטע.  לתצוגה מקדימה של השפעת האפקטים, השתמש בלחצן <guibutton>Play </guibutton>.  לעל אפקט יכולות להיות הגדרות משנה משלו, השתמש בלחצן <guibutton>Play </guibutton> לאחר שנוי ההגדרות על מנת להציג את התוצאה.</para>
+   <para>בחוצץ האפקטים ניתן להגדיר את ההגדרות הבאות:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>רשימת אפקטים:</para>
+            </entry>
+            <entry>
+               <para>תיבה זו מכילה רשימת האפקטים שהופעלו על הקטע.  הקטע מעובד לפי סדר האפקטים מהעליון לתחתון.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הוספה</para>
+            </entry>
+            <entry>
+               <para>הוספת אפקט חדש לקטע</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הסרה</para>
+            </entry>
+            <entry>
+               <para>הסרת האפקט הנבחר מהקטע.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מעלה</para>
+            </entry>
+            <entry>
+               <para>קידום האפק הנבחר במעלה הרשימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מטה</para>
+            </entry>
+            <entry>
+               <para>הורדת האפקט הנבחר במורד הרשימה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הגדרות האפקט</para>
+            </entry>
+            <entry>
+               <para>אזור זה יציג הגדרות המשוייכות לאפקט הנבחר (אם נבחר).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_15"><title>תמונות מפתח</title>
+   <para>אופןשוט יכול להשתמש ב<emphasis>תמונות מפתח</emphasis> על מנת להנפיש את הקטע.  תמונת מפתח היא נקודה בזמן שמכילה הגדרות שונות, כדוגמת גודל, מיקום ושקיפות.  יש שתי דרכים להגדיר תמונת מפתח באופןשוט:  ידני או הגדרה מראש.  </para><sect2 id="sect2_56"><title>הנפשות מוגדרות מראש</title>
+   <para>הרבה הנפשות מוגדרות מראש זמינות, כדוגמת ההזה של קטע מתחתית המסך או התקרבות איטית לקטע.  להוספת הנפשה מוגדרת מראש, לחצן עכבר ימני על הקטע, ובחירה ב<guimenuitem>Animate</guimenuitem> (הנפש).</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_animate.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_57"><title>פריסה מוגדרת מראש</title>
+   <para>הרבה פריסות מוגדרות מראש זמינות, כדוגמת גודל של קטע ומיקומו באחת הפינות על התצוגה של קטע מסויים.  להוספת פריסה מוגדרת מראש, לחצן עכבר ימני על הקטע, ובחירה ב<guimenuitem>Layout</guimenuitem> (פריסה).</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_layout.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_58"><title>ידנית</title>
+   <para>ליצירה ידנית של תמונת מפתח, לחצן עכבר ימני על קטע, ובחירה ב<guimenuitem>Properties</guimenuitem> (מאפיינים).  מעבר לחוצץ <guibutton>פריסה</guibutton>, ובחירה בתמונת מפתח הרצויה מהרשימה הנפרשת.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>לכל קטע יש 2 תמונות מפתח, תחילתו - וסופי.  אם יש הבדל בין הגדרות תמונות המפתח, אופןשוט יערבל את ההפרשים בכל תמונה, וכך ינפיש את הקטע.  המאפיינים הבאים משפיעים על תמונות המפתח:  <emphasis> גובה, רוחב, X, Y, שקיפות</emphasis>.</para>
+   <para>לדוגמה, נניח שמצויים המפתחות הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>תמונת מפתח ראשונה:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Copy text   	 X=-50, Y=0</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>תמונת מפתח אחרונה:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X =150, Y=0</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>זה יגרום להנפשת הקטע לתנועה משמאל לימין המסך.  ההבדל בהגדרות הX יעורבל בכל תמונה בקטע.  ככל שהקטע ארוך יותר, תהיה ההנפשה איטית יותר.  ככל שיקצר, תואץ ההנפשה.</para>
+   <para>אם רוצים שנויים סטטים במיקום קטע, יש להגדיר את אותם הערכים לשתי תמונות המפתח שלו.</para>
+   <para>לדוגמה, נניח שמצויים המפתחות הבאים:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>תמונת מפתח ראשונה:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>תמונת מפתח אחרונה:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>זו ההזחה של הקטע לימין ולמעלה במסך.  זו לא תהיה הנפשה מפני שההזחה שווה עבור שתי תמונות המפתח.</para>
+   <para>אם צריך יותר משתי תמונות מפתח, יש לחתוך את הקטע למספר פיסות, ואז בתחילת ובסיום כל פיסה אפשר להגדיר תמונת מפתח, וכך ליצור כמות לא מוגבלת של תמונות מפתח.</para></sect2></sect1><sect1 id="sect1_16"><title>אפקט קיצוץ</title>
+   <para>אופןשוט יכול לקצוץ וידיאו ותמונות תוך שמוש בהגדרות הפריסה, המצויות במסך <guibutton>Clip Properties</guibutton>.  לחן עכבר ימני על הקטע, ובחירה ב<guimenuitem>Properties</guimenuitem>(מאפיינים).  ואז מעבר לחוצץ <guibutton>Layout </guibutton>. (פריסות).</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>לקיצוץ קטע יש להתקרב לחלק אותו רוצים לראות.  יש להתאים את הגובה, הרוחב והמיקום על מערכת הצירים של הקטע אותו רוצים לקצץ.  יש לודא הגדרות זהות לשתי תמונות המפתח (אם לא רוצים הנפשה).  נא להשתמש בלחצן <guibutton>Play </guibutton> לתצוגה מקדימה של הקיצוץ.  ברקע שהקיצוץ לשביעות רצון המשתמש, יש ללחוץ על לחצן <guibutton>Apply</guibutton>.</para></sect1><sect1 id="sect1_17"><title>אפקט הסחרור</title>
+   <para>אם ברצונכם לסובב ב-90, 180 או אפילו להנפיש הסחרור במעגל, לאופןשוט יש אפקט הסחרור (<guibutton>Rotate</guibutton>) שניתן להעזר בו.</para>
+   <para>שני סוגים של אפקטי הסחרור זמינים, קבוע ומונפש.  ליצירת אפקט הסחרור, יש לעבור לחוצץ <guibutton>Effects </guibutton> (אפקטים) בחלון הראשי, ולגרור את אפקט ה<guimenuitem>Rotate</guimenuitem> (הסחרור) לקטע הרצוי.  </para>
+   <para>להתאמת הגדרות הסחרור, לחצן עכבר ימני על הקטע ובחירה ב<guimenuitem>Properties</guimenuitem> (מאפיינים).  ואז לעבור לחוצץ האפקטים במסך המאפיינים, וללחוץ על אפקט הסחרור.  תעלה רשימת הגדרות הסחרור שניתן להתאימן.  נסו לשנות כל הגדרה, ולהשתמש בלחצן <guibutton>Play </guibutton> לקבלת תצוגה מקדימה.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_rotation.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_59"><title>סחרור קבוע</title>
+   <para>סחרור קבוע יכול לשמש להטיה של וידאו ב-90,180 או כל זוית אחרת.  זו לא הנפשה.  זה שימושי אם צולם וידיאו על הצד, ויש לסובב אותו.  להגדרת הטיה קבועה, יש להתאים את ההגדרות עם "Fixed".  יש לודא ששאר ההגדרות מאופסות.</para></sect2><sect2 id="sect2_60"><title>הנפשת סחרור</title>
+   <para>הנפשת סחרור שימושית לסחרור של קטע סביב מעגל, או דפוסים אחרים.  עשוי להיות חביב לכותרות, סחרור של עיתונים, ושמושים יצירתיים אחרים.  כדי להגדיר הנפשת סחרור, יש לאפס את הגדרות ה"Fixed", ולהשתמש בהגדרות המתחילות ב"Rotate".</para></sect2><sect2 id="sect2_61"><title>סחרור פשוט</title>
+   <para>לכל קטע יש הגדרות <guimenuitem>Rotate</guimenuitem>, שיסובבו את הקטע ללא צורך בהוספת אפקט סחרור לקטע.  ניתן לשנות את ההגדרות הללו בחלון <guimenuitem>מאפייני הקטע</guimenuitem>, או בלחיצה ימנית על הקטע ובחירה בתפריט <guimenuitem>Rotate</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/rotate_simple_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_18"><title>עורך כותרות</title>
+   <para>כמו הרבה עורכי וידיאו אחרים, גם לאופןשוט יש עורך כותרות מובנה.  יש לו מספר תפקודים בסיסיים שיעזרו ליצור כותרות לפרויקט הוידיאו.  הנה רשימת התכונות של מערכת הכותרות:</para>
+   <orderedlist>
+      <listitem>
+         <para>הרבה תבניות (כולל תבניות של צבע).</para>
+      </listitem>
+      <listitem>
+         <para>עריכת מלל קלה (כולל כותרות, תת-כותרות)</para>
+      </listitem>
+      <listitem>
+         <para>שנוי גופנים וצבע (כולל ערוץ שקיפות)</para>
+      </listitem>
+      <listitem>
+         <para>שינוי צבע רקע (כולל שקיפויות)</para>
+      </listitem>
+      <listitem>
+         <para>שמוש בפורמט SVG (גרפיקה וקטורית)</para>
+      </listitem>
+      <listitem>
+         <para>הוספת כותרת למקטע <guimenuitem>קבצי הפרויקט</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>חיבור עם InkSpace (כעורך מתקדם)</para>
+      </listitem>
+   </orderedlist>
+   <para/>
+   <para>אם העורך הבסיסי לא חזק דיו עבורך, ניתן ליבא כל קובץ SVG ולנצלו ככותרת.  יש התיחסות לערוץ השקיפות, והמשמעות שהכותרות יכולות להיות מוצגות מעל כל מסילה אחרת, והוידיאו יראה דרך חלקיהן השקופים.</para><sect2 id="sect2_62"><title>הפעלת העורך</title>
+   <para>להוספת כותרת חדשה, לחיצה על התפריט <guimenu>Title</guimenu> &gt; <guimenuitem>New Title...</guimenuitem>.  זה יפעיל את עורך הכותרות.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_63"><title>יצירת קובץ כותרת חדש</title>
+   <para>אחרי שהעורך הופעל, יש לבחור תבנית וללחוץ על לחצן <guibutton>Create New Title</guibutton>(צור כותרת חדשה).  זה ייצור עותק של תבנית הSVG, ויוסיף את העותק ל<guimenuitem>קבצי הפרויקט</guimenuitem>.   יש להוסיף שם לכותרת, שלפיו היא תישמר לכונן הקשיח.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_64"><title>חלון עורך הכותרות</title>
+   <para>דיאלוג הכותרות מאפשר בחירת תבנית, עריכת הטקסט, שנוי צבע ויצירת כותרות לפרויקט הוידיאו.  ברגע שהעריכה הסתיימה, יש ללחוץ על לחצן <guibutton>Apply</guibutton>.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_main_screen.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>בחירת תבנית</para>
+            </entry>
+            <entry>
+               <para>בחירת תבנית SVG לשמוש ככותרת</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>לחצן יצירת כותרת</para>
+            </entry>
+            <entry>
+               <para>לחיצה על לחצן זה תוסיף עותק של תבנית הSVG לפרויקט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>עריכת טקסט</para>
+            </entry>
+            <entry>
+               <para>הפעלת חלון עריכת הטקסט</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>שינוי גופן</para>
+            </entry>
+            <entry>
+               <para>שנוי גודל וסוג הגופן</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>צבע הגופן</para>
+            </entry>
+            <entry>
+               <para>שנוי צבע הגופן ומידת השקיפות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>צבע הרקע</para>
+            </entry>
+            <entry>
+               <para>שנוי צבע הרקע ומידת השקיפות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>עורך מתקדם</para>
+            </entry>
+            <entry>
+               <para>עריכת כותרת כ-SVG בInkSpace.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>תצוגת כותרת</para>
+            </entry>
+            <entry>
+               <para>תצוגת הכותרת אחרי כל עריכה, שנוי צבע או גופן.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_65"><title>כותרת נגללת\תודות</title>
+   <para>ליצירת אפקט של כותרות נגללות, יש לחתוך את רצף הכותרות למספר רב של כותרות בגודל המסך.</para><sect3 id="sect3_9"><title>יצירת תמונה לכל כותרת</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_10"><title>הזזת הכותרות על ציר הזמן</title>
+   <para>יש להוסיף כל תמונת כותרת של הכותרות הנגללות לציר הזמן, להגדיר משך כל קטע ל-7 שניות, ואז להזיז בין שתי רצועות.  ניתן לביצוע מהיר על ידי המאפין <guimenuitem>הוסף לציר הזמן</guimenuitem>.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_scrolling.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_11"><title>הנפשת כל כותרת</title>
+   <para>לחצן עכבר ימני על כל כותרת ובחירה ב<guimenuitem>Animate</guimenuitem> &gt; <guimenuitem>Bottom to Top</guimenuitem>.  זה ייצור אשליה שכל הכותרות הן רצף יחיד מתגלגל מלמטה למעלה, ללא רווחים.  יש לודא =חפיפה בין הכותרות (כפי שמודגם) כך שלא יהיו רווחים בין הכותרות.</para></sect3></sect2></sect1><sect1 id="sect1_19"><title>עורך כותרות מונפשות</title>
+   <para>גם כותרות תלת מימדיות מונפשות קלות ליצירה.  כותרות אלו כוללות את המאפיינים הבאים:</para>
+   <orderedlist>
+      <listitem>
+         <para>הרבה תבניות</para>
+      </listitem>
+      <listitem>
+         <para>עריכת מלל קלה (כולל כותרות, תת-כותרות)</para>
+      </listitem>
+      <listitem>
+         <para>שנוי גופן וצבע</para>
+      </listitem>
+      <listitem>
+         <para>רקע שקוף</para>
+      </listitem>
+      <listitem>
+         <para>יצוא כרצף תמונות (עם שקיפויות)</para>
+      </listitem>
+      <listitem>
+         <para>הוספת כותרת למקטע <guimenuitem>קבצי הפרויקט</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>שילוב עם בלנדר (ישום תלת מימדי)</para>
+      </listitem>
+   </orderedlist><sect2 id="sect2_66"><title>הפעלת עורך כותרות מונפשות</title>
+   <para>להוספת כותרת, בחר מהתפריט <guimenu>Title</guimenu> &gt; <guimenuitem>New Animated Title...</guimenuitem>.  זה יפעיל את עורך הכותרות המונפשות.  יש לודא ש"בלנדר" מותקן ונתיב הפעלתו מוגדר (גרסה 2.5 ומעלה).</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_67"><title>יצירת כותרת מונפשת חדשה</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/animated_title.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>בחירת תבנית</para>
+            </entry>
+            <entry>
+               <para>בחירת תבנית לשמוש ככותרת</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>חלון תצוגה מקדימה</para>
+            </entry>
+            <entry>
+               <para>תצוגה מקדימה של כל תמונה מההנפשה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>בוחר תמונות</para>
+            </entry>
+            <entry>
+               <para>בחירת תמונה כלשהי לתצוגה מקדימה מההנפשה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>רענון</para>
+            </entry>
+            <entry>
+               <para>רענון חלון התצוגה המקדימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>ערוך הגדרות</para>
+            </entry>
+            <entry>
+               <para>עריכת הגדרות הנפשה שונות, כולל כותרת, גופן, צבעים וכ'ו...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>עיבוד</para>
+            </entry>
+            <entry>
+               <para>יצירת רצף תמונות עם הכותרת המונפשת, והוספת הרצף למקטע <guimenuitem>קבצי הפרויקט</guimenuitem>.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_20"><title>מעברים</title>
+   <para>מעברים לשמוש להחלפה הדרגתית בין 2 קטעים שונים.  הרבה מעברים שונים זמינים ב<application>אופןשוט</application>.  קל לגרור ולהשליך אותם לציר הזמן, וכך לשפר את ההנאה מהפרויטק.</para><sect2 id="sect2_68"><title>מסך מעברים</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_clock.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>חוצץ המעברים</para>
+            </entry>
+            <entry>
+               <para>זהו חוצץ המעברים.  הוא מכיל את רשימת המעברים הזמינים עבור <application>אופןשוט</application>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>רשימת מעברים</para>
+            </entry>
+            <entry>
+               <para>זו רשימת המעברים.  ניתן לבחור מעבר ולגרור אותו לציר הזמן.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>כלי שינוי הגודל</para>
+            </entry>
+            <entry>
+               <para>ניתן להשתמש בכלי שנוי הגדול לשנוי משך המעבר.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>מעבר על ציר הזמן</para>
+            </entry>
+            <entry>
+               <para>Once you drop a transition on the timeline, it can be moved and resized just like any other clip.  The transition snaps between tracks, and blends between the 2 tracks.  If snapping is enabled, the transition will automatically resize itself to perfectly fit between 2 clips, and also  automatically set the direction of the transition.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_69"><title>הוספת מעבר</title>
+   <para>To add a transition, switch to the <guibutton>Transition Tab</guibutton>, and select a transition by clicking on it.  Drag and drop the transition onto the <guibutton>timeline</guibutton>.  It will snap between 2 tracks and automatically resize itself, if dropped where 2 clips overlap.</para></sect2><sect2 id="sect2_70"><title>הזזת מעבר</title>
+   <para>להזזת מעבר, יש לשנות ל<guibutton>Select Mode</guibutton> (מצב בחירה) ב<guibutton>סרגל ציר הזמן</guibutton>, ולגרור אותו למיקומו החדש.</para></sect2><sect2 id="sect2_71"><title>שנוי משך מעבר</title>
+   <para>לשנוי משך מעבר, החלף למצב guibutton&gt;שנוי גודל</para></sect2><sect2 id="sect2_72"><title>היפוך כוון</title>
+   <para>מפני שמעברים משלבים בין 2 רצועות, חשוב לדעת את כוון השילוב.  במעבר מוצג חץ שמדגיש את כוון השילוב, מלמעלה למטה או מלמטה למעלה.  בדרך כלל, המעבר ישלב את הקטע העליון לתחתון.</para>
+   <para>לשנוי כוון השילוב, לחצן עכבר ימני על המעבר ובחירה ב<guimenuitem>Switch Direction</guimenuitem> (החלפת כוון).</para></sect2><sect2 id="sect2_73"><title>מאפייני המעבר</title>
+   <para>בדיוק כמו קטע, גם למעבר יש חלון מאפיינים.  לפתיחת חלון המאפיינים עבור מעבר או מסיכה, לחצן עכבר ימני על העצם ובחירה ב<guimenuitem>Properties</guimenuitem> (מאפיינים).  לשמירת השנויים, לחיצה על לחצן <guibutton>Apply</guibutton>.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_properties.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>סוג</para>
+            </entry>
+            <entry>
+               <para>מסיכה או מעבר</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>כיוון</para>
+            </entry>
+            <entry>
+               <para>כוון המעבר או המסיכה.   <emphasis>למעלה</emphasis> מערבב את הקטע התחתון לעליון ו<emphasis>למטה</emphasis> מערבב את הקטע העליון לתחתון.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>רכות</para>
+            </entry>
+            <entry>
+               <para>רכות המעבר.  ככל שהמספר גדל, המריחה גדולה, וככל שהוא קטן, המעבר פחות מרוח.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>סף המסיכה</para>
+            </entry>
+            <entry>
+               <para>סף המסיכה הוא כמות האפור לשמוש במסיכה.  ככל שהמספר גדול, שטח גדול יותר מהמסיכה יהיה בשמוש, וככל שהוא קטן, יפחת החלק שבשמוש.  דרוש נסיון כדי למצוא את הערך המתאים למסיכה.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_74"><title>המרה למסכה</title>
+   <para>מסיכה מאד דומה למעבר, פרט לעובדת היותה סטטית.  היא לא משתנה בהדרגה מקטע לקטע.  במקום זאת, היא מערבבת את שתי הרצועות באותו טווח זמן.  מסיכה ניתנת לשמוש על מנת לחשוף חלק קטן מקטע, להציג גבולות סביב קטע או להסתיר משהו בקטע.  כדי להתנסות עם מסיכות, ניתן להמיר מעבר למסיכה ולצפות במה שקורה.</para>
+   <para>כדי להמיר מעבר למסיכה, לחצן עכבר ימני על המעבר ובחירה ב<guimenuitem>Convert to Mask</guimenuitem>.</para></sect2><sect2 id="sect2_75"><title>יצירת מעבר\מסיכה חדשים</title>
+   <para>מעברים הם תמונות פשוטות בגוני אפור.  ניתן ליצור אותם בכל תכנה גרפית.  להוספת מעבר מותאים, יש לבחור בתפריט  ב<guimenu>File</guimenu> &gt; <guimenuitem>Import New Transition</guimenuitem>, ולטעון קובץ Png בגוני אפור מהכונן הקשיח.  התמונה החדשה תופיע בחוצץ ה<guimenuitem>מעברים</guimenuitem>.  מעבר זה ישמר מקומית בתיקיית /home/USER/.openshot/</para></sect2><sect2 id="sect2_76"><title>הסרת מעבר</title>
+   <para>להסרת מעבר, לחצן עכבר ימני על המעבר בציר הזמן, ובחירה ב<guimenuitem>Remove</guimenuitem>.</para></sect2></sect1><sect1 id="sect1_21"><title>רשימת מעברים</title>
+   <para>This list does not feature every transition, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>תריסים פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>תריסים גדולים פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_sliding.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>תריסים גולשים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>גלגול פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>גלגול החוצה ופנימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון משמאל לימין</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון מימין לשמאל</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_5.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 5</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_6.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 6</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 7</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_8.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פרקטל 8</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>רקמה 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>רקמה 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>רקמה 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון חול 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון חול 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון חול 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>שעון חול 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/mountains.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>הרים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/openshot_logo.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>הלוגו של Openshot</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/puzzle_7_by_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>פאזל 7 על 7</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>מלבן פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>מלבן החוצה ופנימה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sand.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>חול</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sphere.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>כדור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ספירלה מופשטת 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ספירלה מופשטת 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ספירלה גדולה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_medium.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ספירלה בינונית</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_small.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ספירלה קטנה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spots.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>כתמים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>כוכב 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>כוכב 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>תריסים אנכיים פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>תריסים אנכיים גדולים פנימה והחוצה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_bottom_to_top.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב מלמטה כלפי מעלה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב אלכסוני 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב אלכסוני 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב אלכסוני 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב אלכסוני 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב משמאל לימין</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב מימין לשמאל</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_top_to_bottom.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>ניגוב מלמעלה כלפי מטה</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_22"><title>אפקטים</title>
+   <para>לאופןשוט יש מעל 40 אפקטים שמתוכננים לתפעל קטעי וידיאו או קול.  התאמת רוויון צבע, בהירות, ומקדם גמא ניתנים לביצוע בעזרת אפקטים.  אפקטים אקסוטיים נוספים, כדוגמת סילוף, גלים, סרט-ישן ומסך ירוק (ידוע גם כגוון מפתח\ צבע שקוף) ואפקטים קוליים.</para><sect2 id="sect2_77"><title>הוספת אפקט</title>
+   <para>להוספת אפקט, יש לעבור לחוצץ האפקטים, לבחור מהרשימה ולגרור את האפקט הנבחר לקטע על <guibutton>ציר הזמן</guibutton>.</para>
+   <para/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>חוצץ אפקטים</para>
+            </entry>
+            <entry>
+               <para>חוצץ זה מכיל את רשימת האפקטים.  הרשימה ניתנת לסינון על ידי מעבר בלחצנים בין האפשרויות “All Effects” (כל האפקטים), “Video”(וידיו), or “Audio” (קול).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>רשימת האפקטים</para>
+            </entry>
+            <entry>
+               <para>רשימת האפקטים מכילה את כל האפקטים הזמינים באופןשוט.  אפשר לסנן את הרשימה בעזרת הלחצנים שמעליה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>קטע</para>
+            </entry>
+            <entry>
+               <para>גרירת אפקט נבחר לתוך קטע.  ניתן להעזר במאפייני הקטע לכוונון הגדרות האפקט.  כמו כן, בלחיצה כפולה על סמל האפקט שמוצג על כל קטע שמוגדר לו אפקט, יופעל חלון ההגדרות.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_78"><title>התאמת הגדרות האפקט</title>
+   <para>להתאמת הגדרות האפקט, לחצן עכבר ימני על קטע ובחירה ב<guimenuitem>Properties</guimenuitem> (מאפיינים).  מעבר לחוצץ האפקטים, וניתן לראות רשימת כל הפאקטים שמופעלים על הקטע.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_settings.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>רשימת אפקטים</para>
+            </entry>
+            <entry>
+               <para>רשימת אפקטים שמשוייכים לקטע הנבחר.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>הגדרות האפקט</para>
+            </entry>
+            <entry>
+               <para>רשימה של הגדרות לאפקט הנבחר.  לחיצה על אפקט תטען את רשימת הגדרותיו.  לאחר שנוי בערכים אלו, מומלץ ללחוץ על לחצן <guibutton>Play</guibutton> כדי לראות את ההשפעות.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>לחצני התצוגה המקדימה</para>
+            </entry>
+            <entry>
+               <para>הלחצן <guibutton>Play </guibutton> ו<guibutton>פס הגלילה</guibutton> מאפשרים לקבל תצוגה מקדימה של האפקטים לפני שלוחצים על <guibutton>Apply</guibutton>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>הוספת אפקט</para>
+            </entry>
+            <entry>
+               <para>לחצן זה פותח את חלון "הוספת אפקטים".  בחירה באפקט להוספה ולחיצה על <guibutton>Add Effect</guibutton>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>מחיקת אפקט</para>
+            </entry>
+            <entry>
+               <para>לחצן זה מוחק את האפקט הנבחר (אם בכלל).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>הזזת אפקט</para>
+            </entry>
+            <entry>
+               <para>אפקטים מופעלים מלמעלה כלפי מטה.  ניתן להשתמש בלחצן זה לארגון וסידור האפקטים.  שמוש בלחצן <guibutton>Play </guibutton> לקבלת תצוגה מקדימה של השינויים.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <mediaobject/></sect2></sect1><sect1 id="sect1_23"><title>רשימת אפקטים</title>
+   <para>This list does not feature every effect, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Bass</guibutton> (באס) - התאמת הצלילים הנמוכים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/two_layer.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Black and White</guibutton> (שחור לבן) - שנוי הצבעים לשחור ולבן בהתבסס על סף בהירות.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/blur.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Blur</guibutton> (טשטוש) - טשטוש בדומה לצילום לא ממוקד.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/brightness.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Brightness</guibutton>(בהירות) – תיקון בהירות התמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/cartoon.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Cartoon</guibutton> (סרט מצוייר) - הפיכת הסרט לסרט מצויר, שמוש בזיהוי קצוות.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/charcoal.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Charcoal</guibutton> (צבעי פחם) - שנוי הסרט שיראה כמו ציור פחם</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/burningtv.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Chroma Hold</guibutton> (אחיזת צבע) - הפיכת הסרט לשחור\לבן פרט לצבע אחד.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/chroma_key.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Chroma Key</guibutton> (צבע מפתח) - הפיכת צבע מסויים לשקוף.  ידוע גם בתור "מסך ירוק" או "מסך כחול".</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/colordistance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Color Distance</guibutton> (מרחק צבעים) – חישוב המרווח בין הצבעים שנבחרו וצבעי המסך ושמוש בהפרש בתור הצבע החדש.  (מאפשר אפקטים של נגטיב, הסחת צבעים ועוד).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/contrast.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Contrast</guibutton> (ניגודיות) - התאמת הניגודיות של הסרט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/deinterlace.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Deinterlace</guibutton> (ביטול הבהוב) - המרת סרט שצולם במצב "הבהוב" למצב רגיל.  (בעקר לסרטים שהוקלטו מקלטות וידיאו ישנות).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/distort.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Distort</guibutton> (עוות) - עוות התמונה כמו זרימה של נוזל.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Echo</guibutton> (הד)– הוספת הד.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/edgeglow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Edgeglow</guibutton> - זהוי קצוות וצביעתם בצבע "זורח".</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/freeze.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Freeze</guibutton> (הקפאה) - הקפאת התמונה בוידיאו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/gamma.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Gamma</guibutton> (גאמא) – תיקון ערכי גאמא (צבעים ובהירויות).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/glow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Glow</guibutton> (זורח) - הוספת אפקט של בוהק לסרט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/greyscale.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Gray-scale</guibutton> (אפרורי) - הפיכת הסרט לגוני אפור.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/hue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Hue</guibutton> (גוון) - תיקון גוון כוללני.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/invert.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Invert</guibutton> (היפוך) - הפיכת צבעים, שנוי לתשליל.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/mirror.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Mirror</guibutton> (מראה) - חצית הסרט והוספת השתקפות (מראה).  אנכית, אופקית או אלכסונית.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/nosync.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Nosync</guibutton> (אי-סינכרון) - התאמת מיקום התמונה מעלה ומטה, כשהחלק שנעלם מצד אחד מופיע מהצד השני.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_dust.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Old Dust</guibutton> (אבק יושן) - הוספת כתמי אבק אקראיים על התמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_film.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Old Film</guibutton> (סרט ישן) - התאמת גאמא ובהירות באקראי ליצירת אשליה של סרט ישן.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_grain.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Old Grain</guibutton> (גרעיניות יושן) = הוספת רעש סטטי וגרעיניות על התמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_lines.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Old Lines</guibutton> (קווי יושן) - הוספת קוים אנכיים אקראיים לתמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/tcolor.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Oversaturate</guibutton> (רוויון יתר) - יצירת רוויון יתר של צבעים, כמו בסרטים ישנים.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Phaser</guibutton> (שלבים) - הוספת סדרת שיאים ומכות בקול, יצירת אפקט של סחף</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/pixelate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Pixelate</guibutton> - הגדלת גודל הפיקסלים לטשטוש דמויות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_blue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Remove Blue</guibutton> (מחיקת כחול) - מחיקת הכחול מהתמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_green.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Remove Green</guibutton> (מחיקת ירוק) - מחיקת הירוק מהתמונה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_red.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Remove Red</guibutton> (מחיקת אדום) - מחיקת האדום מהתמונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/rotate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Rotate</guibutton> - סיבוב תמונה בצורה סטטית או דינאמית</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/saturate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Saturation</guibutton> - התאמת דרגת הרוויה או עצמת הצבע בתמונה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sepia.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Sepia</guibutton> – התאמת צבעי התמונה להדמיית סרט שחור-לבן עם צבען (פיגמנט) חום (ספיה)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sobel.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Sobel</guibutton> - זהוי והדגשת קצוות עצמים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/threshold.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Threshold</guibutton> - הפחחת וערבוב צבעים בתמונה לפי רמת סף.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Treble</guibutton> – התאמת הצלילים הגבוהים.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/white_balance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>White Balance</guibutton> - איזון הצבע הלבן לפי טמרפטורה</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_24"><title>יצוא וידאו</title>
+   <para>לאחר שהפרויקט הושלם, תרצו ליצא אותו לפורמט המתאים, מבוסס על הצרכים שלכם.  לאופןשוט יש הרבה פורמטים מוגדרים מראש לפישוט תהליך זה.  יש שני מצבי עבודה ליצוא וידיאו באופןשוט, פשוט ומתקדם.</para>
+   <para>שני המצבים מבוססים על אזור עבודה משותף בראש המסך, <guibutton>General Options</guibutton>.  שם קובץ הוידיאו (ללא הסיומת) ובחירת תיקית היעד ליצוא.</para><sect2 id="sect2_79"><title>הפעלת מסך היצוא</title>
+   <para>להצגת מסך היצוא, לחץ על סמליל<guimenuitem>יצוא וידיאו</guimenuitem> בסרגל הכלים שבחלקו העליון של המסך הראשי, או בחר בתפריט <guimenu>File</guimenu> &gt; <guimenuitem>Export Video</guimenuitem>.</para></sect2><sect2 id="sect2_80"><title>מצב פשוט</title>
+   <para>לאופןשוט יש מספר רב של פורמטי יצוא מוגדרים מראש, שמכסים את רוב המצבים השכיחים.  בחירה ב<guibutton>סוג פרויקט </guibutton> כדוגמת DVD או WEB, וואחר ב<guibutton>יעד</guibutton>, <guibutton>Video Profile</guibutton> ו<guibutton>איכות</guibutton>.  בחירה ב<guibutton>All Formats</guibutton> (כל הפורמטים), תציג רשימה של פורמטים נפוצים, ותאפשר לבחור כרצונך.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_12"><title>העלאה לאינטרנט</title>
+   <para>בחירה באפשרות <guibutton>Upload to Web</guibutton> (העלאה לרשת) שבראש המסך תפתח אפשרות לבחור youtube או vimeo.  אלו שני אתרי שיתוף הוידיאו השכיחים ביותר.  בחירה זו תגדיר אוטומטית את הגדרות היצוא שתואמות לאתר הנבחר, ותפעיל את מסך <guibutton>Upload Video</guibutton> לאחר מכן.</para></sect3></sect2><sect2 id="sect2_81"><title>מצב מתקדם</title>
+   <para>מפני שקל מדי ליצור צרופים מטופשים של קידודים, פורמטים וקצבים, האפשרויות המתקדמות מיועדות לשמוש רק בידי משתמשים שמכירים את FFmpeg.  למשתמשים המנוסים בהגדרות אלו, כל מה שנתמך עם FFmpeg מותר בשמוש, כך שתריסרים על תריסרים של הגדרות עומדות בפניו.  ניתן ליצא וידיאו כרצף תמונות, ולהשתמש בהן לעריכה נוספת או ליבא אותן לתכנות עריכה שונות כדוגמת בלנדר.</para>
+   <para>יתר על כן, בבחירת הגדרה ב<guibutton>מצב פשוט</guibutton> ואז מעבר ל<guibutton>מצב מתקדם</guibutton>, תתבצע הגדרה של כל המאפיינים שקיימים במצב הפשוט לתוך המצב המתקדם.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_advanced.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_25"><title>העלאת וידאו</title>
+   <para>להעלאת וידיאו ישירות לVimeo או Youtube, יש לבחור מהתפריט <guimenu>File</guimenu> &gt; <guimenuitem>Upload Video</guimenuitem>.  לחליפין, במסך <guimenuitem>יצוא וידיאו</guimenuitem> ניתן לבחור <guimenuitem>Upload to Web</guimenuitem> (העלה לרשת), כך שהפרויטק ייוצא לקובץ מתאים ואז יישלח.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/upload_to_web.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>רכיב</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>קובץ וידאו</para>
+            </entry>
+            <entry>
+               <para>בחירה בוידיאו למשלוח לyoutube.  יש לודא מראש תאימות לפורמט המקובל בyoutube, או שזה לא יעבוד.  אם בוצע שמוש במסך <guimenu>יצוא וידיאו</guimenu>, ניתן לבחור באפשרות <guibutton>משלוח לרשת</guibutton>, שתבצע התאמה אוטומטית של הפורמט, ותמלא את תיבת הבחירה עבורך.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>שלח אל</para>
+            </entry>
+            <entry>
+               <para>בחירת אתר היעד למשלוח הקובץ.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>כותרת</para>
+            </entry>
+            <entry>
+               <para>הכנסת כותרת לוידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+            <entry>
+               <para>הכנסת תיאור לוידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>פרטי זיהוי</para>
+            </entry>
+            <entry>
+               <para>הזנת שם משתמש וססמא עבור אתר הוידיאו</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_26"><title>יצוא לxml</title>
+   <para>יצוא הפרויקט לפורמט XML הקרוי MLT XML.  קובץ XML זה יכול לשמש עבור <emphasis>Kdenlive</emphasis> או עבור <guibutton>melt</guibutton>  לשורת הפקודה.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_to_xml.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_27"><title>סוג פרויקט\פרופילים</title>
+   <para>לכל פרויקט ב<application>אופןשוט</application> חייב שיוגדר <guibutton>סוג פרויקט</guibutton> (ידוע גם בתור <guibutton>פרופיל</guibutton>).  הפרופיל מכיל הגדרות התצוגה והיצוא עבור פרויקט הוידיאו:  <emphasis> קצב ביטים, גובה ורוחב, יחס מימדים ויחס פיקסלים</emphasis>.</para>
+   <para>הנה פרופיל דוגמה עבור ATSC 1080i 60Hz:</para>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>תיאור</para>
+            </entry>
+            <entry>
+               <para>ATSC 1080i 60Hz</para>
+            </entry>
+            <entry>
+               <para>שפ הפרופיל כפי שיופיע באופןשוט</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_num</para>
+            </entry>
+            <entry>
+               <para>30000</para>
+            </entry>
+            <entry>
+               <para>תמונות לשניה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_den</para>
+            </entry>
+            <entry>
+               <para>1001</para>
+            </entry>
+            <entry>
+               <para>מכנה עבור קצב התמונות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>רוחב</para>
+            </entry>
+            <entry>
+               <para>1920</para>
+            </entry>
+            <entry>
+               <para>רוחב הוידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>גובה</para>
+            </entry>
+            <entry>
+               <para>1080</para>
+            </entry>
+            <entry>
+               <para>גובה הוידיאו</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>מתקדם</para>
+            </entry>
+            <entry>
+               <para>0</para>
+            </entry>
+            <entry>
+               <para>0 = משתלב, 1=מתקדם</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_num</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>מונה ליחס פיקסלים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_den</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>מכנה ליחס פיקסלים</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_num</para>
+            </entry>
+            <entry>
+               <para>16</para>
+            </entry>
+            <entry>
+               <para>מונה ליחס תצוגה</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_den</para>
+            </entry>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>מכנה ליחס תצוגה</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>ל<application>אופןשוט</application> יש מעל 40 פרופילים\סוגי פרויקטים מוגדרים מראש.  אם הפרופיל הרצוי לא קיים במערכת, ניתן ליצור אחד.  ניתן לנהל את רשימת הפרופילים עם חוצץ <guimenu>Edit &gt;</guimenu><guimenuitem>Preferences </guimenuitem><guimenu>&gt;</guimenu><guimenuitem>  Profiles </guimenuitem>.</para></sect1><sect1 id="sect1_28"><title>העדפות</title>
+   <para>להגדרת <application>אופןשוט</application>, יש לבחור בתפריט <guimenu>Edit &gt;</guimenu><guimenuitem>Preferences</guimenuitem>.  בדיאלוג <guilabel>Preferences</guilabel> (העדפות) ניתן להתאים את משך ההצגה של תמונות, ערכת נושא, וברירת המחדל לפרויקט\פרופיל.  הגדרות אלו יכולות לחסוך זמן רב בתחילת פרויקט חדש.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/preferences.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_29"><title>תלויות</title>
+   <para>אופןשוט מתוכנתת בפייתון, אבל עם הרב תלויות, חלקן רשות וחלקן חובה.  קטע זה מיועד למי שרוצה ליצור התקנה ידנית או חבילת התקנה בעצמו.</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="4"><tbody><row>
+            <entry>
+               <para>מזהה</para>
+            </entry>
+            <entry>
+               <para>שם</para>
+            </entry>
+            <entry>
+               <para>Debian Package Name</para>
+            </entry>
+            <entry>
+               <para>הערות</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>פייתון</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>פייתון</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>זו שפת התכנות העקרית שאופןשות תוכנתה בה.  גרסה 2.5 ומעלה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>GTK+ &amp;  Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-gtk2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>אופןשוט משתמשת בGTK+, וזקוקה גם לקישור לפייתון.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>MLT (Media Lovin' Toolkit)</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libmlt2, libmlt-data, libmlt++3, melt</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>MLT זו מסגרת מולטימדיה פתוחת קוד, מתוכננת ומפותחת לשידורי טלויזיה.  יש לה הרב תלויות שאינן ברשימה זו.  ספריה זו משמשת ליצירת, עריכת ותצוגת וידיאו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>MLT Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-mlt2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>אלו הקישוריות של פייתון לMLT, דרושות לצורך התחברות לספרית MLT מתוך פייתון.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>GooCanvas Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-pygoocanvas</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>GooCanvas משמשת לתצוגת והנפשת ציר הזמן.  הקישור לפייתון דרוש לספריה זו.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Frei0r Video Effects</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>frei0r-plugins</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para><emphasis>(Optional)</emphasis>.  ספריה זו משמשת להוספת אפקטים רבים של וידיאו לאופןשוט.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>FreeDesktop.org Standards Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-xdg</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>XDG משמש לטעינת סמלילים, הגדרת MIME ושילובים נוספים בשולחן העבודה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Sox Audio Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>sox</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>אולר שוייצרי לעיבוד קול, משמש לאפקטים קוליים.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>שכבה פשוטה של מדיה ישירה (SDL)</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libsdl1.2debian, libsdl1.2debian-pulseaudio</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>SDL משמשת להצגת חלון התצוגה המקדימה וניגון הקול.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>Scalable Vector Graphics Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>librsvg2-common</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>ספריית SVG דרושה לעיבוד והצגת תמונות SVG.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>Python Imaging Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-imaging</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>PIL משמשת לחישוב גדלי תמונות.  משמשת בעקר במסך <emphasis>כותרות מונפשות</emphasis>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>12</para>
+            </entry>
+            <entry>
+               <para>FFmpeg File Format Library</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libavformat52  או libavformat-extra-52  או libavformat-unstripped-52</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>זה מספק את MLT עם היכולות להבין קידודי וידיאו וקול שונים.  יש הרבה גרסות של libavformat, כמה עם רשימת קידודים מוגבלת ואחרות עם רשימה מלאה.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>13</para>
+            </entry>
+            <entry>
+               <para>Fontconfig</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>fontconfig</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Fontconfig היא ספריית הגדרת והתאמת גופנים.  אופןשוט משתמש בפקודת fc-list לקבלת רשימת הגופנים המותקנים במחשב, עבור מסך ה<emphasis>כותרות המונפשות</emphasis>.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_30"><title>הצטרפו למפתחי אופןשוט</title>
+   <para>אם אתם מתכנתים (או רוצים להפוך לכאלה), ומעוניינים בפיתוח יכולות חדשות, תיקון באגים, שיפור המישק או פיתוח מעטפת חדשה לאופןשוט, הקטע הבא מסביר את התהליך הנדרש מכם.</para><sect2 id="sect2_82"><title>התמונה הכוללת</title>
+   <para>אופןשוט כתוב בפייתון ומחולק להרבה קבצי פייתון (.py), תמונות (.svg, .png), קבצי xml (.xml), קבצי GTK + XML (.ui), וקבצי פרויקט של בלנדר (.blend).  פייתון היא שפה מפורשת, והמשמעות היא שאין צורך להדר קבצים או לקשר אותם להרצת אופןשוט.  אם שינית קובץ מקור כלשהו, עליך רק לסגור ולהריץ מחדש את התכנה ולראות את השינויים.</para></sect2><sect2 id="sect2_83"><title>השגת הגרסה האחרונה של קוד המקור</title>
+   <para>אופןשוט מחזיק את הגרסה האחרונה של הקוד ב<ulink url="https://code.launchpad.net/openshot">LaunchPad.net</ulink>, ומשתמש בבקרה של מערכת <ulink url="http://bazaar.canonical.com/en/">Bazaar version</ulink> .</para>
+   <orderedlist>
+      <listitem>
+         <para>התקנת גרסת הBazaar.  בדביאן (או אובונטו), יש להקליד</para>
+         <para>
+            <command>$ sudo apt-get install bzr</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Tell Bazaar to create a local branch for your computer.  This will create an /<emphasis>openshot/</emphasis> folder in your home folder and download the latest source code into that folder.  For example: /home/USER/openshot/</para>
+         <para>
+            <command>$ bzr branch lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>אם כבר יש לכם תיקיית <emphasis>/openshot/</emphasis>, פשוט שנו את מיקומכם לתיקיה זו, והריצו את הפקודה הבאה לקבלת הגרסה העדכנית:</para>
+         <para>
+            <command>Copy text 	 $ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr pull lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>כעת מצויה ברשותכם הגרסה העדכנית של אופןשוט.  להפעלת אופןשוט מתיקיה זו, עליכם להריץ את הפקודה הבאה.  זכרו, התלויות של אופןשוט צריכות להיות מותקנות, מה שמכוסה בפרק הבא.</para>
+         <para>
+            <command>$ cd /home/USER/openshot/bin/</command>
+         </para>
+         <para>
+            <command>$ ./openshot  or  python openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>אם שיניתם את קוד המקור של אופןשוט, ותרצו לראות את כל השינויים שלכם, הריצו את הפקודה הבאה:</para>
+         <para>
+            <command>Copy text 	 $ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr status</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>אם אתם לא מרוצים מהשינויים, ותרצו לבטל אותם, העזרו בפקודה הבאה:</para>
+         <para>
+            <command>Copy text 	 $ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr revert</command>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_84"><title>הגדרת הסביבה</title>
+   <para>לאחר שהשגתם את הקוד העדכני ביותר, הצעד הבא הוא להתקין את התלויות.  מומלץ להתקין את אופןשוט דרך מנהל החבילות (כדוגמת synaptic).  זה יתקין גרסה של אופןשוט ואת כל התלויות שלה.  זה לא יתנגש בגרסה המקומית של אופןשוט.  חשוב לדאוג שפקודת <guimenu>$ openshot</guimenu> תפעיל את הגרסה הרשמית, לא את המקומית, ולכן יש להקפיד להפעיל אותה עם הפקודה הבאה:</para>
+   <para>
+      <command>$ cd /home/USER/openshot/bin/</command>
+   </para>
+   <para>
+      <command>$ ./openshot  or  python openshot</command>
+   </para>
+   <para>אחרי שדאגתם לקוד העדכני ולתלויות, ניתן להשתמש בעורך טקסט (כדוגמת gedit), או IDE של פייתון, כדוגמת <ulink url="http://www.eclipse.org/">אקליפס</ulink> או <ulink url="http://www.aptana.com/">אפטנה</ulink> (עם <ulink url="http://pydev.org/">Pydev</ulink>) לעריכת קוד המקור.  היתרון שבשמוש בIDE מלא הוא יכולות DEBUG.  לימוד שמוש בDEBUGGER עבור פייתון לא נמצא בתחום המסמך הזה, אבל יש הרבה מדריכים ברשת.</para></sect2><sect2 id="sect2_85"><title>תיקון הבאג הראשון שלך</title>
+   <para>לאחר שיש לכם גרסה מקומית של אופןשוט, תיקון באגים והוספת יכולות חדשות זו פעולה קלה.  פשוט לעדכן את הקבצים, ולהפעיל את אופןשוט מחדש ולראות את השינויים.  אין ביכולתנו להגיד לכם מראש איך לתקן באגים כמובן, זה תלוי בכם.  בהצלחה!</para></sect2><sect2 id="sect2_86"><title>שיתוף השינויים שלכם עם צוות אופןשוט</title>
+   <para>אחרי שתיקנתם באג או הוספתם תכונה חדשה, הצעד הבא הוא לחלוק זאת עם הצוות, כדי שנוכל לוודא שהתיקונים שלכם יכללו בגרסה הרשמית של אופןשוט.  הדרך הקלה היא ליצור טלאי (diff).  השתמשו בפקודות הבאות ליצירת טלאים:</para>
+   <para>
+      <command>Copy text 	 $ cd /home/USER/openshot/</command>
+   </para>
+   <para>
+      <command>$ bzr diff &gt; mychanges.patch</command>
+   </para>
+   <para>פעולה זו תיצור קובץ בשם mychanges.patch, שיכלול את כל השנויים בקבצים שערכת.  אם יצרת קבצים חדשים, יהיה עליך לדחוס אותם לקובץ zip או tar יחיד, ולכלול אותם בקובץ mychanges.path כמובן.</para>
+   <para>בהמשך, יצירת <ulink url="https://launchpad.net/openshot/+filebug">דווח באג חדש </ulink> בLaunchPad (או למצוא באג קיים), ולהעלות את הטלאי והקבצים הקשורים לדווח הבאג.  זהו!  צוות אופןשוט ייודע בדוא"ל שהטלאי נשלח.  כעת אפשר להרשם לדוחות הבאג ולעקבו אם יש שאלות או הערות על הטלאי.</para></sect2><sect2 id="sect2_87"><title>הצטרפו לצוות הפיתוח של אופןשוט בLaunchPad</title>
+   <para>If you are fixing bugs or adding new features to OpenShot, please consider <ulink url="https://launchpad.net/~openshot.developers">joining our </ulink>
+      <ulink url="https://launchpad.net/~openshot.developers">team</ulink> on LaunchPad.  We have a mailing list that will keep you up to date on the newest bug reports and plans related to OpenShot.</para></sect2></sect1><sect1 id="sect1_31"><title>על אודות OpenShot</title>
+   <para><application>OpenShot</application> נוצרה בידי Jonathan Thomas (<ulink url="mailto:Jonathan.Oomph@gmail.com">Jonathan.Oomph@gmail.com</ulink>) באוגוסט 2008 על מנת לספק עורך וידיאו יציב, חופשי וידידותי.</para><sect2 id="sect2_88"><title>צוות הפיתוח של אופןשוט</title>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Jonathan Thomas</para>
+            </entry>
+            <entry>
+               <para>Jonathan.Oomph@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Andy Finch</para>
+            </entry>
+            <entry>
+               <para>we.rocked.in79@googlemail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Olivier Girard</para>
+            </entry>
+            <entry>
+               <para>eolinwen@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Maël Lavault</para>
+            </entry>
+            <entry>
+               <para>moimael@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>הצג רשימת מפתחים מלאה</para>
+            </entry>
+            <entry>
+               <para>
+                  <ulink url="https://launchpad.net/~openshot.developers/+members#active">https://launchpad.net/~openshot.developers/+members#active</ulink>
+               </para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_89"><title>מידע נוסף</title>
+   <para>למידע נוסף אודות <application>אופןשוט</application>, אנא בקרו ב<ulink url="http://www.openshot.org/">עמוד הבית של אופןשוט</ulink> <ulink url="http://www.openshot.org/">(www.openshot.org)</ulink>.  לדווחי באגים או הגשת הצעות ליישום או למדריך זה, גלשו אל <ulink url="https://launchpad.net/openshot">OpenShot site on Launchpad</ulink>.  לדיונים עם משתמשים אחרים אודות אופןשוט, בקרו באתר המשתמשים ובפורום <ulink url="http://openshotusers.com/forum/">http://OpenShotUsers.com/forum/</ulink></para></sect2><sect2 id="sect2_90"><title>זכויות יוצרים וסימן רשום</title>
+   <para>כל הזכויות שמורות (C) 2011 ג'ונתן תומס.  אופןשוט (TM) הוא סימן רשום השייך לג'ונתן תומס.</para></sect2><sect2 id="sect2_91"><title>רשיון</title>
+   <para>תכנה זו מופצת תחת הרשיון הכללי של גנו (GPL) כפי שפורסם על ידי אגוד התכנה החופשית; התכנה תחת גרסה מספר 3 של הרשיון או (לבחירתכם) כל גרסה מאוחרת יותר.  עותק של הרשיון ניתן למצוא ב<ulink url="http://www.gnu.org/licenses/gpl.html">קישור הזה</ulink>, או בקובץ "COPYING" הכלול עם קוד המקור של התכנה.  <ulink url="http://www.law.co.il/computer-law/free-software/2007/07/13/gpl-3-hebrew-translation/">קישור לתרגום עברי לא מחייב</ulink>.</para></sect2></sect1><para/>
+</article>

@@ -1,0 +1,4502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="es">
+   <articleinfo>
+      <title>OpenShot Video Editor Manual – v1.4</title>
+      <subtitle/>
+      <edition/>
+   </articleinfo><sect1 id="sect1_1"><title>Introducción</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/logo_badge.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>OpenShot Video Editor es un programa diseñado para crear y editar vídeos en Linux.  
+Fácilmente puede combinar múltiples videoclips, sonido e imágenes en un solo proyecto y luego exportar el vídeo resultante a varios de los formatos de vídeo más comunes.</para>
+   <para>OpenShot es un editor no lineal de vídeo, lo que significa que se puede acceder a cualquier fotograma de vídeo en cualquier momento, y por lo que las secuencias de video se pueden superponer, mezclar, y ordenar de manera muy creativa.   Ninguna edición (corte, empalme, etc ..) de las secuencias de vídeo (videoclips) es destructiva, lo que significa que nunca se modifican las secuencias de vídeo originales.</para>
+   <para>Puede usar OpenShot para crear presentaciones de diapositivas, editar vídeos caseros, crear anuncios de televisión y películas en-linea o cualquier cosa que pueda imaginar.</para><sect2 id="sect2_1"><title>Síntesis de las características</title>
+   <orderedlist>
+      <listitem>
+         <para>Soporte de muchos formatos de vídeo, audio e imagen (basado en FFmpeg)</para>
+      </listitem>
+      <listitem>
+         <para>Integración con Gnome (soporte para "arrastrar y soltar")</para>
+      </listitem>
+      <listitem>
+         <para>Múltiples pistas</para>
+      </listitem>
+      <listitem>
+         <para>Redimensionado, ajuste, separación de fotogramas y corte de las secuencias de vídeo (videoclips)</para>
+      </listitem>
+      <listitem>
+         <para>Transiciones de vídeo con previsualización en tiempo real</para>
+      </listitem>
+      <listitem>
+         <para>Composición, superposición de imágenes y marcas de agua digitales</para>
+      </listitem>
+      <listitem>
+         <para>Plantillas de títulos, creación de títulos, títulos animados en 3D</para>
+      </listitem>
+      <listitem>
+         <para>Amigable con SVG, para crear e incluir títulos y créditos</para>
+      </listitem>
+      <listitem>
+         <para>Créditos de película desplazables</para>
+      </listitem>
+      <listitem>
+         <para>Clips de color sólido (incluyendo composición alpha)</para>
+      </listitem>
+      <listitem>
+         <para>Soporte para Rotoscopia / Secuencia de imágenes</para>
+      </listitem>
+      <listitem>
+         <para>Línea de tiempo con "arrastrar y soltar"</para>
+      </listitem>
+      <listitem>
+         <para>Control manual sobre la velocidad y reproducción, con las teclas: J,K, y L</para>
+      </listitem>
+      <listitem>
+         <para>Codificación de vídeo (basada en FFmpeg)</para>
+      </listitem>
+      <listitem>
+         <para>Animación por fotogramas clave</para>
+      </listitem>
+      <listitem>
+         <para>Zoom digital de los clips de vídeo</para>
+      </listitem>
+      <listitem>
+         <para>Cambio de velocidad de los clips (camara lenta, etc)</para>
+      </listitem>
+      <listitem>
+         <para>Transiciones personalizadas, luminancias y máscaras</para>
+      </listitem>
+      <listitem>
+         <para>Redimensionado de vídeo (tamaño del cuadro)</para>
+      </listitem>
+      <listitem>
+         <para>Mezcla y edición de sonido</para>
+      </listitem>
+      <listitem>
+         <para>Plantillas para la animación y disposición por fotogramas clave</para>
+      </listitem>
+      <listitem>
+         <para>Efecto Ken Burns (creación de vídeo "paneando" sobre una imagen)</para>
+      </listitem>
+      <listitem>
+         <para>Efectos de vídeo digitales, incluyendo brillo, gamma, tono, escala de grises, chroma key (pantalla azul / pantalla verde) y más de 40 otros efectos de vídeo y audio</para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_2"><title>Captura de pantalla</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_clips.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2></sect1><sect1 id="sect1_2"><title>Primeros pasos</title><sect2 id="sect2_3"><title>Ejecutando OpenShot Video Editor</title>
+   <para>Puede ejecutar <application>OpenShot</application> de las siguientes maneras:</para><sect3 id="sect3_1"><title>Menú de aplicaciones</title>
+   <para>Elija <guisubmenu>Sonido &amp; Vídeo &gt;</guisubmenu><guimenuitem>OpenShot Video Editor</guimenuitem>.</para></sect3><sect3 id="sect3_2"><title>Línea de comandos</title>
+   <para>Para ejecutar <application>OpenShot</application> desde la línea de comandos, abra una Terminal, escriba el siguiente comando y presione la tecla <keycap>Intro</keycap>:</para>
+   <para><command>openshot</command> [nombredearchivo]</para>
+   <para>El parámetro opcional [nombredearchivo] puede ser un archivo de audio o vídeo, o un proyecto de OpenShot (*.osp). Pueden especificarse varios archivos (separados por un espacio), importándose todos en una única instancia de <application>OpenShot</application>.</para></sect3><sect3 id="sect3_3"><title>Abrir con...</title>
+   <para>Para iniciar <application>OpenShot</application> desde Nautilus, presione el botón derecho sobre un archivo de imagen, vídeo o audio y elija <guimenu>Abrir con</guimenu> &gt; <guimenuitem>OpenShot Video Editor</guimenuitem>. O elija <guimenu>Abrir con</guimenu> &gt; <guimenuitem>Abrir con otra aplicación</guimenuitem> &gt; <command>openshot</command>.</para>
+   <para/></sect3></sect2></sect1><sect1 id="sect1_3"><title>¡Aprenda a manejar OpenShot en 5 minutos!</title>
+   <para>Usar OpenShot es muy fácil, y este tutorial le guiará por las funciones básicas en 5 minutos. Después de este tutorial, podrá hacer un sencillo pase de diapositivas con música.</para><sect2 id="sect2_4"><title>Paso 1 - Importar Fotos y Música</title>
+   <para>Antes de hacer nuestro vídeo necesitamos <guibutton>importar archivos</guibutton> a OpenShot. Arrastre y suelte algunas  <emphasis>imágenes</emphasis> (*.JPG, *.PNG, etc...) y un <emphasis>archivo de música</emphasis> (la mayoría de formatos deben funcionar) desde su escritorio hasta OpenShot Video Editor. Asegúrese de que suelta los archivos donde indica el puntero en la ilustración.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_5"><title>Paso 2 - Organice las fotos en la línea de tiempo</title>
+   <para>Después de importar algunos archivos, el siguiente paso es añadirlos a la línea de tiempo y organizarlos. Pulse sobre cada foto (una a la vez), y arrástrelas hasta la <guibutton>Pista 2</guibutton> en la línea de tiempo. Arrastre y suelte las fotos (también tratadas como clips) para organizarlas.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_6"><title>Paso 3 - Añada música a la línea de tiempo</title>
+   <para>Para hacer nuestro pase de diapositivas más interesante necesitamos añadir algo de música. Debería haber importado un archivo de música en el Paso 1. Pulse sobre el archivo de música y arrástrelo hasta la <guibutton>Pista 1</guibutton> en la línea de tiempo.</para></sect2><sect2 id="sect2_7"><title>Paso 4 - Previsualice su proyecto</title>
+   <para>Para previsualizar cómo se ve y se oye nuestro vídeo, presione el botón <guibutton>Reproducir</guibutton> bajo la ventana de previsualización. Presione de nuevo el botón <guibutton>Reproducir</guibutton> para pausar el vídeo. Recuerde, si necesita reorganizar cualquier clip, sólo arrástrelo y suéltelo para moverlo.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_8"><title>Paso 5 - Exporte su vídeo</title>
+   <para>Cuando esté satisfecho con el resultado de su pase de diapositivas, el siguiente paso será exportar su vídeo. Esto convertirá su proyecto de OpenShot en un archivo de vídeo que podría reproducirse en cualquier reproductor multimedia de Linux (como Totem, VLC, etc...) o sitios web (como YouTube, Vimeo, etc...).</para>
+   <para>Presione sobre el icono <guibutton>Exportar Vídeo</guibutton> en la parte superior de la pantalla (o utilice el menú <guimenuitem>Archivo</guimenuitem> &gt; <guimenuitem>Exportar vídeo...</guimenuitem>). Elija una de las muchas opciones de exportación preconfiguradas, y haga clic en el botón <guibutton>Exportar Vídeo</guibutton>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_9"><title>Paso 6 - ¡Disfrute de OpenShot!</title>
+   <para>Ahora tiene los conocimientos básicos sobre cómo funciona OpenShot. <emphasis>Importar, organizar, previsualizar y exportar</emphasis>. Previsiblemente este tutorial le ha llevado menos de 5 minutos. Por favor, lea el resto del manual para un conocimiento detallado de OpenShot y sus características avanzadas. ¡Disfrútelo!</para></sect2></sect1><sect1 id="sect1_4"><title>Ventana principal</title>
+   <para>OpenShot Video Editor tiene una ventana principal que contiene la mayoría de la información, botones y menús necesarios para editar sus proyectos de vídeo.</para><sect2 id="sect2_10"><title>Información general</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Barra de Herramientas Principal</para>
+            </entry>
+            <entry>
+               <para>Contiene los botones para abrir, guardar y exportar los proyectos de vídeo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Pestañas de funciones</para>
+            </entry>
+            <entry>
+               <para>Alterna entre Archivos de proyecto, Transiciones y Efectos</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Archivos del proyecto</para>
+            </entry>
+            <entry>
+               <para>Todos los archivos de audio, vídeo e imágenes que han sido importados al proyecto.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Ventana de previsualización</para>
+            </entry>
+            <entry>
+               <para>Esta es el área donde se reproducirá el vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Barra de herramientas de edición</para>
+            </entry>
+            <entry>
+               <para>Esta barra contiene los botones utilizados para editar, recortar y separar clips.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Deslizador de ampliación</para>
+            </entry>
+            <entry>
+               <para>Este deslizador ajusta la escala de tiempo de la línea de tiempo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Regla / Marca de reproducción</para>
+            </entry>
+            <entry>
+               <para>La regla muestra la escala temporal y la línea roja es la marca de reproducción. La marca de reproducción representa la posición actual de la reproducción.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Línea de tiempo</para>
+            </entry>
+            <entry>
+               <para>La línea de tiempo visualiza su proyecto de vídeo, cada clip y transición dentro del mismo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Filtro</para>
+            </entry>
+            <entry>
+               <para>Filtra la lista de objetos mostrados (archivos del proyecto, traducciones y efectos) usando los botones interruptores y la caja para escribir.   Entre algunas letras de lo que busca y los resultados serán mostrados.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_11"><title>Barra de Herramientas Principal</title>
+   <para>La <guimenu>barra de herramientas principal </guimenu>alberga botones para crear y guardar rápidamente su proyecto, acciones de deshacer y rehacer, importar archivos y exportar su vídeo.  También puede acceder a todas estas funciones mediante los menús <guimenuitem>Archivo</guimenuitem> y <guimenuitem>Editar</guimenuitem>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_toolbar.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Nuevo proyecto</para>
+            </entry>
+            <entry>
+               <para>Crear un nuevo archivo de proyecto OpenShot (*.OSP).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Guardar proyecto</para>
+            </entry>
+            <entry>
+               <para>Guarda el proyecto actual. Si no se ha creado un proyecto, se abrirá un cuadro de diálogo para recoger más información.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Deshacer</para>
+            </entry>
+            <entry>
+               <para>Deshacer la última acción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Rehacer</para>
+            </entry>
+            <entry>
+               <para>Rehacer la acción anterior</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Importar archivos</para>
+            </entry>
+            <entry>
+               <para>Importa 1 o más archivos al proyecto actual de OpenShot.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Exportar vídeo</para>
+            </entry>
+            <entry>
+               <para>Exporta el proyecto actual a un archivo de vídeo.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_12"><title>Pestañas de funciones</title>
+   <para>Estas pestañas permiten alternar entre 3 funciones diferentes: Archivos de proyecto, Transiciones y Efectos. Los elementos en estas pestañas pueden ser arrastrados y soltados a la línea de tiempo.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_tabs.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_13"><title>Archivos del proyecto</title>
+   <para>La sección Archivos del Proyecto contiene todos los archivos que han sido importados en su proyecto.   Antes de poder añadir una imagen, sonido o vídeo al mismo, estos debe ser importados a su sección de Archivos del Proyecto.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_files.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_14"><title>Ventana de previsualización</title>
+   <para>La Ventana de previsualización es la que controla la reproducción (o previsualización) de su proyecto de vídeo. Los botones bajo la ventana de previsualización controlan la reproducción y la salida de vídeo en esta área. El tamaño de la ventana puede ser modificado haciendo clic y arrastrando los tiradores (o líneas) alrededor de esta sección.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_preview.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Saltar al comienzo</para>
+            </entry>
+            <entry>
+               <para>Salta al comienzo del proyecto</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Retroceder</para>
+            </entry>
+            <entry>
+               <para>Rebobina el vídeo desde la posición de reproducción actual.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Reproducir / Pausar</para>
+            </entry>
+            <entry>
+               <para>Reproduce o Pausa la reproducción del proyecto</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Avance Rápido</para>
+            </entry>
+            <entry>
+               <para>Avanza rápidamente el vídeo desde la posición de reproducción actual.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Saltar al final</para>
+            </entry>
+            <entry>
+               <para>Salta al final del proyecto.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_15"><title>Barra de herramientas de edición</title>
+   <para>La Barra de edición permite alternar entre los distintos modos de edición para la línea de tiempo. Para mover, recortar o partir clips es necesario cambiar el modo de edición usando esta barra.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Añadir pista</para>
+            </entry>
+            <entry>
+               <para>Añade una nueva pista al comienzo de la lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Modo de selección</para>
+            </entry>
+            <entry>
+               <para>El Modo de selección permite seleccionar y mover clips.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Modo cuchilla</para>
+            </entry>
+            <entry>
+               <para>La herramienta de corte le permite dividir un clip en cualquier lugar donde haga clic.  Si la opción de ajuste está activada, haciendo clic cerca del cabezal (la línea roja), el clip se dividirá exactamente en la posición del cabezal.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Modo de redimensión</para>
+            </entry>
+            <entry>
+               <para>El Modo de redimensión permite sujetar los extremos de un clip y arrastrarlos para redimensionarlo (o recortarlo).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Modo de encaje</para>
+            </entry>
+            <entry>
+               <para>La herramienta de ajuste posibilita que los clips se ajusten (o salten) al clip más próximo o al cabezal (si se encuentran cercanos) cuando los suelta.  Las transiciones se ajustarán a los clips colindantes.  Los clips y las transiciones también se adaptan a la posición del cabezal.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Añadir marcador</para>
+            </entry>
+            <entry>
+               <para>Añade un nuevo marcador (o punto de partida), que permite rápidamente saltar de vuelta a este punto exacto mientras reproduces.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Marcador anterior</para>
+            </entry>
+            <entry>
+               <para>Salta al marcador anterior (si lo hubiere).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Marcador siguiente</para>
+            </entry>
+            <entry>
+               <para>Salta al siguiente marcador (si lo hubiere).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_16"><title>Deslizador de ampliación</title>
+   <para>El deslizador de zoom le permite variar la escala temporal de la línea de tiempo. Incremente el zoom para ver la línea de tiempo de más cerca, o reduzca el zoom para ver el proyecto entero sin necesidad de hacer scroll. Puede hacer clic en los botones de zoom (derecha e izquierda), o arrastrar el deslizador de zoom. Cuando arrastre el deslizador, la línea de tiempo se actualizará al pausar o dejar de mover este.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_zoomer.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_17"><title>Línea de tiempo</title>
+   <para>La línea de tiempo visualiza su proyecto de una manera muy gráfica.  Cada clip se representa con un rectángulo amarillo  Cada pista se representa con un rectángulo azul.  El cabezal (la línea roja) representa la posición actual de reproducción (o previsualización) de su proyecto.</para>
+   <para>Haga clic en cualquier lugar de la regla para saltar a ese punto de la línea de tiempo. Si arrastra la regla, se "restregará" el vídeo, lo cual es una forma rápida aunque tosca de previsualizar su proyecto.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Regla</para>
+            </entry>
+            <entry>
+               <para>La regla muestra la escala temporal actual de la línea de tiempo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Cabezal de reproducción</para>
+            </entry>
+            <entry>
+               <para>El cabezal de reproducción representa la posición actual de reproducción de su ventana de previsualización.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Clip</para>
+            </entry>
+            <entry>
+               <para>Un clip representa un archivo de audio, imagen o vídeo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Pista</para>
+            </entry>
+            <entry>
+               <para>Una pista es similar a una capa. Las pistas que están encima muestran vídeo e imágenes sobre las que están debajo. No hay límite en el número de pistas que puede tener un proyecto.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_18"><title>Pistas</title>
+   <para>OpenShot usa las pistas como capas de vídeos e imágenes, de modo análogo a como lo hacen las aplicaciones de edición de imagen. La pista superior es equivalente a la capa superior y la pista inferior es equivalente a la capa inferior. OpenShot mezclará todas las capas/pistas , como lo haría una aplicación de edición de imagen.</para>
+   <para>Por ejemplo, imagine un proyecto con 3 pistas de vídeo  Podría usar una imagen de una puesta de sol como fondo, otra imagen con varios círculos en el medio y un logo en la parte superior.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/tracks.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Pista superior</para>
+            </entry>
+            <entry>
+               <para>Los clips de esta pista se mostrarán por encima de todas las demás. En esta capa deberían ir los logos y las marcas de agua. El logo de OpenShot de la captura de pantalla está en esta capa.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Pista intermedia</para>
+            </entry>
+            <entry>
+               <para>Estos clips están bajo la pista superior y sobre la pista inferior.  La imagen con los círculos se encuentra en esta pista en la ilustración.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Pista inferior</para>
+            </entry>
+            <entry>
+               <para>Estas pistas están por debajo de todas las demás. El atardecer de la imagen está en esta capa.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_19"><title>Control de la reproducción de vídeo</title>
+   <para>Reproducción, pausa y búsqueda son características muy importantes en un editor de vídeo.  Durante la creación de un proyecto de vídeo se necesita reproducir éste una y otra vez.  Hacer clic en el botón <guibutton>Reproducir</guibutton> es una manera fácil de lograr esto, pero hay otras maneras más rápidas.</para><sect3 id="sect3_4"><title>Métodos de reproducción</title>
+   <para>Hay 8<emphasis> formas </emphasis>de controlar la reproducción de vídeo en <application>OpenShot</application></para>
+   <orderedlist>
+      <listitem>
+         <para>Haciendo clic en la <guibutton>Barra de previsualización</guibutton> (Reproducir, Avance rápido, etc...)</para>
+      </listitem>
+      <listitem>
+         <para>Arrastrando el deslizador sobre la barra de herramientas de previsualización</para>
+      </listitem>
+      <listitem>
+         <para>Arrastrando el <guibutton>Cabezal de reproducción</guibutton> sobre la regla</para>
+      </listitem>
+      <listitem>
+         <para>Haciendo clic sobre la regla en cualquier punto</para>
+      </listitem>
+      <listitem>
+         <para>Usando atajos de teclado (teclas J, K, L)</para>
+      </listitem>
+      <listitem>
+         <para>Usando los botones de dirección (izquierda, derecha, arriba, abajo)</para>
+      </listitem>
+      <listitem>
+         <para>Using SHIFT + Arrow Buttons (Left, Right, Up, Down)</para>
+      </listitem>
+      <listitem>
+         <para>Pulsando la barra espaciadora</para>
+      </listitem>
+      <listitem>
+         <para>Haciendo doble clic en un marcador definido por el usuario.</para>
+      </listitem>
+   </orderedlist></sect3></sect2></sect1><sect1 id="sect1_5"><title>Keyboard Shortcuts</title>
+   <para>A keyboard shortcut is a key (or keys) on the keyboard that saves you the trouble of moving your mouse and clicking.  It is often faster to type a key, than to point and click.  Here are all keyboard shortcuts in <application>OpenShot</application>:</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>tecla</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>J</para>
+            </entry>
+            <entry>
+               <para>Rebobinar el vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>K</para>
+            </entry>
+            <entry>
+               <para>Pausa, reproducción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>L</para>
+            </entry>
+            <entry>
+               <para>Avance rápido</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Barra espaciadora</para>
+            </entry>
+            <entry>
+               <para>Pausa, reproducción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Arriba</para>
+            </entry>
+            <entry>
+               <para>Buscar el marcador anterior (si existe)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Abajo</para>
+            </entry>
+            <entry>
+               <para>Buscar el marcador siguiente (si existe)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Izquierda</para>
+            </entry>
+            <entry>
+               <para>Ir al fotograma anterior (frame stepping)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Left</para>
+            </entry>
+            <entry>
+               <para>Step backwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Derecha</para>
+            </entry>
+            <entry>
+               <para>Ir al fotograma siguiente (frame stepping)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Right</para>
+            </entry>
+            <entry>
+               <para>Step forwards one second</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Tabulador</para>
+            </entry>
+            <entry>
+               <para>Alternar entre el modo <guibutton>Redimensionar</guibutton> y <guibutton>Seleccionar</guibutton></para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Scroll Wheel</para>
+            </entry>
+            <entry>
+               <para>Acercar y alejar el zoom en la línea de tiempo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Home</para>
+            </entry>
+            <entry>
+               <para>Desplazarse hasta el principio de la línea de tiempo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + End</para>
+            </entry>
+            <entry>
+               <para>Desplazarse hasta el principio de la línea de tiempo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>C</para>
+            </entry>
+            <entry>
+               <para>Dividir todos los clips en la posición del cabezal</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + N</para>
+            </entry>
+            <entry>
+               <para>Crear un proyecto nuevo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + O</para>
+            </entry>
+            <entry>
+               <para>Abrir un proyecto existente</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + F</para>
+            </entry>
+            <entry>
+               <para>Importar archivo (audio, video o imagen)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + I</para>
+            </entry>
+            <entry>
+               <para>Importar secuencia de imágenes</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + W</para>
+            </entry>
+            <entry>
+               <para>Importar nueva traducción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + S</para>
+            </entry>
+            <entry>
+               <para>Guardar el proyecto actual</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + CTRL + S</para>
+            </entry>
+            <entry>
+               <para>Guardar el proyecto actual como...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + X</para>
+            </entry>
+            <entry>
+               <para>Exportar proyecto como XML MLT</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + E</para>
+            </entry>
+            <entry>
+               <para>Exportar el proyecto actual como un archivo de vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Control+U</para>
+            </entry>
+            <entry>
+               <para>Subir el proyecto actual como archivo  de vídeo a Youtube o Vimeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Q</para>
+            </entry>
+            <entry>
+               <para>Salir del programa</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Z</para>
+            </entry>
+            <entry>
+               <para>Deshacer la última acción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Y</para>
+            </entry>
+            <entry>
+               <para>Rehacer la acción anterior</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + P</para>
+            </entry>
+            <entry>
+               <para>Editar las preferencias</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + T</para>
+            </entry>
+            <entry>
+               <para>Crear un título nuevo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + B</para>
+            </entry>
+            <entry>
+               <para>Crear un título animado nuevo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F11</para>
+            </entry>
+            <entry>
+               <para>Cambiar a modo de pantalla completa</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>F1</para>
+            </entry>
+            <entry>
+               <para>Abrir el archivo de ayuda (si está instalado)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + D</para>
+            </entry>
+            <entry>
+               <para>Captura y guarda la diapositiva actual de cualquier clip, excepto de sonido, según indique cabeza de reproducción y añade la imagen a los Archivos del Proyecto.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>M</para>
+            </entry>
+            <entry>
+               <para>Add a marker to the timeline</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Middle Mouse click</para>
+            </entry>
+            <entry>
+               <para>Opens clip properties window</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>CTRL + Drag clip or transition</para>
+            </entry>
+            <entry>
+               <para>Restricts movement of clip or transition to vertical only</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Click</para>
+            </entry>
+            <entry>
+               <para>Removes the clip or transition that was clicked</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>SHIFT + Remove Clip (menu item)</para>
+            </entry>
+            <entry>
+               <para>Closes the gap on the timeline left by the deleted clip</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_6"><title>Proyectos - Crear, abrir y guardar</title>
+   <para>OpenShot necesita un Archivo de Proyecto para guardar la información que compone un proyecto de vídeo. Información como el nombre y la ubicación de su proyecto, archivos de vídeo y de audio, información sobre la línea de tiempo, qué clips han sido recortados, arreglos, etc ...</para>
+   <para/>
+   <para>Cuando se ejecuta <application>OpenShot</application>, el propio programa crea un nuevo proyecto automáticamente. Puede empezar a usarlo inmediatamente sin necesidad de crear un nuevo proyecto.  </para>
+   <para>Los archivos de proyecto tienen una extensión de archivo .OSP (proyecto_ejemplo.osp).  Además, los archivos de proyecto necesitan una carpeta de miniaturas (thumbnail) , que contendrá todas las miniaturas de su proyecto.  Si mueve un archivo de proyecto, asegúrese de mover la carpeta /thumbnail/ también.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Archivo de Proyecto</para>
+            </entry>
+            <entry>
+               <para>/home/usuario/Escritorio/ProyectoA.osp</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Carpeta de miniaturas</para>
+            </entry>
+            <entry>
+               <para>/home/usuario/Escritorio/thumbnail/</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable><sect2 id="sect2_20"><title>Crear un proyecto</title>
+   <para>Hay dos modos de crear un proyecto nuevo</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/menu_file.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_5"><title>Método 1 - Menú Archivo:</title>
+   <para>Hacer clic en el menú <guimenu>Archivo &gt;</guimenu><guimenuitem>Nuevo proyecto</guimenuitem>.  Se abrirá la ventana de <guilabel>Nuevo proyecto</guilabel>.  Cambie el nombre y tipo de proyecto, la longitud de la línea de tiempo y, a continuación, haga clic en "Guardar proyecto".</para></sect3><sect3 id="sect3_6"><title>Método 2 - Guardar por defecto:</title>
+   <para>Como Openshot crea por defecto un proyecto cuando lanza el programa, usted puede sencillamente elegir <guimenu>Archivo &gt;</guimenu><guimenuitem>Guardar</guimenuitem>.  Se abrirá la pantalla <guilabel>Guardar proyecto</guilabel>.  Cambie el nombre del proyecto, tipo de proyecto, duración de la línea de tiempo y haga clic en "Guardar proyecto".</para></sect3></sect2><sect2 id="sect2_21"><title>Pantalla de guardar proyecto</title>
+   <para>Al hacer clic en <guimenuitem>Nuevo proyecto</guimenuitem> o <guimenuitem>Guardar proyecto</guimenuitem> se mostrará esta pantalla.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/projects_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Nombre del proyecto</para>
+            </entry>
+            <entry>
+               <para>El nombre de su archivo de proyecto (extensión de archivo .osp)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Carpeta del proyecto</para>
+            </entry>
+            <entry>
+               <para>La ubicación de la carpeta dónde guardar sus archivos de proyecto.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Duración del proyecto</para>
+            </entry>
+            <entry>
+               <para>La longitud <emphasis>máxima</emphasis> de la línea de tiempo.  No obstante, la línea de tiempo crecerá de manera automática si los clips exceden dicha longitud.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Tipo de proyecto</para>
+            </entry>
+            <entry>
+               <para>Esto afecta a la venta de previsualización.  Establece el tamaño,  relación de aspecto, y fotogramas por segundo de los archivos de video que estas previsualizando.  Es recomendable que edites en el con el mismo perfil que planeas exportar (para lograr los mejores resultados).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Detalles del Proyecto</para>
+            </entry>
+            <entry>
+               <para>Esta tabla previsualiza los detalles del tipo de proyecto, tales como tamaño, relación de aspecto y fotogramas por segundo.   Si  cambia el desplegable de tipo de proyecto, se actualizará esta tabla.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_22"><title>Abrir un proyecto</title>
+   <para>Para abrir un proyecto, elija <guimenu>Archivo &gt;</guimenu><guimenuitem>Abrir un proyecto</guimenuitem>. Se mostrará el diálogo <guilabel>Abrir un proyecto</guilabel>. Seleccione el archivo de proyecto (*.osp) que desee abrir, a continuación haga clic en <guibutton>Abrir proyecto</guibutton>.</para>
+   <para>Si está abriendo un proyecto reciente, elija <guimenu>Archivo &gt;</guimenu><guimenuitem>Proyectos recientes</guimenuitem>.  Esta es a menudo la manera más rápida de abrir un proyecto en <application>OpenShot</application>.</para>
+   <para>Si desea abrir automáticamente su proyecto al lanzar OpenShot, haga doble clic en el archivo .OSP (en su ordenador), y elija <command>openshot</command> como comando.</para></sect2></sect1><sect1 id="sect1_7"><title>Importar archivos - Audio, vídeo e imágenes</title>
+   <para>Antes de poder usar un clip en la línea de tiempo, debe primero <emphasis>importarlo</emphasis> a su proyecto.  Existen unas cuantas maneras de importar un clip.  La más común es arrastrar y soltar archivos de su ordenador a la sección  <guibutton>Archivos del proyecto</guibutton> de la pantalla.</para>
+   <para>Existen 4 métodos diferentes para importar un clip.</para><sect2 id="sect2_23"><title>Método 1 - Arrastrar y soltar</title>
+   <orderedlist>
+      <listitem>
+         <para>Ejecutar <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>Arrastrar y soltar a la vez múltiples archivos desde su Escritorio al árbol de <guibutton>Archivos del proyecto</guibutton>.</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/files_drag_and_drop.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_24"><title>Método 2 - Arrastrar carpeta</title>
+   <orderedlist>
+      <listitem>
+         <para>Ejecutar <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>Arrastra y suelta una carpeta con archivos de medios de tu escritorio a <emphasis>Archivos de proyecto</emphasis></para>
+         <para>
+            <emphasis>* Todos los archivos de audio, vídeo e imágenes de esta carpeta serán importados</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_25"><title>Método 3 - Abrir con</title>
+   <orderedlist>
+      <listitem>
+         <para>Mientras navega por sus archivos en Gnome, seleccione 1 o más archivos de medios</para>
+      </listitem>
+      <listitem>
+         <para>Haz click con el botón derecho en los archivos seleccionados y elige <guimenu>Abrir con Otra Aplicación...</guimenu></para>
+      </listitem>
+      <listitem>
+         <para>Elige <application>OpenShot Video Editor</application> (o el comando <command>openshot</command>)</para>
+         <para>
+            <emphasis>* Incluso después de comenzar a trabajar</emphasis>
+            <application>OpenShot</application>
+            <emphasis>con sus archivos, aun puede volver al sistema de archivos y hacer clic derecho en "más archivos" para escogerlos</emphasis>
+            <application>OpenShot</application>
+            <emphasis>. Los añadirá a la instancia en ejecución de OpenShot.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_26"><title>Método 4 - Botón de importar</title>
+   <orderedlist>
+      <listitem>
+         <para>Ejecutar <application>OpenShot</application></para>
+      </listitem>
+      <listitem>
+         <para>Haz clic en el botón <guibutton>Importar archivos</guibutton> de la barra de herramientas.</para>
+      </listitem>
+      <listitem>
+         <para>Elige 1 o más ficheros, y haz click en <guibutton>Importar</guibutton></para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_8"><title>Secuencias de imágenes</title>
+   <para>Una de las características más potentes de OpenShot es la habilidad de importar secuencias de imágenes.  Una secuencia de imágenes no es, en realidad, más que una carpeta llena de imágenes con nombres muy similares y por supuesto, nombradas secuencialmente.  Cada archivo de imagen representa un fotograma de vídeo.  De modo que para un clip de 30 segundos de duración, con 30 fotogramas por segundo, debería tener 900 archivos de imagen.  Aunque las secuencias de imágenes puedan ser difíciles de trabajar (a causa del gran volumen de archivos) se puede lograr casi cualquier cosa.</para>
+   <para>Para importar una secuencia de imágenes, siga estos pasos:</para><sect2 id="sect2_27"><title>Localice una secuencia de imágenes</title>
+   <para>Muchos programas pueden generar una secuencia de imágenes.  Por ejemplo, en Blender (un paquete de animación 3D), puede crear una gran secuencia animada para el título y exportarla como una serie de archivos .PNG (con transparencia).   Se creará una carpeta en su ordenador que contendrá todas las imágenes.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_28"><title>Importe la secuencia de imágenes</title>
+   <para>Elija la opción de menú <guimenu>Archivo</guimenu> &gt; <guimenuitem>Importar secuencia de imágenes</guimenuitem> y se lanzará el diálogo de Secuencia de imágenes.  </para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>Seleccione la ubicación de la carpeta de su secuencia de imágenes, y el patrón de nomenclatura de archivos.  No todas las secuencias de imágenes se nombran de la misma forma.  Por ejemplo, Movie_0001.JPG es diferente de Movie_1.JPG.  Una vez introducido el patrón correcto de nombre de archivo, haga clic en <guibutton>Importar secuencia de imágenes</guibutton>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/import_image_seq.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_29"><title>Arrastra y suelta secuencias de imágenes.</title>
+   <para>La forma más fácil para importar una secuencia de imágenes, es arrastrar y soltar una única imagen de la secuencia en "Archivos de proyecto", o usar la pantalla <guimenu>Importar Archivos</guimenu> e importar una única imagen.  Entonces, te preguntará si quieres importar la secuencia completa.  Usando este método se determinará automáticamente el patrón del archivo y se definirá la correcta configuración para la secuencia.</para></sect2><sect2 id="sect2_30"><title>Añadir a la línea de tiempo</title>
+   <para>Arrastre y suelte su nueva secuencia de video en la línea de tiempo   Se representará como un clip individual, como cualquier otro clip de vídeo.</para></sect2><sect2 id="sect2_31"><title>Cree una secuencia de imágenes</title>
+   <para>Si aún no tiene una secuencia de imágenes, es fácil crear una.  Simplemente haga clic con el botón derecho en cualquier <guibutton>archivo de vídeo</guibutton> en sus <guimenuitem>Archivos del proyecto</guimenuitem> y elija <guimenuitem>Convertir a secuencia de imágenes</guimenuitem>.  Se creará una nueva carpeta y exportará cada fotograma como un archivo .PNG.  También se añadirá automáticamente una referencia a su nueva secuencia de imágenes en la sección <guimenuitem>Archivos del proyecto</guimenuitem>.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/image_seq_convert.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_32"><title>Editar una secuencia de imágenes</title>
+   <para>Si desea editar una secuencia de imágenes, le recomendamos utilizar  Gimp (un editor de imágenes libre de origen).   El tiene plug-ins para ayudar en la edición de grandes secuencias de imágenes, y puede simplificar el proceso de edición, guardar  y abrir la siguiente imagen en  secuencia.   A continuación, puede retocar cada fotograma, eliminar los ojos rojos, añadir efectos de sables de luz brillante, borrar alambres, etc ..   No hay realmente nada que no se puede hacer en la edición  fotograma por fotograma, pero se necesita mucho esfuerzo.</para><sect3 id="sect3_7"><title>Paquete de animación Gimp (GAP)</title>
+   <para>GAP es un plug-in para  Gimp, que ayuda a la edición de secuencias de imágenes.  Puede guardar rápidamente la imagen actual y cargar la siguiente imagen de una secuencia.  También puede utilizar fotogramas clave (key-frames) para aplicar efectos en múltiples fotogramas, o incluso crear animaciones.  Si necesita editar una secuencia de imágenes, definitivamente debería consultar <ulink url="http://www.gimp.org/tutorials/Using_GAP/">GAP</ulink>.</para></sect3><sect3 id="sect3_8"><title>Pantallazo del Paquete de Animación de Gimp (Gimp Animation Package)</title>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/gimp_animation_package.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect3></sect2></sect1><sect1 id="sect1_9"><title>Gestionar archivos y carpetas</title>
+   <para>Cuando haga un vídeo, necesitará importar muchos archivos diferentes en su proyecto, incluyendo audio, vídeos, imágenes, títulos, capas superpuestas, efectos de sonido, y más.  Esto puede írsele rápidamente de las manos, y hacer su lista de archivos de proyecto demasiado larga, lo cual ralentizará su búsqueda de un archivo determinado.</para>
+   <para>Si tu proyecto tiene demasiados ficheros (lo que es decisión tuya), puedes usar etiquetas, filtros y carpetas para organizar tus ficheros.</para><sect2 id="sect2_33"><title>Etiquetas</title>
+   <para>Cada archivo tiene una columna para una <guimenu>etiqueta</guimenu>.  Una etiqueta es cualquier frase o frases que te ayudan a identificar para qué se va a utilizar este archivo.  Por ejemplo, ""Escena 1", "Intro", "Título", "Créditos".  No hay una forma correcta o incorrecta para utilizar una etiqueta, sólo introduce cualquier texto que te ayude a identificar un archivo.</para></sect2><sect2 id="sect2_34"><title>Filtros</title>
+   <para>La sección <guimenu>Archivos de Proyecto</guimenu> tiene botones de filtro y una caja de texto para ayudarte a encontrar archivos rápidamente.  Los botones de filtro, <guimenuitem>Vídeo</guimenuitem>, <guimenuitem>Audio</guimenuitem>, e <guimenuitem>Imagen</guimenuitem>, filtrarán rápidamente la lista de archivos a esos tipos de archivo.  Introduce cualquier texto en la caja de texto para mostrar sólo los archivos que contienen dicho texto en el nombre o la etiqueta.  Así que, esta característica se puede combinar con las etiquetas para crear un potente sistema de búsqueda y organización de medios.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_filter.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_35"><title>Carpetas</title>
+   <para>Si las etiquetas y los filtros no son suficientes para organizar los archivos de tu proyecto, puedes además, crear carpetas dentro de tu proyecto que te ayudarán a agrupar los archivos.</para></sect2><sect2 id="sect2_36"><title>Crear una carpeta</title>
+   <orderedlist>
+      <listitem>
+         <para>Haga clic con el botón derecho en la sección <guimenuitem>Archivos del proyecto</guimenuitem>.</para>
+      </listitem>
+      <listitem>
+         <para>Elija <guimenuitem>Crear una carpeta...</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>Introduzca un nombre para su carpeta.</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_create.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_37"><title>Guarde los archivos en la carpeta</title>
+   <orderedlist>
+      <listitem>
+         <para>Asegúrese de haber creado antes una carpeta.</para>
+      </listitem>
+      <listitem>
+         <para>Haga clic derecho en 1 o más archivos en la sección de los <guimenuitem>Archivos del proyecto</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>Elija <guimenuitem>Mover archivo(s) a carpetaguimenuitem&gt;.</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>Elija la carpeta</para>
+         <para/>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/folders_move_to_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_38"><title>Borrar una carpeta</title>
+   <orderedlist>
+      <listitem>
+         <para>Clic derecho en una carpeta</para>
+      </listitem>
+      <listitem>
+         <para>Seleccione <guimenuitem>Eliminar</guimenuitem></para>
+         <para>
+            <emphasis>* Asegúrese de mover todos los archivos de una carpeta antes de eliminarla.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2></sect1><sect1 id="sect1_10"><title>Agregar archivos a la línea de tiempo</title>
+   <para>Una vez hayas importado archivos a tu proyecto, el siguiente paso es añadirlos en la línea de tiempo.  </para><sect2 id="sect2_39"><title>Arrastrar  y Soltar</title>
+   <para>Para añadir un archivo de tus <guimenuitem>Archivos de Proyecto</guimenuitem> a la <guibutton>línea de tiempo</guibutton>, sigue estos pasos:</para>
+   <orderedlist>
+      <listitem>
+         <para>Haga clic en un archivo.</para>
+      </listitem>
+      <listitem>
+         <para>Arrástrelo sobre la<guibutton>línea de tiempo</guibutton> y suéltelo</para>
+      </listitem>
+      <listitem>
+         <para>El  clip se añadirá a la línea de tiempo.</para>
+         <para>
+            <emphasis>Sólo puedes añadir 1 archivo cada vez con este método.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/timeline_drop.png"/>
+         <caption/>
+      </imageobject>
+      <emphasis/>
+   </mediaobject>
+   <para/></sect2><sect2 id="sect2_40"><title>Añadir múltiples archivos a la línea de tiempo</title>
+   <para>Si quisieras añadir múltiples archivos a la línea de tiempo simultáneamente, hay una característica llamada <guimenuitem>Añadir a la Línea de Tiempo</guimenuitem>.  Para usar esta característica, selecciona todos los archivos que te gustaría añadir a la línea de tiempo, haz clic con el botón derecho y selecciona <guimenuitem>Añadir a la Línea de Tiempo</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>La pantalla <guimenuitem>Añadir a la Línea de Tiempo</guimenuitem> también puede aplicar desvanecimiento y transición entre los clips,  o simplemente apilarlos uno tras del otro en la línea de tiempo.  Los archivos serán insertados en la posición de la reproducción.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/add_to_timeline.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Momento de inicio</para>
+            </entry>
+            <entry>
+               <para>Éste es el lugar en la línea de tiempo (en segundos) donde los archivos se añadirán.  La ubicación predeterminada es la posición de reproducción en la línea de tiempo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Pista superior</para>
+            </entry>
+            <entry>
+               <para>La pista superior es la pista donde se añadirán los clips en principio.  Si no se están usando transiciones, sólo se necesita la pista superior.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Pista inferior</para>
+            </entry>
+            <entry>
+               <para>La pista inferior se usa cuando se necesitan transiciones, y los clips alternan entre la pista superior e inferior, con transiciones entre ellos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Atenuar</para>
+            </entry>
+            <entry>
+               <para>Tipo de fundido a aplicar sobre un clip</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Duración del fundido</para>
+            </entry>
+            <entry>
+               <para>Duración (en segundos) del fundido.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Transición</para>
+            </entry>
+            <entry>
+               <para>El tipo de transición a añadir entre clips.  Puedes, además, elegir Transición Aleatoria, si no quieres que la misma transición se use una y otra vez.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Duración de la transición</para>
+            </entry>
+            <entry>
+               <para>Duración (en segundos) de la transición.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Subir</para>
+            </entry>
+            <entry>
+               <para>Mover los archivos seleccionados hacia arriba en la lista</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Bajar</para>
+            </entry>
+            <entry>
+               <para>Mover los archivos seleccionados hacia abajo en la lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>Barajar ficheros</para>
+            </entry>
+            <entry>
+               <para>Baraja los ficheros y los coloca en orden aleatorio.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>Eliminar archivo</para>
+            </entry>
+            <entry>
+               <para>Elimina los archivos seleccionados de esta pantalla</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_11"><title>Movimiento y ajuste de clips en la línea de tiempo</title>
+   <para>Una vez que haya archivos (también llamados clips) en la línea de tiempo, tenemos que colocarlos en pistas, y ponerlos  en el orden correcto.   También, tendremos que seleccionar el comienzo y el final del clip de vídeo (si es necesario).</para><sect2 id="sect2_41"><title>Mover un clip (modo de selección)</title>
+   <orderedlist>
+      <listitem>
+         <para>Cambie al <guibutton>modo de selección</guibutton> (este es el modo por defecto)</para>
+      </listitem>
+      <listitem>
+         <para>Haga clic en un clip.</para>
+      </listitem>
+      <listitem>
+         <para>Arrastre el clip a una nueva posición en la<guibutton> línea de tiempo </guibutton>, y suéltelo.</para>
+         <para>
+            <emphasis>* Si la opción de ajuste está habilitada, el clip se alineará a continuación de cualquier clip cercano (o al cabezal de reproducción, si se encuentra próximo).</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_42"><title>Recortar un clip (Modo de redimensión)</title>
+   <orderedlist>
+      <listitem>
+         <para>Cambie al modo de <guibutton>Redimensionar</guibutton>, haciendo clic en el icono Redimensionar.</para>
+      </listitem>
+      <listitem>
+         <para>Mueva el cursor del ratón sobre el borde derecho o izquierdo de un clip.</para>
+      </listitem>
+      <listitem>
+         <para>Arrastre el borde del clip para recortar el vídeo.</para>
+         <para>
+            <emphasis>Conforme arrastre el borde del clip, la ventana de previsualización mostrará dónde comenzará o terminará el clip (según qué lado del clip esté arrastrando).</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_43"><title>Cortar  un clip (Modo Cuchilla)</title>
+   <orderedlist>
+      <listitem>
+         <para>
+            <emphasis>Para cortar un clip en 2 piezas, cambie a</emphasis>
+            <guibutton>Modo cuchilla</guibutton>
+            <emphasis>.</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>El cursor del ratón cambiará a una línea de puntos y un icono de cuchilla.</emphasis>
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>Haga clic sobre un clip en el punto que desea cortar o dividirlo.</emphasis>
+         </para>
+         <para>
+            <emphasis>* Si la opción de ajuste está activada, la cuchilla saltará a la posición del cabezal, si esta se encuentra próxima.</emphasis>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_44"><title>Barra de herramientas de edición</title>
+   <para>La Barra de edición permite alternar entre los distintos modos de edición para la línea de tiempo. Para mover, recortar o partir clips es necesario cambiar el modo de edición usando esta barra.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/main_window_edit_toolbars.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Añadir pista</para>
+            </entry>
+            <entry>
+               <para>Añade una nueva pista al comienzo de la lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Modo de selección</para>
+            </entry>
+            <entry>
+               <para>El Modo de selección permite seleccionar y mover clips.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Modo cuchilla</para>
+            </entry>
+            <entry>
+               <para>El Modo cuchilla permite separar un clip cortando donde se presiona.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Modo de redimensión</para>
+            </entry>
+            <entry>
+               <para>El Modo de redimensión permite sujetar los extremos de un clip y arrastrarlos para redimensionarlo (o recortarlo).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Modo de encaje</para>
+            </entry>
+            <entry>
+               <para>El Modo de encaje permite encajar (o saltar) el clip arrastrado junto al clip o marca de reproducción más cercano (de haber uno cerca) al momento de soltarlo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Añadir marcador</para>
+            </entry>
+            <entry>
+               <para>Añade un nuevo marcador (o punto de partida), que permite rápidamente saltar de vuelta a este punto exacto mientras reproduces.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Marcador anterior</para>
+            </entry>
+            <entry>
+               <para>Salta al marcador anterior (si lo hubiere).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Marcador siguiente</para>
+            </entry>
+            <entry>
+               <para>Salta al siguiente marcador (si lo hubiere).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2></sect1><sect1 id="sect1_12"><title>Separar el audio del vídeo.</title>
+   <para>OpenShot puede separar el audio y el vídeo de un clip, si es necesario.   Si sólo desea reproducir el audio de un clip, o sólo reproducir el vídeo sin audio,  siga estos pasos:</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/track_buttons.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_45"><title>Solo el video.</title>
+   <para>Para reproducir solo el vídeo de un clip, haga clic en el icono del altavoz, situado en el clip.   Se silenciará el audio de este clip de video.   O si desea silenciar el audio de toda la pista, haga clic en el icono del altavoz en la pista.</para></sect2><sect2 id="sect2_46"><title>Solo el audio.</title>
+   <para>Para sólo escuchar el audio de un clip, haga clic en el icono del ojo, situado en el clip.   Esto ocultará la salida de vídeo.   O si desea ocultar la salida de vídeo de toda la pista, haga clic en el icono del ojo   en la pista.</para></sect2></sect1><sect1 id="sect1_13"><title>Duplicar clips.</title>
+   <para>Una característica muy útil en OpenShot es la capacidad para duplicar clips, transiciones, y las máscaras.   Para duplicar un elemento, haga clic derecho sobre el elemento (como un clip o transición) y elija <guimenuitem>Duplicar</guimenuitem>.   Esto agregará una copia exacta del elemento duplicado a la línea de tiempo.   Incluidos los puntos de entrada y salida, los efectos aplicados al clip, y los principales ajustes de animación de fotograma clave.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/duplicate_clip.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>Un uso común de  la función <guimenuitem>Duplicar</guimenuitem>, es recortar un clip de vídeo hasta una escena específica, a continuación, duplicar el clip.   Una vez que haya dos clips idénticos, puede silenciar el audio en uno, y ocultar el vídeo del otro.    Es un método rápido para separar el audio y el vídeo de un clip.   Ahora puede desplazar el audio del clip, o continuar con el audio del clip, mientras que el recorte del vídeo esta abajo.   Esto se utiliza a menudo en las películas, cuando dos personas están hablando.   Se escucha el audio de la primera persona que habla, mientras se muestra la reacción de la segunda persona.</para></sect1><sect1 id="sect1_14"><title>Propiedades del clip</title>
+   <para>Cada clip en OpenShot tiene muchas propiedades que pueden ser manipuladas.   Sin embargo, debido a que no es posible visualizar y ajustar todos los parámetros de la línea de tiempo, se ha creado esta pantalla.   Permite al usuario ajustar cada posible opción y propiedad que tenga un clip, incluyendo longitud, velocidad, volumen, tamaño, posición, relación de aspecto y muchos otras.</para><sect2 id="sect2_47"><title>Lanzamiento de la ventana de Propiedades de clip</title>
+   <para>To launch the clip properties screen, right-click on a clip and choose <guimenuitem>Properties</guimenuitem>, or click your middle mouse button on a clip.</para></sect2><sect2 id="sect2_48"><title>Vista previa de cambios.</title>
+   <para>Para previsualizar rápidamente lo que la nueva configuración  produce, haga clic en el botón <guibutton> Reproducir guibutton&gt; o arrastre la vista previa  Diapositiva guibutton&gt;.  Aplicar guibutton&gt;.</guibutton></para></sect2><sect2 id="sect2_49"><title>Etiqueta General</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab1.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para>La etiqueta General tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Position on Timeline</para>
+            </entry>
+            <entry>
+               <para>The point on the timeline at which the clip begins to play (in seconds).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Activar vídeo</para>
+            </entry>
+            <entry>
+               <para>Salida de video de este clip</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Activar audio</para>
+            </entry>
+            <entry>
+               <para>Salida de audio para este clip</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_50"><title>Pestaña Duración</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab2.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box"/> La pestaña Duración proporciona información sobre el inicio, final, y la longitud total de un clip.   Al ajustar estos valores, puede retrasar el comienzo de un clip, finalizar el clip anticipadamente o ambas cosas.   Utilice el botón <guibutton>Reproducir</guibutton> para previsualizar los cambios.   Practique ajustando estos valores sin utilizar la herramienta de Cambiar tamaño.</para>
+   <para/>
+   <para>La pestaña Duración tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Entrada (segundos)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to start playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Salida (segundos)</para>
+            </entry>
+            <entry>
+               <para>The point in the clip in which to stop playing, in seconds.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Duración (segundos)</para>
+            </entry>
+            <entry>
+               <para>La duración del clip se calcula sobre la base de los puntos de entrada y salida.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_51"><title>Pestaña Velocidad</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab3.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para><anchor id="result_box1"/> La pestaña de velocidad muestra  un modo simple y un modo avanzado.   En el modo simple, utilizando los valores predefinidos, se puede acelerar el clip a 16x la velocidad normal o ralentizar el clip a 1/16 de la velocidad normal.   También, puede cambiar la dirección.   El modo avanzado le permite establecer una velocidad de alta precisión con decimales, en lugar de las fracciones simples predefinidas.</para>
+   <para/>
+   <para>Nota:  La solapa de velocidad sólo se muestra para archivos de vídeo.  El audio no se reproduce cuando se modifica la velocidad.</para>
+   <para/>
+   <para>La pestaña velocidad tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Velocidad</para>
+            </entry>
+            <entry>
+               <para>El segundo en que comenzará a reproducirse el vídeo (decimal)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Dirección</para>
+            </entry>
+            <entry>
+               <para>El último segundo del clip de vídeo (decimal)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Velocidad avanzada</para>
+            </entry>
+            <entry>
+               <para>Un valor decimal de alta precisión para la velocidad de un clip.   Este valor varía en función de los cambios realizados  en el desplegable de velocidad.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_52"><title>Pestaña Distribución</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>La pestaña Distribución tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Fotograma clave</para>
+            </entry>
+            <entry>
+               <para>Este desplegable determina en qué fotograma clave está trabajando.  Cada clip tiene dos fotogramas clave, el inicio y el final del clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Altura</para>
+            </entry>
+            <entry>
+               <para>La altura de un clip (en base a porcentaje).   Cuanto mayor sea el número, más alto será el clip.   Cuanto menor sea el número, menor será el clip .   Esto sólo afecta al fotograma clave actual, no a todo el clip.  </para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Anchura</para>
+            </entry>
+            <entry>
+               <para>La anchura de un clip (en base a porcentaje).   Cuanto mayor sea el número, mayor será el ancho del clip .   Cuanto menor sea el número, más estrecho será el clip .   Esto sólo afecta al fotograma clave actual, no a todo el clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>X</para>
+            </entry>
+            <entry>
+               <para>Posición X del centro del clip.   Cuanto mayor sea el número, más a la derecha estará el clip.   Cuanto menor sea el número, más cerca de la izquierda estará el clip. Esto sólo afecta al fotograma clave actual, no a todo el clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Y</para>
+            </entry>
+            <entry>
+               <para>Posición Y del centro del clip.   Cuanto mayor sea el número, más cerca de la parte inferior estará el clip.   Cuanto menor sea el número, más cerca de la parte superior estará.   Esto sólo afecta al fotograma clave actual, no a todo el clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Alfa</para>
+            </entry>
+            <entry>
+               <para>El nivel alfa del clip (transparencia).   100 = opaco.   0 = invisible.   Esto sólo afecta al fotograma clave actual, no a todo el clip.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_53"><title>Pestaña Audio</title>
+   <mediaobject/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab5.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>La pestaña de audio tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Volumen</para>
+            </entry>
+            <entry>
+               <para>El nivel de volumen de este clip.   0 = mudo, 100 = max.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Atenuación de entrada</para>
+            </entry>
+            <entry>
+               <para>Fundir el audio desde mudo hasta el nivel de volumen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Atenuación de salida</para>
+            </entry>
+            <entry>
+               <para>Atenuar el clip desde su nivel de volumen a mudo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Desvanecimiento (segundos)</para>
+            </entry>
+            <entry>
+               <para>El número de segundos que durará el desvanecimiento.   Cuanto mayor sea este número, más gradual será la atenuación.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_54"><title>Etiqueta de video</title>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab6.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>La pestaña de vídeo puede ajustar el tamaño, la posición y la alineación de un clip.   Además,  puede aplicar  efecto de fundido al principio y final de un clip,  que a veces es más fácil que usar una transición.   Debido a que la atenuación es una propiedad del clip, esta se mueve cuando se mueve el clip.   Así, a diferencia de las transiciones, el desvanecimiento permanece con el clip cuando este es movido.</para>
+   <para>La pestaña de vídeo tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ajustar a pantalla completa</para>
+            </entry>
+            <entry>
+               <para>Ajusta los clips al tamaño de la pantalla (definida en el tipo de proyecto)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Mantener la relación de aspecto</para>
+            </entry>
+            <entry>
+               <para>No distorsiona el clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Alineación horizontal</para>
+            </entry>
+            <entry>
+               <para>Alineación del clip de izquierda a derecha.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Alineación vertical</para>
+            </entry>
+            <entry>
+               <para>Alineación del clip de arriba hacia abajo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Girar</para>
+            </entry>
+            <entry>
+               <para>El número de grados a rotar la imagen.  Éste puede ser un número positivo o negativo, dependiendo de la dirección en que quieras rotar.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Atenuación de entrada</para>
+            </entry>
+            <entry>
+               <para>Fundir el clip de transparente a opaco.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Atenuación de salida</para>
+            </entry>
+            <entry>
+               <para>Desvanece el clip de opaco a transparente.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Desvanecimiento (segundos)</para>
+            </entry>
+            <entry>
+               <para>El número de segundos que durará el desvanecimiento.   Cuanto mayor sea este número, más gradual será la atenuación.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_55"><title>Pestaña de efectos.</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab7.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para>La pestaña  de efectos puede aplicar y controlar los múltiples efectos  que se pueden aplicar a un clip.   Para previsualizar el clip con los efectos, utilice el botón de <guibutton>Reproducir</guibutton>.   Cada efecto puede tener muchas configuraciones, así que use el botón <guibutton>Reproducir</guibutton> según varía los ajustes para comprobar el resultado.</para>
+   <para>La pestaña efectos tiene las siguientes propiedades:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Lista de efectos.</para>
+            </entry>
+            <entry>
+               <para>Esta caja tiene una lista de todos los efectos aplicados a este clip.   Los clips se procesan en  orden de superior a inferior.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Añadir</para>
+            </entry>
+            <entry>
+               <para>Añadir un nuevo efecto a este clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Quitar</para>
+            </entry>
+            <entry>
+               <para>Eliminar el efecto seleccionado del clip.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Arriba</para>
+            </entry>
+            <entry>
+               <para>Mover el efecto seleccionado hacia arriba en la lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Abajo</para>
+            </entry>
+            <entry>
+               <para>Mover el efecto seleccionado hacia abajo en la lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Configuración de Efectos</para>
+            </entry>
+            <entry>
+               <para>Esta área contiene los ajustes para el clip seleccionado (si procede).</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_15"><title>Fotogramas clave</title>
+   <para>OpenShot puede utilizar <emphasis>Fotogramas Clave</emphasis> para animar un clip.   Un fotograma clave es un punto en el tiempo que contiene muchos ajustes, tales como tamaño, posición y transparencia.   Hay dos maneras de establecer fotogramas  clave en OpenShot, manualmente o con un valor preestablecido.  </para><sect2 id="sect2_56"><title>Animacion preestablecida.</title>
+   <para>Muchas animaciones preestablecidas se encuentran disponibles, tales como desplazar un clip de abajo a arriba en la pantalla o aplicar un zoom ralentizado a un clip.   Para agregar una animación preestablecida, haga clic con el botón derecho en un clip, y elija <guimenuitem>Animación</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_animate.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_57"><title>Distribuciones predefinidas</title>
+   <para>Tiene a su disposición muchas distribuciones predefinidas tales como cambiar el tamaño de un clip y posicionarlo en una esquina de la pantalla o centrarlo.   Para agregar una distribución preestablecida a un clip, haga clic con el botón derecho en un clip, y elija <guimenuitem>Distribución</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/keyframe_layout.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_58"><title>Manualmente</title>
+   <para>Para crear manualmente fotogramas clave, haga clic derecho en un clip, y elija <guimenuitem>Propiedades</guimenuitem>.   Cambie a la pestaña <guibutton>Distribuciónguibutton&gt;, y elija qu</guibutton></para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>Cada clip tiene 2 fotogramas clave, el inicio de un clip, y el final de un clip.   Si hay alguna diferencia entre el inicio y el final , OpenShot  interpolará la diferencia en cada fotograma , animando así el clip.   Las siguientes propiedades se ven afectadas por los fotogramas clave:   <emphasis>altura, anchura, X, Y, y alpha</emphasis>.</para>
+   <para>Por ejemplo, considere estos fotogramas clave:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>Fotograma clave de inicio:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=0</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>Fotograma clave final:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X =150, Y=0</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>Esto resultaria en la animación del clip de  izquierda a  derecha en la pantalla.   La diferencia de la configuración de X es interpolada en todos los marcos en este clip.   Cuanto más   tiempo dure el clip,  más lenta es la animación.   Cuanto más corto el clip, más rápida  la animación.</para>
+   <para>Si desea  cambiar estáticamente el tamaño o la posición de un clip, Establezca para los fotogramas clave, inicial y final, los mismos valores:</para>
+   <para>Por ejemplo, considere estos fotogramas clave:</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>
+                  <guibutton>Fotograma clave de inicio:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>
+                  <guibutton>Fotograma clave final:</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>X=-50, Y=-50</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para>Esto desplazaría el clip a la parte superior derecha de la pantalla.   No se produciría animación puesto que los fotogramas clave de inicio y final tienen el mismo valor.</para>
+   <para>Si necesita más de 2 fotogramas clave, corte el clip en muchos pedazos, y al principio y al final de cada sección, puede establecer los fotogramas  clave, dando así la posibilidad de realizar un número ilimitado de fotogramas clave.</para></sect2></sect1><sect1 id="sect1_16"><title>Efecto de recorte</title>
+   <para>OpenShot puede recortar clips de vídeo y de imagen usando nuestra configuración de Distribución, que se encuentra en la pantalla de <guibutton>Propiedades del clip</guibutton>.   Haga clic derecho sobre un clip, y elija <guimenuitem>Propiedades</guimenuitem>.   A continuación, cambie a la pestaña <guibutton>Distribución</guibutton>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/clip_properties_tab4.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para>Para recortar un clip, tiene que hacer zoom en la parte del clip que desea mostrar.   Ajuste los valores de altura, anchura, X, e Y para acercar el área del clip que desee recortar.   Asegúrese de configurar ambos fotogramas clave con los mismos valores.  Utilice el botón <guibutton>Reproducir</guibutton> para lograr una vista previa.   Una vez que esté satisfecho con lo obtenido, haga clic en <guibutton>Aplicar</guibutton>.</para></sect1><sect1 id="sect1_17"><title>Efecto de rotacion</title>
+   <para>Si necesita girar un clip de vídeo 90 grados, 180 grados, o incluso realizar una rotación animada en círculos, OpenShot dispone del efecto <guibutton>Girar</guibutton> para ayudarle en esta tarea.</para>
+   <para>OpenShot dispone de dos tipos de efectos de rotación disponibles, fija y animada.  Para aplicar un efecto de rotación, cambie a la <guibutton>Pestaña de Efectos</guibutton> en la <guibutton>ventana principal</guibutton>, y arrastre el efecto <guimenuitem>Girar</guimenuitem> a su clip de vídeo.  </para>
+   <para>Para ajustar la configuración de rotación, haga clic derecho en el clip y seleccione <guimenuitem>Propiedadesguimenuitem&gt;. Reproducir para previsualizar el efecto.</guimenuitem></para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_rotation.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect2 id="sect2_59"><title>Rotación fija</title>
+   <para>Con una rotación fija puede rotar un vídeo 90 grados, 180 grados, o cualquier otro número de grados que precise.  Esta rotación no es animada.  Esto es útil cuando graba un vídeo girado y necesita volver a girarlo.  Para usar una rotación fija, simplemente ajuste la configuración con el inicio en "Fija".  Asegúrese de volver a ajustar la configuración a cero.</para></sect2><sect2 id="sect2_60"><title>Rotación animada</title>
+   <para>La rotación animada puede usarse para  hacer girar un clip en círculos o en muchos otros patrones.  Este puede ser un bonito efecto para títulos, periódicos giratorios u otros usos creativos.  Para utilizar una rotación animada, ajuste la configuración "Fija" a cero y use únicamente la configuración que comienza por "Rotar".</para></sect2><sect2 id="sect2_61"><title>Rotación simple</title>
+   <para>Cada clip tiene una opción de <guimenuitem>Rotar</guimenuitem>, que rotará el clip sin que haga falta añadir un efecto al clip.  Esto se puede modificar en la pantalla de <guimenuitem>Propiedades del Clip</guimenuitem>, o haciendo click con el botón derecho en un clip y eligiendo el menú <guimenuitem>Rotar</guimenuitem>.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/rotate_simple_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_18"><title>Editor de título</title>
+   <para>Como muchos editores de video, OpenShot tiene incluido un editor de títulos.  Tiene algunas funciones básicas para ayudarte a crear títulos para tu proyecto de video.  Estas son las características del sistema de títulos:</para>
+   <orderedlist>
+      <listitem>
+         <para>Muchas plantillas (incluyendo una plantilla de color sólido)</para>
+      </listitem>
+      <listitem>
+         <para>Edición sencilla de texto (título, subtítulo)</para>
+      </listitem>
+      <listitem>
+         <para>Cambio de fuente y color (incluyendo el canal alfa)</para>
+      </listitem>
+      <listitem>
+         <para>Cambio del color de fondo (incluyendo el canal alfa)</para>
+      </listitem>
+      <listitem>
+         <para>Utiliza el formato de imagen SVG (basado en gráficos vectoriales)</para>
+      </listitem>
+      <listitem>
+         <para>Añade los títulos  a la sección <guimenuitem>Archivos del proyecto</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>Integración con Inkscape (como editor avanzado)</para>
+      </listitem>
+   </orderedlist>
+   <para/>
+   <para>Sin embargo, si el editor básico no le resulta bastante potente, puede importar y usar como título cualquier archivo de imagen SVG.   El canal alfa (transparencia) será respetado, lo que significa que los títulos pueden ser superpuestos sobre otras pistas y el vídeo se mostrará a través de las partes transparentes.</para><sect2 id="sect2_62"><title>Lanzar el editor de títulos</title>
+   <para>Para añadir un nuevo título, haga clic en la opción de menú <guimenu>Título</guimenu> &gt; <guimenuitem>Nuevo título...</guimenuitem>.  Esto iniciará el  Editor de títulos.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_63"><title>Crear un nuevo archivo de título</title>
+   <para>Una vez lanzado el editor de títulos, debe seleccionar una plantilla y hacer clic en el botón <guibutton>Crear nuevo título</guibutton>.  Esto hará una copia de la plantilla de título SVG y la añadirá a sus <guimenuitem>Archivos del proyecto</guimenuitem>.  Introduzca el nombre del archivo, pues será grabado en su disco duro.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_new.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2><sect2 id="sect2_64"><title>Ventana del editor de títulos</title>
+   <para>El diálogo de título le permite elegir una plantilla, editar el texto, cambiar los colores y crear sus propios títulos para su proyecto de vídeo.  Cuando haya terminado de editar su título, haga clic en el botón <guibutton>Apply</guibutton>.</para>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_main_screen.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Elegir plantilla</para>
+            </entry>
+            <entry>
+               <para>Elegir una plantilla de archivo SVG para usarla como título.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Botón crear título</para>
+            </entry>
+            <entry>
+               <para>Haga clic en este butón para crear una copia de la plantilla SVG.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Editar el texto</para>
+            </entry>
+            <entry>
+               <para>Lanzar la ventana de edición de texto</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Cambiar la fuente</para>
+            </entry>
+            <entry>
+               <para>Cambiar el tamaño y familia de la fuente.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Color de fuente</para>
+            </entry>
+            <entry>
+               <para>Cambiar el color de la fuente y el nivel alfa (transparencia).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Color del fondo</para>
+            </entry>
+            <entry>
+               <para>Cambiar el color del fondo y el nivel alfa (transparencia).</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Editor avanzado</para>
+            </entry>
+            <entry>
+               <para>Editar este título SVG en Inkscape.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Previsualización del título</para>
+            </entry>
+            <entry>
+               <para>Previsualiza su título tras cada edición, cambio de color o de fuente.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_65"><title>Títulos emergentes / créditos</title>
+   <para>Para crear el efecto de títulos en marquesina, necesita recortar su secuencia de título en varios títulos con diferentes tamaños de pantalla.</para><sect3 id="sect3_9"><title>Cree la imagen para cada título</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_folder.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_10"><title>Coloque cada título en la línea de tiempo</title>
+   <para>Añade cada imagen de título de tus créditos deslizantes a tu línea de tiempo, define la longitud de cada imagen a 7 segundos, y luego aplica un desfase (offset) entre las dos pistas.  Esto puede ser hecho rápidamente con la característica <guimenuitem>Añadir a la Línea de Tiempo</guimenuitem>.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_scrolling.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/></sect3><sect3 id="sect3_11"><title>Anime cada título</title>
+   <para>Haga clic con el botón derecho en cada clip de título y elija <guimenuitem>Animar</guimenuitem> &gt; <guimenuitem>De abajo a arriba</guimenuitem>.  De esta forma se creará la ilusión de que todos sus títulos de crédito se desplazan de abajo a arriba en una secuencia contínua, sin saltos.  Asegúrese de solapar los títulos (como se muestra en la ilustración) de manera que no haya huecos entre los títulos.</para></sect3></sect2></sect1><sect1 id="sect1_19"><title>Editor de títulos animados</title>
+   <para>Los títulos animados 3D son tan fáciles de crear como los títulos basados en imágenes sencillas.   El sistema de título animado tiene las siguientes características:</para>
+   <orderedlist>
+      <listitem>
+         <para>Muchas plantillas</para>
+      </listitem>
+      <listitem>
+         <para>Edición sencilla de texto (título, subtítulo)</para>
+      </listitem>
+      <listitem>
+         <para>Cambiar fuente y color</para>
+      </listitem>
+      <listitem>
+         <para>Fondos Transparentes</para>
+      </listitem>
+      <listitem>
+         <para>Produce una secuencia de imágenes PNG (con canal alfa)</para>
+      </listitem>
+      <listitem>
+         <para>Añade los títulos  a la sección <guimenuitem>Archivos del proyecto</guimenuitem></para>
+      </listitem>
+      <listitem>
+         <para>Integración con Blender (un programa de animación 3D)</para>
+      </listitem>
+   </orderedlist><sect2 id="sect2_66"><title>Iniciar el Editor de Títulos Animados</title>
+   <para>Para añadir un nuevo título, haga clic en la opción de menú <guimenu>Título</guimenu> &gt; <guimenuitem>Nuevo título animado...</guimenuitem>.  Se abrirá el Editor de títulos animados.  Asegúrese de configurar el ajuste «Ejecutable de Blender» en el diálogo de preferencias a la ruta de Blender (se requiere la versión 2.5 o superior).</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/titles_menu.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/></sect2><sect2 id="sect2_67"><title>Crear un Título Animado Nuevo</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/animated_title.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <para/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Elegir plantilla</para>
+            </entry>
+            <entry>
+               <para>Seleccionar una plantilla para usar como título</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Ventana de previsualización</para>
+            </entry>
+            <entry>
+               <para>Previsualizar cualquier fotograma en la animación</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Selector de fotogramas</para>
+            </entry>
+            <entry>
+               <para>Elegir cualquier fotograma para previsualizar en la animación.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Actualizar</para>
+            </entry>
+            <entry>
+               <para>Refrescar la ventana de previsualización, para aplicar los cambios nuevos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Editar configuraciones</para>
+            </entry>
+            <entry>
+               <para>Editar los diversos ajustes de la animación, incluyendo el título, fuente, color, etc...</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Renderizar</para>
+            </entry>
+            <entry>
+               <para>Generar una secuencia de imágenes con el título animado, y añadirlo a la sección <guimenuitem>Ficheros del Proyecto</guimenuitem></para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2></sect1><sect1 id="sect1_20"><title>Transiciones</title>
+   <para>Las transiciones se utilizan para pasar gradualmente de un clip a otro.  Hay muchas transiciones disponibles en <application>OpenShot</application>.  Es fácil arrastrarlas y soltarlas en la línea de tiempo y pueden añadir un montón de diversión a un proyecto de vídeo.</para><sect2 id="sect2_68"><title>Pantalla de transiciones</title>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_clock.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Pestaña de transiciones</para>
+            </entry>
+            <entry>
+               <para>Esta es la pestaña de transiciones.  Contiene una lista de todas las transiciones disponibles en <application>OpenShot</application>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Lista de transiciones</para>
+            </entry>
+            <entry>
+               <para>Esta es la lista de transiciones.  Seleccione una transición y arrástrela y suéltela en la línea de tiempo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Redimensionar</para>
+            </entry>
+            <entry>
+               <para>Puede usar la herramienta de redimensionar para redimensionar una transición.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Una transición en la línea de tiempo</para>
+            </entry>
+            <entry>
+               <para>Once you drop a transition on the timeline, it can be moved and resized just like any other clip.  The transition snaps between tracks, and blends between the 2 tracks.  If snapping is enabled, the transition will automatically resize itself to perfectly fit between 2 clips, and also  automatically set the direction of the transition.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_69"><title>Añadir una transición</title>
+   <para>To add a transition, switch to the <guibutton>Transition Tab</guibutton>, and select a transition by clicking on it.  Drag and drop the transition onto the <guibutton>timeline</guibutton>.  It will snap between 2 tracks and automatically resize itself, if dropped where 2 clips overlap.</para></sect2><sect2 id="sect2_70"><title>Mover una transición</title>
+   <para>Para mover una transición, active el <guibutton>modo Seleccionar</guibutton> en la <guibutton>barra de herramientas de la línea de tiempo</guibutton>, y arrástrela a una nueva posición.</para></sect2><sect2 id="sect2_71"><title>Redimensionar una transición</title>
+   <para>Para redimensionar una transición, active el <guibutton>modo Redimensionar</guibutton> en la <guibutton>barra de herramientas de la línea de tiempo</guibutton>, y arrastre el extremo izquierdo o derecho a un nuevo tamaño.</para></sect2><sect2 id="sect2_72"><title>Cambio de dirección.</title>
+   <para>Debido a  que las transiciones se mezclan entre 2 pistas, es importante saber en qué dirección se produce la mezcla.   En la transición, hay una flecha  indica la dirección, de arriba abajo o de abajo hacia arriba.   En general, la transición debería ir del primer clip al siguiente según su posición en la línea de tiempo.</para>
+   <para>Para cambiar la dirección de una transición, haga clic derecho en una transición, y elija <guimenuitem>Cambiar dirección</guimenuitem>.</para></sect2><sect2 id="sect2_73"><title>Propiedades de la transición</title>
+   <para>Al igual que un clip, una transición tiene una ventana de propiedades.   Para iniciar la ventana de propiedades de una transición o de una máscara, haga clic derecho sobre el elemento y elija <guimenuitem>Propiedades</guimenuitem>.   Para guardar los cambios, haga clic en  <guibutton>Aplicar</guibutton>.</para>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/transitions_properties.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Tipo</para>
+            </entry>
+            <entry>
+               <para>Máscara o transición</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Dirección</para>
+            </entry>
+            <entry>
+               <para>La dirección de la transición o la máscara.   <emphasis>Arriba</emphasis> produce una mezcla desde el clip inferior al clip superior.   Y <emphasis>Abajo</emphasis> mezcla desde el clip superior hacia el clip subyacente.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Suavidad</para>
+            </entry>
+            <entry>
+               <para>La suavidad de la transición.   Cuanto mayor sea el número, mayor será la duración, cuanto menor sea el número más breve será la duración de la transición.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Máscara de Umbral</para>
+            </entry>
+            <entry>
+               <para>El umbral de la máscara  es la cantidad de grises a utilizar para la máscara.   Cuanto mayor sea el número, mayor cantidad de máscara se aplica; cuanto menor sea el número, menos se utiliza.   Experimente para encontrar el umbral adecuado para una máscara.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect2><sect2 id="sect2_74"><title>Convertir en máscara</title>
+   <para>Una máscara es muy similar a una transición, salvo que una máscara es estática.   No cambia gradualmente de un clip al siguiente.   En su lugar, se mezclan las 2 pistas en un momento predeterminado.   Una máscara puede ser utilizada para mostrar sólo una pequeña sección de un clip, para mostrar un borde alrededor de un clip, para bloquear algo de un clip.   Para experimentar con una máscara, simplemente convierta una transición a máscara y vea qué ocurre.</para>
+   <para>Para convertir una transición a una máscara, haga clic derecho en la transición, y elija <guimenuitem>Convertir en máscara</guimenuitem>.</para></sect2><sect2 id="sect2_75"><title>Crear una nueva Transición / Máscara</title>
+   <para>Las transiciones no son más que imágenes en escala de gris.   Se pueden crear en cualquier programa gráfico.  Para añadir una transición o máscara personalizada, seleccione <guimenu>Archivo</guimenu> &gt; <guimenuitem>Importar nueva transición</guimenuitem>, y selecciona un archivo de imagen PNG en escala de grises desde su disco duro.  Esta imagen se mostrará en la pestaña <guimenuitem>Transiciones</guimenuitem>.  Esta transición se ubicará en la carpeta /home/USER/.openshot/.</para></sect2><sect2 id="sect2_76"><title>Eliminar una transicion</title>
+   <para>Para eliminar una transición, haga clic derecho en una transición en la línea de tiempo y elija <guimenuitem>Eliminar</guimenuitem>.</para></sect2></sect1><sect1 id="sect1_21"><title>Lista de transiciones</title>
+   <para>This list does not feature every transition, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Persianas de dentro hacia fuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Persianas grandes de dentro hacia fuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/blinds_sliding.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Cierre de persianas</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Círculo desde dentro hacia afuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/circle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Círculo de fuera hacia dentro</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de izquierda a derecha</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/clock_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de derecha a izquierda</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_5.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 5</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_6.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 6</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 7</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/fractal_8.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Fractal 8</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Emerger 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Emerger 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hatched_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Emerger 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de arena 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de arena 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de arena 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/hourglass_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Reloj de arena 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/mountains.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Montañas</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/openshot_logo.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Logo de OpenShot</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/puzzle_7_by_7.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Puzzle 7 por 7</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Rectángulo de adentro hacia fuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/rectangle_out_to_in.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Rectángulo de afuera hacia adentro</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sand.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Arena</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/sphere.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Esfera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Espiral abstracta 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_abstract_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Espiral abstracta 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Espiral grande</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_medium.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Espiral media</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spiral_small.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Espiral pequeña</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/spots.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Lunares</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Estrella 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/star_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Estrella 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Persianas verticales de dentro hacia fuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/vertical_blinds_in_to_out_big.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Persianas verticales grandes de dentro hacia fuera</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_bottom_to_top.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Limpiar de abajo hacia arriba</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_1.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Transición en diagonal 1</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_2.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Transición en diagonal 2</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_3.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Transición en diagonal 3</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_diagonal_4.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Transición en diagonal 4</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_left_to_right.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Limpiar de izquierda a derecha</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_right_to_left.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Limpiar de derecha a izquierda</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/transitions/wipe_top_to_bottom.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para>Limpiar de arriba hacia abajo</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_22"><title>Efectos</title>
+   <para>OpenShot dispone de más de 40 efectos diseñados para manipular el vídeo o el audio de un clip.  Ajustar el tono de un color, brillo y gamma, todo ello puede hacerse con los efectos.  Así como efectos más exóticos como distorsión, onda, película antigua, pantalla verde (también conocida como Chroma Key) y efectos de audio.</para><sect2 id="sect2_77"><title>Agregar un efecto</title>
+   <para>Para agregar un efecto, cambie a la pestaña <guibutton>Efectos</guibutton>, seleccione un efecto de la lista, y arrastre el efecto a un clip en la <guibutton>línea de tiempo</guibutton>.</para>
+   <para/>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_window.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Pestaña de efectos.</para>
+            </entry>
+            <entry>
+               <para>Esta pestaña contiene la lista de efectos.  La lista de efectos puede ser filtrada con los botones "Todos los Efectos", "Vídeo", o "Audio".  Puedes también, escribir las primeras letras del nombre del efecto, y se mostrará una lista filtrada de efectos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Lista de efectos</para>
+            </entry>
+            <entry>
+               <para>La lista de efectos contiene todos los efectos disponibles en OpenShot.  Se puede filtrar la lista con los botones sobre esta lista.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Clip</para>
+            </entry>
+            <entry>
+               <para>Arrastra el efecto seleccionado a un clip.  Usa las Propiedades del Clip para ajustar la configuración del efecto.  También puedes hacer doble click en el icono del efecto, que se mostrará en todos los clips que tienen efectos y lanzará la pantalla de propiedades del clip.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_78"><title>Ajustar la configuración del efecto</title>
+   <para>Para ajustar la configuración de un efecto, haga clic derecho en un clip y elija <guimenuitem>Propiedades</guimenuitem>.   Vaya a la pestaña <guibutton>Efectos</guibutton> y podrá ver una lista de todos los efectos que se han aplicado al clip actual.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/effects_settings.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Lista de efectos</para>
+            </entry>
+            <entry>
+               <para>Lista de los efectos que pertenecen al clip seleccionado.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Configuración de Efectos</para>
+            </entry>
+            <entry>
+               <para>Una lista de ajustes para el efecto seleccionado.   Haga clic en un efecto para  cargar la lista de ajustes.   Puede cambiar los valores de estos parámetros, utilice el botón de  <guibutton>Reproducir guibutton&gt; para previsualizar el efecto.</guibutton></para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Botones de vista previa</para>
+            </entry>
+            <entry>
+               <para>Utilice el botón <guibutton>Reproducir</guibutton> y el <guibutton>control deslizante</guibutton> para previsualizar los efectos antes de hacer clic en <guibutton>Aplicar</guibutton>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Añadir efecto</para>
+            </entry>
+            <entry>
+               <para>Este botón  inicia la ventana Añadir Efecto.   Seleccione un efecto para agregar y haga clic en <guibutton>Añadir efecto</guibutton>.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Quitar efecto</para>
+            </entry>
+            <entry>
+               <para>Este boton borra el el efecto seleccionado (si lo hubiere)</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Mover efecto</para>
+            </entry>
+            <entry>
+               <para>Los efectos se aplican de arriba a abajo.   Utilice estos botones para organizar el orden de los efectos.   Utilice el botón  <guibutton>Reproducir</guibutton> para previsualizar los cambios.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <mediaobject/></sect2></sect1><sect1 id="sect1_23"><title>Lista de efectos</title>
+   <para>This list does not feature every effect, but many of the popular ones.</para>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Bajos</guibutton> - Ajusta el sonido o tono bajo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/two_layer.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Blanco y negro</guibutton> - Ajusta el color de la imagen a blanco y negro según un umbral.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject/>
+            </entry>
+            <entry>
+               <para/>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/blur.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Desenfoque</guibutton> – Desenfoca la imagen de manera similar a una cámara desenfocada.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/brightness.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Brillo</guibutton> – Ajusta el brillo de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/cartoon.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Cartoon</guibutton> – Transforma la imagen en dibujos animados, utilizando una clase de detección de bordes.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/charcoal.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Carboncillo</guibutton> – Filtra la imagen para darle aspecto de haber sido dibujada con carboncillo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/burningtv.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Chroma Hold</guibutton> – Muestra un único color, convirtiendo a escala de grises el resto de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/chroma_key.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Chroma Key</guibutton> – Hacer transparente un único color.  También conocido como pantalla verde o pantalla azul.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/colordistance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Distancia de color</guibutton> – Calcula la distancia entre el color seleccionado y el píxel actual y utiliza este valor como nuevo valor de píxel.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/contrast.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Contraste</guibutton> – Ajusta el contraste de la imagen original.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/deinterlace.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Desentrelazar</guibutton> – Convierte vídeo entrelazado en no entrelazado.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/distort.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Distorsionar</guibutton> – Distorsiona la imagen original de forma similar al plasma.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Eco</guibutton> – Añadir un eco.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/edgeglow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Edgeglow</guibutton> – Encuentra y hace resplandecer los bordes de los objetos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/freeze.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Congelar</guibutton> – Congelar el fotograma de un video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/gamma.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Gamma</guibutton> – Ajusta los valores de gamma o luminancia de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/glow.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Resplandor</guibutton> – Añade un efecto de resplandor a la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/greyscale.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Escala de grises</guibutton> – Convierte una imagen a escala de grises.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/hue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Tono</guibutton> – Modifica el tono de todos los colores de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/invert.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Invertir</guibutton> – Convierte los colores de la imagen a sus opuestos o complementarios.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/mirror.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Espejo</guibutton> – Divide la imagen y la replica como en un espejo.  Pueden usarse espejos verticales, horizontales y diagonales.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/nosync.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Nosync</guibutton> – Ajusta la imagen arriba y abajo, con la porción que excede la pantalla apareciendo en el lador contrario.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_dust.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Polvo antiguo</guibutton> – Añade aleatoriamente pequeñas motas de polvo a la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_film.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Película antigua</guibutton> – Ajusta el brillo y gamma de forma aleatoria para crear la ilusión de una película antigua.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_grain.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Granulado Antiguo</guibutton> – Añade interferencias y granulado a la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/old_lines.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Lineas Antiguas</guibutton> – Añade lineas verticales al azar a la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/tcolor.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Sobresaturar</guibutton> – Sobresatura el color de la imagen, como en las películas antiguas en Technicolor.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Phaser</guibutton> – Añade una serie de picos y valles al audio, creando un efecto de barrido.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/pixelate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Pixelar</guibutton> – Aumenta el tamaño de los píxeles para desdibujar la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_blue.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Eliminar Azul</guibutton> – Suprime el color azul de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_green.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Eliminar Verde</guibutton> – Suprime el color verde de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/remove_red.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Eliminar Rojo</guibutton> – Suprime el color rojo de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/rotate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Rotar</guibutton> – Rota una imagen de manera estática o animada.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/saturate.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Saturación</guibutton> – Ajusta la saturación o intensidad de la imagen.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sepia.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Sepia</guibutton> – Ajusta el color de la imagen para emular una película en blanco y negro a la que se ha añadido un pigmento sepia.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/sobel.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Sobel</guibutton> – Detecta y resalta los bordes de los objetos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/threshold.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Umbral</guibutton> – Reduce y mezcla los colores de la imagen según un umbral.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/audio.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Treble</guibutton> – Ajusta el sonido o tono agudo.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <mediaobject>
+                  <imageobject>
+                     <imagedata fileref="figures/effects/white_balance.png"/>
+                     <caption/>
+                  </imageobject>
+               </mediaobject>
+            </entry>
+            <entry>
+               <para><guibutton>Balance de blancos</guibutton> – Ajusta el balance de blancos y la temperatura del color.</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect1><sect1 id="sect1_24"><title>Exportar vídeo</title>
+   <para>Una vez que haya terminado un proyecto, querrá exportarlo al formato adecuado, según sus necesidades.   OpenShot tiene muchos formatos predefinidos para simplificar este proceso. Hay dos modos de exportar un vídeo en OpenShot, modo simple y modo avanzado.</para>
+   <para>Ambos modos comparten un espacio común en la parte superior de la pantalla, <guibutton>Opciones generales</guibutton>.   Introduzca un nombre para su archivo de vídeo (sin extensión) y elija una carpeta para la exportación.</para><sect2 id="sect2_79"><title>Lanzar la ventana de exportación</title>
+   <para>Para iniciar la ventana de exportación, haga clic enel icono <guimenuitem>Exportar vídeo</guimenuitem> en la barra de herramientas en la parte superior de la ventana principal, o elija <guimenu>Archivo</guimenu> &gt; <guimenuitem>Exportar vídeo</guimenuitem>.</para></sect2><sect2 id="sect2_80"><title>Modo Sencillo</title>
+   <para>OpenShot tiene muchos formatos predefinidos de exportación, que cubren los supuestos de exportación más comúnes. Seleccione  un <guibutton>Tipo de proyecto</guibutton>, como DVD o Web, y luego elija <guibutton>Objetivo</guibutton>, <guibutton>Perfil de vídeo </guibutton>, y  <guibutton>Calidad</guibutton> .   Si selecciona <guibutton>Todos los formatos</guibutton>,  le dará una lista de todos los formatos comunes, y le permitirá elegir el que desee.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_simple.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject><sect3 id="sect3_12"><title>Subir a la web</title>
+   <para>Elige la opción de <guibutton>Subir a Web</guibutton> en la parte superior de esta pantalla para escoger entre Youtube y Vimeo.  Estos son dos sitios muy comunes para compartir vídeos.  Esto definirá automáticamente la configuración de exportación para que sea compatible con la web seleccionada y lanzará la pantalla de <guibutton>Subir Vídeo</guibutton> una vez el vídeo haya sido creado.</para></sect3></sect2><sect2 id="sect2_81"><title>Modo avanzado</title>
+   <para>Las opciones avanzadas sólo deberían ser utilizados por alguien familiarizado con FFmpeg, ya que es muy fácil  crear combinaciones no válidas de codecs, formatos y  tasas de bits.   Sin embargo, si usted está familiarizado con estos ajustes, puede utilizar cualquier formato/codec/tasa de bits soportado por FFmpeg, lo cual abre docenas y docenas de formatos adicionales que pueden ser utilizados durante el proceso de exportación.   También puede exportar el vídeo como una secuencia de imágenes, que puede ser útil si tiene previsto importar este vídeo en un programa que requiere secuencias de imágenes, como Blender.</para>
+   <para>Además, si primero selecciona valores en el <guibutton>Modo simple</guibutton> y luego cambia al <guibutton>Modo avanzado</guibutton> los ajustes del modo simple serán recordados y aparecerán preseleccionados.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_advanced.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect2></sect1><sect1 id="sect1_25"><title>Subir vídeo</title>
+   <para>Si quieres subir un vídeo directamente a Youtube o Vimeo, elige <guimenu>Archivo</guimenu> &gt; <guimenuitem>Subir Vídeo</guimenuitem>.  Además, en la pantalla <guimenuitem>Exportar Vídeo</guimenuitem>, puedes escoger <guimenuitem>Subir a Web</guimenuitem>, que primero exportará tu proyecto en el formato correcto y luego mostrará la pantalla para subir el archivo.</para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/upload_to_web.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject>
+   <mediaobject/>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Componente</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Archivo de vídeo</para>
+            </entry>
+            <entry>
+               <para>Escoge un archivo de vídeo para subir a Youtube.  Asegúrate primero, de que tiene un formato compatible con Youtube, o puede que no funcione correctamente.  Si usas primero la pantalla de <guimenu>Exportar Vídeo</guimenu>, puedes utilizar <guibutton>Subir a Web, que autom</guibutton></para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>Subir A</para>
+            </entry>
+            <entry>
+               <para>Elige los sitios web de vídeo a los que quieres subir el vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>Título</para>
+            </entry>
+            <entry>
+               <para>Introduce un título para el vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+            <entry>
+               <para>Introduce una descripción para el vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Credenciales</para>
+            </entry>
+            <entry>
+               <para>Introduce el nombre de usuario y contraseña para la web de vídeo</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_26"><title>Exportar a XML</title>
+   <para>Exportar tu proyecto en un formato XML potente y flexible, llamado XML MLT.  Este archivo XML puede ser usado en <emphasis>Kdenlive</emphasis> y la línea de comando <guibutton>melt</guibutton></para>
+   <para/>
+   <mediaobject/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/export_to_xml.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_27"><title>Tipos de proyecto / Perfiles</title>
+   <para>Todo proyecto en <application>OpenShot</application> debe tener un <guibutton>tipo de proyecto</guibutton> (también conocido como <guibutton>perfil</guibutton>).  Un perfil determina las siguientes opciones de reproducción y exportación para el proyecto de video: <emphasis>fotogramas por segundo, altura y anchura, relación de aspecto y de pixel</emphasis>.</para>
+   <para>Este es un perfil de ejemplo para ATSC 1080i 60Hz:</para>
+   <informaltable frame="all">
+      <tgroup cols="3"><tbody><row>
+            <entry>
+               <para>Descripción</para>
+            </entry>
+            <entry>
+               <para>ATSC 1080i 60Hz</para>
+            </entry>
+            <entry>
+               <para>El nombre del perfil como aparecerá en Openshot.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_num</para>
+            </entry>
+            <entry>
+               <para>30000</para>
+            </entry>
+            <entry>
+               <para>Numerador de la relación de fotogramas.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>frame_rate_den</para>
+            </entry>
+            <entry>
+               <para>1001</para>
+            </entry>
+            <entry>
+               <para>Denominador de la relación de fotogramas.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>anchura</para>
+            </entry>
+            <entry>
+               <para>1920</para>
+            </entry>
+            <entry>
+               <para>Ancho del video.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>altura</para>
+            </entry>
+            <entry>
+               <para>1080</para>
+            </entry>
+            <entry>
+               <para>Altura del vídeo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>progresivo</para>
+            </entry>
+            <entry>
+               <para>0</para>
+            </entry>
+            <entry>
+               <para>0 = Entrelazado, 1 = Progresivo</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_num</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Numerador de la relación de  pixel.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>sample_aspect_den</para>
+            </entry>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Denominador de la relación de pixel.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_num</para>
+            </entry>
+            <entry>
+               <para>16</para>
+            </entry>
+            <entry>
+               <para>Numerador de la relación de aspecto de la pantalla</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>display_aspect_den</para>
+            </entry>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Denominador de la relación de aspecto de la pantalla</para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/>
+   <para><application>OpenShot</application> dispone de más de 40 perfiles predefinidos / tipos de proyecto disponibles.  No obstante, si no encuentra un perfil que funcione para su proyecto, también puede crear uno propio.  Puede gestionar la lista de perfiles con la pestaña <guimenu>Editar &gt;</guimenu><guimenuitem>Preferencias </guimenuitem><guimenu>&gt;</guimenu><guimenuitem> Perfiles </guimenuitem>.</para></sect1><sect1 id="sect1_28"><title>Preferencias</title>
+   <para>Para configurar <application>OpenShot</application>, elija <guimenu>Editar &gt;</guimenu><guimenuitem>Preferencias</guimenuitem>. El diálogo <guilabel>Preferencias</guilabel> puede ajustar la duración predeterminada de las imágenes, el tema por defecto así como el tipo de proyecto / perfil predeterminados.  Configurar estos valores puede ahorrarle un tiempo valioso cada vez que inicie un nuevo proyecto.</para>
+   <para/>
+   <mediaobject>
+      <imageobject>
+         <imagedata fileref="figures/preferences.png"/>
+         <caption/>
+      </imageobject>
+   </mediaobject></sect1><sect1 id="sect1_29"><title>Dependencias</title>
+   <para>OpenShot está programado en Python, pero tiene algunas dependencias, algunas opcionales y otras requeridas.  Si estás intentando instalar OpenShot manualmente o crear un paquete de instalación para OpenShot, esta sección es para ti.</para>
+   <para/>
+   <informaltable frame="all">
+      <tgroup cols="4"><tbody><row>
+            <entry>
+               <para>Id</para>
+            </entry>
+            <entry>
+               <para>Nombre</para>
+            </entry>
+            <entry>
+               <para>Nombre de Paquete Debian</para>
+            </entry>
+            <entry>
+               <para>Notas</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>1</para>
+            </entry>
+            <entry>
+               <para>Python</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Este es el lenguaje de programación principal de OpenShot.  Se requiere Python 2.5+</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>2</para>
+            </entry>
+            <entry>
+               <para>GTK+ &amp;   Python Bindings</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-gtk2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>OpenShot usa GTK+, y necesita las Python bindings para GTK</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>3</para>
+            </entry>
+            <entry>
+               <para>MLT (Media Lovin' Toolkit)</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libmlt2, libmlt-data, libmlt++3, melt</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>MLT es un framework de código abierto, diseñado y mantenido para la difusión de televisión.  Esto tiene muchas dependencias adicionales que no están listadas aquí.  Esta biblioteca se usa para crear, editar y reproducir vídeos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>4</para>
+            </entry>
+            <entry>
+               <para>Python Bindings para MLT</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-mlt2</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Estas son las Python bindings para MLT, que son requeridas para utilizar MLT desde el lenguaje de programación Python</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>5</para>
+            </entry>
+            <entry>
+               <para>Python Bindings para GooCanvas</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-pygoocanvas</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>GooCanvas se usa para pintar y animar la línea de tiempo.  Se requieren las "Python bindings" para usar esta biblioteca.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>6</para>
+            </entry>
+            <entry>
+               <para>Efectos de Vídeo Frei0r</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>frei0r-plugins</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para><emphasis>(Opcional</emphasis> Esta biblioteca se usa para añadir efectos de vídeo adicionales a OpenShot</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>7</para>
+            </entry>
+            <entry>
+               <para>Biblioteca Estándar FreeDesktop.org</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-xdg</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>XDG se utiliza para cargar iconos, definir tipos MIME, y otras características de integración con el escritorio.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>8</para>
+            </entry>
+            <entry>
+               <para>Biblioteca de Audio Sox</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>sox</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Navaja suiza de procesamiento de audio, utilizado en los efectos de sonido.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>9</para>
+            </entry>
+            <entry>
+               <para>Simple DirectMedia Layer</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libsdl1.2debian, libsdl1.2debian-pulseaudio</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>SDL se usa para mostrar la ventana de previsualización para vídeo y para reproducir audio</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>10</para>
+            </entry>
+            <entry>
+               <para>Biblioteca de Gráficos Vectoriales Escalables</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>librsvg2-common</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>La biblioteca SVG es requerida para procesar y mostrar imágenes SVG</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>11</para>
+            </entry>
+            <entry>
+               <para>Biblioteca de Imágenes de Python</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>python-imaging</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>PIL se utiliza para calcular la información del tamaño de la imagen.  Se utiliza principalmente para los <emphasis> títulos animados emphasis&gt; en pantalla.</emphasis></para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>12</para>
+            </entry>
+            <entry>
+               <para>Biblioteca de Formato de Archivo FFmpeg</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>libavformat52 o libavformat-extra-52 o libavformat-unstripped-52</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Esto proporciona a MLT la habilidad para entender diferentes codecs de vídeo y audio.  Hay muchas versiones diferentes de libavformat, algunas están limitadas en códecs y otras incluyen montones de estos.</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>13</para>
+            </entry>
+            <entry>
+               <para>Configuración de Fuente</para>
+            </entry>
+            <entry>
+               <para>
+                  <guibutton>Configuración de Fuente</guibutton>
+               </para>
+            </entry>
+            <entry>
+               <para>Fontconfig se usa para configurar la fuente y la librería de personalización.   OpenShot utiliza el comando fc-list para obtener una lista de todas las fuentes instaladas en el equipo, para los <emphasis> títulos animados emphasis&gt; en pantalla</emphasis></para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable></sect1><sect1 id="sect1_30"><title>Sé un Desarrollador de OpenShot</title>
+   <para>Si eres programador (o quieres convertirte en uno), y estás interesado en desarrollar nuevas características, arreglar fallos, mejorar la interfaz de usuario, o desarrollar nuevos temas para OpenShot, las siguientes secciones te explicarán los pasos y el proceso que debes seguir.</para><sect2 id="sect2_82"><title>La Gran Foto</title>
+   <para>OpenShot es un programa en Python constituido por muchos ficheros de Python (.py), imágenes (.svg, .png),  archivos XML (.xml), archivos XML GTK+ (.ui), y archivos de proyecto de Blender (.blend) . Python es un lenguaje interpretado, esto quiere decir que ningún archivo debe ser compilado para ejecutar OpenShot.  Si cambias alguno de los ficheros fuente, sólo necesitas cerrar y reabrir OpenShot para ver los cambios.</para></sect2><sect2 id="sect2_83"><title>Obtener el Último Código Fuente</title>
+   <para>OpenShot aloja la última versión de su código fuente en <ulink url="https://code.launchpad.net/openshot">LaunchPad.net</ulink>, usando el sistema de control de versiones <ulink url="http://bazaar.canonical.com/en/">Bazaar</ulink>.</para>
+   <orderedlist>
+      <listitem>
+         <para>Instala el sistema de control de versiones Bazaar.  En Debian (o Ubuntu), puedes hacerlo escribiendo</para>
+         <para>
+            <command>$ sudo apt-get install bzr</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Dile a Bazaar que cree una rama local para tu ordenador.  Esto creará una carpeta /<emphasis>openshot/</emphasis> en tu carpeta personal y descargará ahí el código fuente más actual.  Por ejemplo: /home/USER/openshot</para>
+         <para>
+            <command>$ bzr branch lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Si la tienes una carpeta <emphasis>/openshot/</emphasis>, sólo cambia tu directorio actual ahí, y ejecuta el siguiente comando para obtener la última versión:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr pull lp:openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Ahora deberías tener el código fuente más actual de OpenShot.  Para cargar OpenShot desde esta carpeta, debes ejecutar los siguientes comandos.  Recuerda, debes tener las dependencias para OpenShot ya instaladas, esto lo cubriremos en el siguiente apartado.</para>
+         <para>
+            <command>$ cd /home/USER/openshot/bin/</command>
+         </para>
+         <para>
+            <command>$ ./openshot  or  python openshot</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Si has hecho cambios al código fuente de OpenShot, y quieres ver todo lo que has cambiado, ejecuta este comando:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr status</command>
+         </para>
+      </listitem>
+      <listitem>
+         <para>Si no estas contento con tus cambios locales y quieres revertirlos, ejecuta este comando:</para>
+         <para>
+            <command>$ cd /home/USER/openshot/</command>
+         </para>
+         <para>
+            <command>$ bzr revert</command>
+         </para>
+      </listitem>
+   </orderedlist></sect2><sect2 id="sect2_84"><title>Configura Tu Entorno</title>
+   <para>Una vez obtenido el último código fuente, el siguiente paso es instalar las dependencias requeridas.  Recomendaría instalar OpenShot desde tu gestor de paquetes favorito (como Synaptic).  Esto instalará una versión de OpenShot con todas las dependencias requeridas.  Esto no tendrá conflictos con tu versión local del código fuente de OpenShot.  Lo único es recordar que el comando <guimenu>$ openshot</guimenu> ejecutará la versión oficial de OpenShot y no la versión local.  Así que, debes recordar ejecutar OpenShot con los siguientes comandos:</para>
+   <para>
+      <command>$ cd /home/USER/openshot/bin/</command>
+   </para>
+   <para>
+      <command>$ ./openshot  or  python openshot</command>
+   </para>
+   <para>Ahora que tienes el último código fuente y todas las dependencias, puedes usar un editor de texto (como gedit), o un completo IDE para Python como <ulink url="http://www.eclipse.org/">Eclipse</ulink> o <ulink url="http://www.aptana.com/">Aptana</ulink> (con <ulink url="http://pydev.org/">Pydev</ulink>) para modificar el código fuente.  La ventaja de utilizar un completo IDE para Python son las capacidades avanzadas de depurado.  Está más allá del ámbito de este documento enseñarte cómo depurar Python con Eclipse o Aptana, pero hay montones de buenos tutoriales para ello online.</para></sect2><sect2 id="sect2_85"><title>Corrigiendo Tu Primer Bug</title>
+   <para>Ahora que tienes una versión de OpenShot funcional, arreglar bugs y añadir nuevas características es fácil.  Simplemente modifica los archivos y recarga OpenShot para ver tus cambios.  Eso sí, no puedo decirte exactamente cómo corregir un bug, eso es cosa tuya.  ¡Buena suerte!</para></sect2><sect2 id="sect2_86"><title>Compartir tus cambios con el Equio de OpenShot</title>
+   <para>Una vez hayas corregido tu primer bug o añadido una nueva y fantástica característica, el siguiente paso es compartirla con el Equipo de Openshot, y asegurarnos de que los cambios van a la versión oficial de OpenShot.  La forma más fácil para compartir tus cambios es crear un parche (patch o diff).  Usa el siguiente comando para crear un parche (patch):</para>
+   <para>
+      <command>$ cd /home/USER/openshot/</command>
+   </para>
+   <para>
+      <command>$ bzr diff &gt; mychanges.patch</command>
+   </para>
+   <para>Esto creará un archivo llamado mychanges.patch, que debe contener todos los cambios de todos los archivos que has modificado.  Por supuesto, si has creado nuevos archivos, debes comprimirlos en un archivo ZIP o TAR, e incluirlos con tu archivo mychanges.patch.</para>
+   <para>Lo siguiente es crear un <ulink url="https://launchpad.net/openshot/+filebug">nuevo informe de fallo</ulink> en Launchpad (o encontrar un informe de fallo ya existente), y subit tu parche y archivos relacionados a dicho informe.  ¡Ya está!  El Equipo de OpenShot será notificado por e-mail y el parche será enviado.  Puedes suscribirte al informe de fallos, y seguirlo, informándote de si hay preguntas o comentarios sobre tu parche.</para></sect2><sect2 id="sect2_87"><title>Únete al Equipo de Desarrolladores de OpenShot en Launchpad</title>
+   <para>If you are fixing bugs or adding new features to OpenShot, please consider <ulink url="https://launchpad.net/~openshot.developers">joining our </ulink>
+      <ulink url="https://launchpad.net/~openshot.developers">team</ulink> on LaunchPad.  We have a mailing list that will keep you up to date on the newest bug reports and plans related to OpenShot.</para></sect2></sect1><sect1 id="sect1_31"><title>Acerca de OpenShot</title>
+   <para><application>OpenShot</application> fue creado por Jonathan Thomas (<ulink url="mailto:Jonathan.Oomph@gmail.com">Jonathan.Oomph@gmail.com</ulink>) en Agosto de 2008 con el objetivo de proporcionar un editor de vídeo estable, libre y de fácil utilización.</para><sect2 id="sect2_88"><title>Equipo de desarrollo de OpenShot</title>
+   <informaltable frame="all">
+      <tgroup cols="2"><tbody><row>
+            <entry>
+               <para>Jonathan Thomas</para>
+            </entry>
+            <entry>
+               <para>Jonathan.Oomph@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Andy Finch</para>
+            </entry>
+            <entry>
+               <para>we.rocked.in79@googlemail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Olivier Girard</para>
+            </entry>
+            <entry>
+               <para>eolinwen@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Maël Lavault</para>
+            </entry>
+            <entry>
+               <para>moimael@gmail.com</para>
+            </entry>
+         </row>
+         <row>
+            <entry>
+               <para>Ver la lista completa de desarrolladores:</para>
+            </entry>
+            <entry>
+               <para>
+                  <ulink url="https://launchpad.net/~openshot.developers/+members#active">https://launchpad.net/~openshot.developers/+members#active</ulink>
+               </para>
+            </entry>
+         </row></tbody></tgroup>
+   </informaltable>
+   <para/></sect2><sect2 id="sect2_89"><title>Más Información</title>
+   <para>Para obtener más información sobre <application>OpenShot</application>, por favor, visita la <ulink url="http://www.openshot.org/">página web de OpenShot </ulink><ulink url="http://www.openshot.org/">(www.openshot.org)</ulink>. Para informar sobre un fallo o hacer una sugerencia respecto a la aplicación o este manual, ve al <ulink url="https://launchpad.net/openshot">sitio de OpenShot en Launchpad</ulink>.  Para debatir sobre OpenShot con otros usuarios, visita nuestro foro: <ulink url="http://openshotusers.com/forum/">http://OpenShotUsers.com/forum/</ulink>.</para></sect2><sect2 id="sect2_90"><title>Copyright y Marca Comercial</title>
+   <para>Copyright (C) 2011  Jonathan Thomas.  OpenShot(TM) es una marca registrada propiedad de Jonathan Thomas.</para></sect2><sect2 id="sect2_91"><title>Licencia</title>
+   <para>Este programa se distribuye bajo los términos de la Licencia Pública General GNU tal como ha sido publicada  por la Free Software Foundation, ya sea la versión 3  de la Licencia, o (a su elección) cualquier versión posterior. Una copia de esta licencia se puede encontrar en este <ulink url="http://www.gnu.org/licenses/gpl.html">enlace</ulink>, o en el archivo COPYING incluido con el código fuente de este programa.</para></sect2></sect1><para/>
+</article>
