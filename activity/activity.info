@@ -1,0 +1,7 @@
+[Activity]
+name = OpenShot
+bundle_id = org.laptop.OpenShot
+icon = logo
+exec = sugar-activity activity.OpenShotActivity
+show_launcher = yes
+activity_version = 1

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #	OpenShot Video Editor is a program that creates, modifies, and edits video files.
 #   Copyright (C) 2009  Jonathan Thomas, TJ
 #
