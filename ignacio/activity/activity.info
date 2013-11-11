@@ -1,0 +1,9 @@
+[Activity]
+name = OpenShot
+activity_version = 1
+license = GPLv3
+bundle_id = org.ceibaljam.openshot
+exec = sugar-activity activity.OpenShot
+icon = openshot
+show_launcher = yes
+summary = Crear videos
